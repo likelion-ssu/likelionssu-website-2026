@@ -1,1 +1,320 @@
 @import "tailwindcss";
+
+/* ===========================
+   Font Face (Interop)
+=========================== */
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Thin.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Thin.woff")
+      format("woff");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-ExtraLight.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-ExtraLight.woff")
+      format("woff");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Light.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Regular.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Medium.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Medium.woff")
+      format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-SemiBold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-SemiBold.woff")
+      format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Bold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-Bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Interop";
+  src: url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-ExtraBold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/payw-org/Interop@main/web/fonts/Interop-ExtraBold.woff")
+      format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* ===========================
+   Typography Utilities
+=========================== */
+@layer utilities {
+  /* ===========================
+    Interop
+  =========================== */
+
+  /* (Pre Title 1 K) Interop Medium 30 35 4% */
+  .typo-pretitle1k {
+    font-family: "Interop", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Sub Title K) Interop Regular 22 25 4% */
+  .typo-subtitlek {
+    font-family: "Interop", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Card Text K) Interop Medium 16 18 4% */
+  .typo-cardtextk {
+    font-family: "Interop", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Body K 1) Interop Light 14 30 4% */
+  .typo-bodyk1 {
+    font-family: "Interop", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Bold K) Interop Semibold 14 30 4% */
+  .typo-boldk {
+    font-family: "Interop", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Body 2) Interop Light 14 25 4% */
+  .typo-body2 {
+    font-family: "Interop", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Small 1) Interop Light 12 14 4% */
+  .typo-small1 {
+    font-family: "Interop", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Small 2) Interop Light 12 25 4% */
+  .typo-small2 {
+    font-family: "Interop", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Button Text) Interop Regular 13 14 4% */
+  .typo-buttontext {
+    font-family: "Interop", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Comment K) Interop Light 10 18 10% */
+  .typo-commentk {
+    font-family: "Interop", sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ===========================
+    JetBrains Mono
+  =========================== */
+
+  /* (Title/Header 1) JetBrains Mono Bold 50 55 0% */
+  .typo-title1e {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: 0em;
+  }
+
+  /* (Pre Title 1 E) JetBrains Mono Bold 30 35 10% */
+  .typo-pretitle1e {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.1em;
+  }
+
+  /* (Pre Title 2 E) JetBrains Mono SemiBold 15 18 0% */
+  .typo-pretitle2e {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0em;
+  }
+
+  /* (Sub Title E) JetBrains Mono Bold 22 25 4% */
+  .typo-subtitlee {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.04em;
+  }
+
+  /* (Card Text E) JetBrains Mono SemiBold 16 20 0% */
+  .typo-cardtexte {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0em;
+  }
+
+  /* (Body E 1) JetBrains Mono Light 14 30 0% */
+  .typo-bodye1 {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0em;
+  }
+
+  /* (Bold E) JetBrains Mono Semibold 14 30 0% */
+  .typo-bolde {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0em;
+  }
+
+  /* (Comment E) JetBrains Mono Medium 10 14 0% */
+  .typo-commente {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0em;
+  }
+
+  /* (Tag Text E W) JetBrains Mono Medium 8 10 0% */
+  .typo-tagtextew {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: 0em;
+  }
+
+  /* (Footer 1 E W) JetBrains Mono Light 15 18 0% */
+  .typo-footer1ew {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0em;
+  }
+
+  /* (Footer 2 E W) JetBrains Mono Medium 12 10 8% */
+  .typo-footer2ew {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  /* (Footer 1 E M) JetBrains Mono Light 12 18 0% */
+  .typo-footer1em {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0em;
+  }
+
+  /* (Footer 2 E M) JetBrains Mono Medium 12 18 8% */
+  .typo-footer2em {
+    font-family: "JetBrains Mono", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+  }
+}
+
+  /* ===========================
+    COLOR
+  =========================== */
+
+@theme {
+  --color-primarybrand: #FF5202;
+  --color-secondarybrand: #F9F8F5;
+  --color-light: #FFFFFF;
+  --color-line: #D2D2D1;
+  --color-accent: #F5F5F5;
+  --color-emptyimg: #EFEFEF;
+  --color-text: #020202;
+  --color-hoverimg: rgba(2, 2, 2, 0.7);
+  --color-subtext: rgba(2, 2, 2, 0.3);
+}
