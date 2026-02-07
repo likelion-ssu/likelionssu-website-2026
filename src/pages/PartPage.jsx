@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import SideBar from '../components/sidebar/SideBar';
+import Footer from '../components/footer/Footer';
 
 export default function PartPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,6 +16,7 @@ export default function PartPage() {
       <div className='h-[20rem]'>PartPage</div>
       <div className='h-[20rem]'>PartPage</div>
       <div className='h-[20rem]'>PartPage</div>
+      <Footer/>
 
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </div>

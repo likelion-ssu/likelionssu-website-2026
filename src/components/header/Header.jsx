@@ -20,7 +20,7 @@ export default function Header({ onMenuClick }) {
         <div className="flex items-center justify-end gap-[2.5rem] sm:gap-[2.5rem] sm:flex">
           {/* Recruit - 웹에서만 */}
           <div className="hidden sm:flex">
-            <HoverBtn type="managementteam"/>
+            <HoverBtn/>
           </div>
 
           {/* Menu */}
