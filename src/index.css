@@ -84,6 +84,25 @@
 }
 
 /* ===========================
+   Font Face (BookkMyungjo)
+=========================== */
+
+@font-face {
+    font-family: 'BookkMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Lt.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BookkMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+/* ===========================
    Typography Utilities
 =========================== */
 @layer utilities {
@@ -167,6 +186,15 @@
   .typo-buttontext {
     font-family: "Interop", sans-serif;
     font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+  }
+
+    /* (Button Text Bold) Interop Regular 13 14 4% */
+  .typo-buttontextbold {
+    font-family: "Interop", sans-serif;
+    font-weight: 500;
     font-size: 13px;
     line-height: 14px;
     letter-spacing: 0.04em;
@@ -296,7 +324,7 @@
   /* (Footer 2 E M) JetBrains Mono Medium 12 18 8% */
   .typo-footer2em {
     font-family: "JetBrains Mono", sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.08em;
@@ -307,6 +335,7 @@
     COLOR
   =========================== */
 
+  /* ex) text-primarybrand*/
 @theme {
   --color-primarybrand: #FF5202;
   --color-secondarybrand: #F9F8F5;
@@ -318,3 +347,4 @@
   --color-hoverimg: rgba(2, 2, 2, 0.7);
   --color-subtext: rgba(2, 2, 2, 0.3);
 }
+
