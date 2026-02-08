@@ -20,7 +20,7 @@ export default function ProjectCard({
         )}
       </div>
 
-      {/* 이미지-텍스트 간격 (Figma padding 값에 맞춰 우선 세팅) */}
+      {/* 이미지-텍스트 간격 */}
       <div className="h-[0.63rem]" />
 
       {/* 텍스트 */}
