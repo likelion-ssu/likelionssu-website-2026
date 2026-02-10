@@ -6,11 +6,13 @@ import MenuTab from "./MenuTab";
 
 // 사이드바O -> <Header onMenuClick={toggleSidebar} />
 // home, recruit 페이지 -> <Header noneSidebar={true} onMenuClick={toggleSidebar}/>
+// 모바일 메뉴 숨김 -> <Header hideMobileMenu={true} />
 
-// position:fixed 로 수정
-// 페이지 적용시 pt-[5.9375rem] sm:pt-[3.5625rem]
-
-export default function Header({ onMenuClick, noneSidebar = false }) {
+export default function Header({
+  onMenuClick,
+  noneSidebar = false,
+  hideMobileMenu = false,
+}) {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 bg-secondarybrand
@@ -25,9 +27,8 @@ export default function Header({ onMenuClick, noneSidebar = false }) {
       >
         {/* 헤더 가운데 세로선 (웹에서 noneSidebar일 때만) */}
         {noneSidebar && (
-  <div className="hidden sm:block absolute left-1/2 sm:top-[-0.625rem] -translate-x-1/2 w-[0.0625rem] sm:h-[3.5625rem] bg-line" />
-)}
-
+          <div className="hidden sm:block absolute left-1/2 sm:top-[-0.625rem] -translate-x-1/2 w-[0.0625rem] sm:h-[3.5625rem] bg-line" />
+        )}
 
         {/* Logo */}
         <div className="absolute top-[3.56rem] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:top-0 sm:left-0">
@@ -35,11 +36,9 @@ export default function Header({ onMenuClick, noneSidebar = false }) {
         </div>
 
         {/* 웹에서 noneSidebar일 때 MenuTab */}
-        <div className="hidden sm:flex">
-          {noneSidebar && <MenuTab />}
-        </div>
+        <div className="hidden sm:flex">{noneSidebar && <MenuTab />}</div>
 
-        {/* 오른쪽 컨텐츠 (모바일에서는 항상 유지 / 웹에서는 noneSidebar가 false일 때만) */}
+        {/* 오른쪽 컨텐츠 */}
         <div
           className={`${
             noneSidebar ? "sm:hidden" : "flex"
@@ -50,16 +49,17 @@ export default function Header({ onMenuClick, noneSidebar = false }) {
             <HoverBtn />
           </div>
 
-          {/* Menu */}
-          <div
-            className="absolute top-[3.63rem] right-[1.22rem] sm:static sm:top-0 sm:right-0 flex items-center justify-center cursor-pointer"
-            onClick={onMenuClick}
-          >
-            <img src={menu} className="w-[1.2375rem] h-[0.9375rem]" />
-          </div>
+          {/* Menu 아이콘 */}
+          {!hideMobileMenu && (
+            <div
+              className="absolute top-[3.63rem] right-[1.22rem] sm:static sm:top-0 sm:right-0 flex items-center justify-center cursor-pointer"
+              onClick={onMenuClick}
+            >
+              <img src={menu} className="w-[1.2375rem] h-[0.9375rem]" />
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
-
