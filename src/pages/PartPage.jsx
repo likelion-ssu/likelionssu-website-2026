@@ -16,7 +16,7 @@ export default function PartPage() {
     <div className="bg-secondarybrand min-h-screen relative">
       <Header onMenuClick={toggleSidebar} />
 
-      <div className="mt-[2.19rem] flex flex-col items-center w-full">
+      <div className="mt-[2.19rem] flex flex-col items-center w-full  pt-[5.9375rem] sm:pt-[3.5625rem]">
 
   <div className="w-full flex justify-center">
     <div className="flex items-center gap-[0.625rem] sm:gap-0">
