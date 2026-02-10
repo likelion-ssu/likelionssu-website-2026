@@ -1,0 +1,68 @@
+import React, { useEffect, useRef, useState } from "react";
+import PartMenu from "./PartMenu";
+
+export default function PartMenuTab({ activePart, setActivePart }) {
+  const [isStuck, setIsStuck] = useState(false);
+  const tabRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!tabRef.current) return;
+
+      const rect = tabRef.current.getBoundingClientRect();
+      setIsStuck(rect.top <= 95);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div
+      ref={tabRef}
+      className={`
+        sticky 
+        top-[5.9375rem] sm:top-[3.5625rem]
+        z-40 
+        w-full 
+        flex flex-col items-center
+        ${isStuck ? "bg-transparent sm:bg-secondarybrand" : "bg-secondarybrand"}
+      `}
+    >
+      {/* 메뉴 탭 */}
+      <div className="flex items-center gap-[0.625rem] sm:gap-0">
+        <PartMenu
+          mobileText="PM"
+          webText="Product Manager"
+          isActive={activePart === "PM"}
+          onClick={() => setActivePart("PM")}
+        />
+        <PartMenu
+          mobileText="DE"
+          webText="Product Designer"
+          isActive={activePart === "DE"}
+          onClick={() => setActivePart("DE")}
+        />
+        <PartMenu
+          mobileText="FE"
+          webText="Frontend Developer"
+          isActive={activePart === "FE"}
+          onClick={() => setActivePart("FE")}
+        />
+        <PartMenu
+          mobileText="BE"
+          webText="Backend Developer"
+          isActive={activePart === "BE"}
+          onClick={() => setActivePart("BE")}
+        />
+      </div>
+
+      {/* 모바일 밑줄: sticky 붙으면 사라짐 */}
+      {!isStuck && (
+        <div className="w-full border-b-[0.63px] border-line sm:hidden" />
+      )}
+    </div>
+  );
+}

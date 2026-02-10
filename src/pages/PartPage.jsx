@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import Header from "../components/header/Header";
 import SideBar from "../components/sidebar/SideBar";
 import Footer from "../components/footer/Footer";
-import PartMenu from "../features/Part/components/PartMenu";
-import ShortcutBtn from "../features/Part/components/ShortcutBtn";
+import PartMenuTab from "../features/Part/components/PartMenuTab";
+
+import PM from "../features/Part/components/Layout/ProductManager";
+import DE from "../features/Part/components/Layout/ProductDesigner";
+import FE from "../features/Part/components/Layout/FrontEnd";
+import BE from "../features/Part/components/Layout/BackEnd";
 
 export default function PartPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,43 +20,17 @@ export default function PartPage() {
     <div className="bg-secondarybrand min-h-screen relative">
       <Header onMenuClick={toggleSidebar} />
 
-      <div className="mt-[2.19rem] flex flex-col items-center w-full  pt-[5.9375rem] sm:pt-[3.5625rem]">
+      <div className="pt-[7.8775rem] sm:pt-[7.3125rem]">
+        <PartMenuTab activePart={activePart} setActivePart={setActivePart} />
 
-  <div className="w-full flex justify-center">
-    <div className="flex items-center gap-[0.625rem] sm:gap-0">
-      <PartMenu
-        mobileText="PM"
-        webText="Product Manager"
-        isActive={activePart === "PM"}
-        onClick={() => setActivePart("PM")}
-      />
-      <PartMenu
-        mobileText="DE"
-        webText="Product Designer"
-        isActive={activePart === "DE"}
-        onClick={() => setActivePart("DE")}
-      />
-      <PartMenu
-        mobileText="FE"
-        webText="Frontend Developer"
-        isActive={activePart === "FE"}
-        onClick={() => setActivePart("FE")}
-      />
-      <PartMenu
-        mobileText="BE"
-        webText="Backend Developer"
-        isActive={activePart === "BE"}
-        onClick={() => setActivePart("BE")}
-      />
-    </div>
-  </div>
-
-  <hr className="-mt-[0.06rem] w-full border-t border-line sm:hidden" />
-</div>
-
-      <div className="mt-[2.69rem] h-[20rem]">PartPage</div>
-      <ShortcutBtn/>
-      <ShortcutBtn text="세션 소개" />
+        {/* 레이아웃 들어올 자리 */}
+        <div>
+          {activePart === "PM" && <PM />}
+          {activePart === "DE" && <DE />}
+          {activePart === "FE" && <FE />}
+          {activePart === "BE" && <BE />}
+        </div>
+      </div>
 
       <Footer />
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />

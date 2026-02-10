@@ -18,7 +18,7 @@ export default function PartMenu({
         sm:border-b-[0.7px] sm:border-b-line sm:border-t-0 sm:border-l-0 sm:border-r-0
 
         cursor-pointer
-        ${isActive ? "bg-white" : "bg-transparent"}
+        ${isActive ? "bg-white" : "bg-secondarybrand"}
       `}
     >
       {/* 모바일 */}
