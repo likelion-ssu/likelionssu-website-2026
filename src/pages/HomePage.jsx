@@ -23,7 +23,7 @@ export default function HomePage() {
     <div className="bg-secondarybrand min-h-screen relative">
       <Header onMenuClick={toggleSidebar} noneSidebar={true}/>
 
-      <div className="mt-[2.19rem] flex flex-col items-center w-full px-10 gap-6">
+      <div className="pt-[5.9375rem] sm:pt-[3.5625rem] flex flex-col items-center w-full px-10 gap-6">
         <div className="typo-pretitle1k text-primarybrand">HomePage</div>
 
         <nav className="flex flex-col gap-4">

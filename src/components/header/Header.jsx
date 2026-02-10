@@ -17,12 +17,18 @@ export default function Header({ onMenuClick, noneSidebar = false }) {
                   flex flex-col items-center 
                   h-[5.9375rem] sm:h-[3.5625rem] sm:pt-[0.625rem] sm:pb-[0.0625rem] gap-[0.5565rem]
                   border-b-[0.7px] border-line
-                  ${noneSidebar ? "sm:border-b-[0.7px]" : ""}`}
+                  ${noneSidebar ? "sm:border-b-0" : ""}`}
     >
       <div
         className="flex w-full justify-between items-center relative 
                    sm:w-[83.40625rem] sm:justify-between sm:items-center sm:h-[3.5625rem]"
       >
+        {/* 헤더 가운데 세로선 (웹에서 noneSidebar일 때만) */}
+        {noneSidebar && (
+  <div className="hidden sm:block absolute left-1/2 sm:top-[-0.625rem] -translate-x-1/2 w-[0.0625rem] sm:h-[3.5625rem] bg-line" />
+)}
+
+
         {/* Logo */}
         <div className="absolute top-[3.56rem] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:top-0 sm:left-0">
           <Logo />
@@ -56,3 +62,4 @@ export default function Header({ onMenuClick, noneSidebar = false }) {
     </div>
   );
 }
+
