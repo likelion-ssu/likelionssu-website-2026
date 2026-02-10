@@ -5,7 +5,7 @@ import menu from "../../assets/menu.svg";
 import MenuTab from "./MenuTab";
 
 // 사이드바O -> <Header onMenuClick={toggleSidebar} />
-// home, recruit 페이지 -> <Header noneSidebar={true} />
+// home, recruit 페이지 -> <Header noneSidebar={true} onMenuClick={toggleSidebar}/>
 
 // position:fixed 로 수정
 // 페이지 적용시 pt-[5.9375rem] sm:pt-[3.5625rem]
