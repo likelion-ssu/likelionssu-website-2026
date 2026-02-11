@@ -8,7 +8,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
   return (
     <article
       className={`w-full flex flex-col overflow-hidden bg-light
-        ${isMobile ? "min-h-0 rounded-none shadow-none py-0" : "max-w-[51.6875rem] min-h-[32.4375rem] p-[0.63rem] rounded-[0.625rem] shadow-md cursor-default"}
+        ${isMobile ? "min-h-0 rounded-none shadow-none py-0" : "max-w-[51.6875rem] max-h-[32.4375rem] p-[0.63rem] pb-[5rem] rounded-[0.625rem] shadow-md cursor-default"}
       `}
       onClick={(e) => e.stopPropagation()}
     >
@@ -36,7 +36,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
         {/* PC: 이미지 + GIT/인스타를 하나로 묶음 / 모바일: 이미지만 */}
         <div className="order-1 flex flex-col gap-[0.62rem] lg:col-start-1 lg:row-start-1 min-h-0">
           {/* 402px Figma 기준, 450px~ 에서 납작해 보이지 않도록 높이 보강 */}
-          <div className="w-full h-[12.125rem] min-[450px]:h-[14.5rem] lg:h-[20.5rem] bg-emptyimg overflow-hidden rounded-none lg:rounded-[0.25rem] shrink-0">
+          <div className="w-full h-[13rem] min-[450px]:h-[15rem] lg:h-[18rem] bg-emptyimg overflow-hidden rounded-none lg:rounded-[0.25rem] shrink-0">
             {project.imageUrl ? (
               <img
                 src={project.imageUrl}
