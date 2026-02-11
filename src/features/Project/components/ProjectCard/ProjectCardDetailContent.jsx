@@ -18,7 +18,9 @@ export default function ProjectCardDetailContent({ project, variant }) {
         <span className={isMobile ? "typo-body2" : "typo-commentk"}>
           {project.category}
         </span>
-        <p className="typo-buttontextbold text-text text-center leading-tight">
+        <p
+          className={`${isMobile ? "typo-cardtextk" : "typo-buttontextbold"} text-text text-center leading-tight`}
+        >
           {project.title}
         </p>
         <span
@@ -29,11 +31,12 @@ export default function ProjectCardDetailContent({ project, variant }) {
       </header>
 
       <div
-        className={`flex-1 grid grid-cols-1 lg:grid-cols-[65%_35%] lg:grid-rows-1 min-h-0 lg:gap-x-[1rem] lg:items-start ${isMobile ? "pt-[0.5rem] px-[1.31rem] pb-[1.31rem] gap-[1.5rem]" : "p-[0.88rem] gap-2 pt-0 pb-8"}`}
+        className={`flex-1 grid grid-cols-1 lg:grid-cols-[65%_35%] lg:grid-rows-1 min-h-0 lg:gap-x-[1rem] lg:items-start ${isMobile ? "pt-0 px-[1.8rem] pb-[3.5rem] gap-[0.6rem]" : "p-[0.88rem] gap-2 pt-0 pb-8"}`}
       >
         {/* PC: 이미지 + GIT/인스타를 하나로 묶음 / 모바일: 이미지만 */}
         <div className="order-1 flex flex-col gap-[0.62rem] lg:col-start-1 lg:row-start-1 min-h-0">
-          <div className="w-full h-[12.125rem] lg:h-[20.5rem] bg-emptyimg overflow-hidden rounded-none lg:rounded-[0.25rem] shrink-0">
+          {/* 402px Figma 기준, 450px~ 에서 납작해 보이지 않도록 높이 보강 */}
+          <div className="w-full h-[12.125rem] min-[450px]:h-[14.5rem] lg:h-[20.5rem] bg-emptyimg overflow-hidden rounded-none lg:rounded-[0.25rem] shrink-0">
             {project.imageUrl ? (
               <img
                 src={project.imageUrl}
@@ -119,8 +122,8 @@ export default function ProjectCardDetailContent({ project, variant }) {
           </div>
         </section>
 
-        {/* 모바일(402px 기준): Team 아래, 소셜 가운데 정렬, 아이콘 2.25rem */}
-        <div className="order-3 flex gap-2 lg:hidden flex-start items-center pt-6">
+        {/* 모바일(402px 기준): Team 아래, 소셜 가운데 정렬, 아이콘 2rem */}
+        <div className="order-3 flex gap-3 lg:hidden flex-start items-center pt-6">
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
@@ -142,18 +145,10 @@ export default function ProjectCardDetailContent({ project, variant }) {
               className="flex items-center justify-center typo-small1 text-subtext hover:text-primarybrand transition"
               aria-label="Instagram"
             >
-              <img
-                src={instagramIcon}
-                alt=""
-                className="w-[2.25rem] h-[2.25rem]"
-              />
+              <img src={instagramIcon} alt="" className="w-[2rem] h-[2rem]" />
             </a>
           ) : (
-            <img
-              src={instagramIcon}
-              alt=""
-              className="w-[2.25rem] h-[2.25rem]"
-            />
+            <img src={instagramIcon} alt="" className="w-[2rem] h-[2rem]" />
           )}
         </div>
       </div>
