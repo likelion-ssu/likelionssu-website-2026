@@ -15,11 +15,17 @@ export default function ProjectCardDetailContent({ project, variant }) {
       <header
         className={`w-full shrink-0 grid grid-cols-3 gap-2 items-center bg-light ${isMobile ? "px-[1.31rem] py-[1.31rem]" : "px-6 py-4"}`}
       >
-        <span className="typo-commentk">{project.category}</span>
+        <span className={isMobile ? "typo-body2" : "typo-commentk"}>
+          {project.category}
+        </span>
         <p className="typo-buttontextbold text-text text-center leading-tight">
           {project.title}
         </p>
-        <span className="typo-commentk text-right">{project.number}기</span>
+        <span
+          className={`${isMobile ? "typo-body2" : "typo-commentk"} text-right`}
+        >
+          {project.number}기
+        </span>
       </header>
 
       <div
@@ -71,18 +77,28 @@ export default function ProjectCardDetailContent({ project, variant }) {
 
         <section className="order-2 flex flex-col gap-6 lg:col-start-2 lg:row-start-1">
           <div className="flex flex-col gap-2">
-            <h2 className="typo-commente text-text">About</h2>
-            <p className="typo-commentk text-text whitespace-pre-line">
+            <h2
+              className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
+            >
+              About
+            </h2>
+            <p
+              className={`${isMobile ? "typo-body2" : "typo-commentk"} text-text whitespace-pre-line`}
+            >
               {project.about}
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <h2 className="typo-commente text-text">Stack</h2>
+            <h2
+              className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
+            >
+              Stack
+            </h2>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-accent typo-tagtextew text-text"
+                  className={`px-2 py-1.5 bg-accent text-text ${isMobile ? "typo-footer2ew" : "typo-tagtextew"}`}
                 >
                   {tech}
                 </span>
@@ -90,40 +106,54 @@ export default function ProjectCardDetailContent({ project, variant }) {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h2 className="typo-commente text-text">Team</h2>
-            <p className="typo-commentk text-text whitespace-pre-line">
+            <h2
+              className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
+            >
+              Team
+            </h2>
+            <p
+              className={`${isMobile ? "typo-body2" : "typo-commentk"} text-text whitespace-pre-line`}
+            >
               {project.team}
             </p>
           </div>
         </section>
 
-        {/* 모바일: 맨 아래에 소셜 (이미지 -> About/Stack/Team -> 소셜 순서 유지) */}
-        <div className="order-3 flex lg:hidden gap-4 justify-end items-center">
+        {/* 모바일(402px 기준): Team 아래, 소셜 가운데 정렬, 아이콘 2.25rem */}
+        <div className="order-3 flex gap-2 lg:hidden flex-start items-center pt-6">
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 typo-small1 text-subtext hover:text-primarybrand transition"
+              className="flex items-center justify-center typo-small1 text-subtext hover:text-primarybrand transition"
               aria-label="GitHub"
             >
-              <img src={githubIcon} alt="" className="w-5 h-5" />
+              <img src={githubIcon} alt="" className="w-[2rem] h-[2rem]" />
             </a>
           ) : (
-            <img src={githubIcon} alt="" className="w-5 h-5" />
+            <img src={githubIcon} alt="" className="w-[2rem] h-[2rem]" />
           )}
           {project.instagramUrl ? (
             <a
               href={project.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 typo-small1 text-subtext hover:text-primarybrand transition"
+              className="flex items-center justify-center typo-small1 text-subtext hover:text-primarybrand transition"
               aria-label="Instagram"
             >
-              <img src={instagramIcon} alt="" className="w-5 h-5" />
+              <img
+                src={instagramIcon}
+                alt=""
+                className="w-[2.25rem] h-[2.25rem]"
+              />
             </a>
           ) : (
-            <img src={instagramIcon} alt="" className="w-5 h-5" />
+            <img
+              src={instagramIcon}
+              alt=""
+              className="w-[2.25rem] h-[2.25rem]"
+            />
           )}
         </div>
       </div>
