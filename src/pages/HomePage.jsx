@@ -1,44 +1,48 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import HoverBtn from "../components/header/HoverBtn";
 import Header from "../components/header/Header";
 import SideBar from "../components/sidebar/SideBar";
-import Footer from "../components/footer/Footer";
+import graphic from "../features/Home/assets/home-graphic.svg";
+import RecruitButton from "../features/Home/components/RecruitButton";
+import BottomTabbar from "../features/Home/components/BottomTabbar";
 
 export default function HomePage() {
-  const navigate = useNavigate();
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const closeSidebar = () => setIsSidebarOpen(false);
 
-  const menuItems = [
-    { label: "P A R T", path: "/part" },
-    { label: "A B O U T U S", path: "/about" },
-    { label: "P R O J E C T", path: "/project" },
-  ];
-
   return (
-    <div className="bg-secondarybrand min-h-screen relative">
-      <Header onMenuClick={toggleSidebar} noneSidebar={true}/>
+    <div className="bg-secondarybrand min-h-screen relative overflow-hidden">
+      <Header onMenuClick={toggleSidebar} noneSidebar={true} hideMobileMenu={true}/>
 
-      <div className="pt-[5.9375rem] sm:pt-[3.5625rem] flex flex-col items-center w-full px-10 gap-6">
-        <div className="typo-pretitle1k text-primarybrand">HomePage</div>
+      {/* 화면 정중앙 세로선 */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[0.0625rem] h-screen bg-line z-10" />
 
-        <nav className="flex flex-col gap-4">
-          {menuItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => navigate(item.path)}
-              className="typo-pretitle2e text-line hover:text-text transition underline underline-offset-8 decoration-transparent hover:decoration-text"
-            >
-              {item.label}
-            </button>
-          ))}
+      {/* 메인 컨텐츠 (화면 정중앙 정렬) */}
+      <div className="h-screen flex justify-center items-center overflow-hidden relative z-20">
+        {/* 이미지 + 버튼 */}
+        <div className="relative shrink-0">
+          <img
+            src={graphic}
+            alt="home-graphic"
+            className="
+              w-[37.17188rem] h-[37.17188rem]
+              sm:w-[min(49.5625rem,90vh)]
+              sm:h-[min(49.5625rem,90vh)]
+              shrink-0
+            "
+          />
 
-          <HoverBtn />
-        </nav>
+          {/* RecruitButton을 이미지 정가운데 */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <RecruitButton />
+          </div>
+        </div>
+      </div>
+
+      {/* BottomTabbar: 모바일에서만 + 화면 맨 아래 고정 */}
+      <div className="fixed bottom-0 left-0 w-full sm:hidden z-50">
+        <BottomTabbar />
       </div>
 
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
