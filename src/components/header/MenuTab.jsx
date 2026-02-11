@@ -13,7 +13,9 @@ export default function MenuTab() {
         <MenuTextBold>PART</MenuTextBold>
       </button>
 
-      <MenuTextBold>PROJECT</MenuTextBold>
+      <button onClick={() => navigate("/project")}>
+        <MenuTextBold>PROJECT</MenuTextBold>
+      </button>
     </div>
   );
 }
