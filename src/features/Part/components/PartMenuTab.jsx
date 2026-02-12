@@ -24,6 +24,7 @@ export default function PartMenuTab({ activePart, setActivePart }) {
       ref={tabRef}
       className={`
         fixed 
+        sm:sticky
         top-[5.9375rem] sm:top-[3.5625rem]
         z-40 
         w-full 
@@ -31,7 +32,8 @@ export default function PartMenuTab({ activePart, setActivePart }) {
       `}
     >
       {/* 메뉴 탭 */}
-      <div className="flex items-center w-full">
+      <div className="flex items-center w-full justify-between sm:w-fit sm:justify-center sm:mx-auto">
+
         <PartMenu
           mobileText="PM"
           webText="Product Manager"
