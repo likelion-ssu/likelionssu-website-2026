@@ -3,7 +3,7 @@ import pm1 from "../../assets/pm/pm-1.svg";
 
 export default function PmIntro() {
   return (
-    <div className="w-full sm:w-[75.8125rem] flex flex-col justify-center items-center sm:items-start gap-[1.25rem] px-[1.19rem] sm:px-0 sm:gap-[2.38rem] mt-[2.31rem]  ">
+    <div className="w-full sm:w-[75.8125rem] flex flex-col justify-center items-center sm:items-start gap-[1.25rem]  sm:gap-[2.38rem] mt-[2.31rem]  ">
       
       <div className="flex flex-col justify-center items-start  gap-[1.25rem] sm:flex-row sm:gap-[7.12rem]">
         
