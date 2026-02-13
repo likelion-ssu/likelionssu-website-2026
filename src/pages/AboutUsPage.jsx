@@ -40,6 +40,9 @@ export default function AboutUsPage() {
           />
         </div>
 
+        {/* 세로 구분선 - Header 하단 border와 동일 스타일 (0.7px, border-line) */}
+        <div className="hidden sm:block w-[0.7px] min-h-screen bg-line shrink-0 self-stretch" />
+
         {/* 오른쪽 스크롤 영역 - 모바일 전체 너비 */}
         <div className="w-full sm:w-1/2 shrink-0">
           <AboutContent

@@ -20,7 +20,7 @@ export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollCha
   const isScrolling = useRef(false);
 
   // 각 활동 컨테이너의 크기 (가로 배열)
-  const ACTIVITY_WIDTH = IMG_SIZE_1.width * 3 + 16; // 144*3 + 8*2 = 448px
+  const ACTIVITY_WIDTH = 560; // 이미지 3개를 감싸는 컨테이너 너비
   const ACTIVITY_HEIGHT = IMG_SIZE_2.height; // 가장 큰 이미지 높이 = 184px
   
   // 활동 컨테이너 간 gap
@@ -135,14 +135,18 @@ export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollCha
   return (
     <div 
       ref={containerRef}
-      className="relative h-full w-full flex items-center justify-center bg-[#020202] overflow-hidden"
+      className="relative h-full w-full flex items-center justify-center bg-secondarybrand overflow-hidden"
     >
       {/* 중앙 하얀색 박스 (고정) */}
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-light pointer-events-none z-10"
+        className="absolute top-1/2 -translate-y-1/2 bg-light pointer-events-none"
         style={{
-          width: ACTIVITY_WIDTH + 'px',
-          height: ACTIVITY_HEIGHT + 'px',
+          left: 'calc(50% - ' + (ACTIVITY_WIDTH / 2 + 14) + 'px)',
+          right: 0,
+          height: (ACTIVITY_HEIGHT + 28) + 'px',
+          paddingTop: '14px',
+          paddingBottom: '14px',
+          paddingLeft: '14px',
         }}
       />
 
@@ -175,10 +179,11 @@ export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollCha
                 ref={(el) => {
                   activityElementsRef.current[activityIndex] = el;
                 }}
-                className="flex flex-row gap-2"
+                className="flex flex-row justify-between items-end"
                 style={{ 
                   marginBottom: ACTIVITY_GAP + 'px',
-                  height: ACTIVITY_HEIGHT + 'px'
+                  width: ACTIVITY_WIDTH + 'px',
+                  height: ACTIVITY_HEIGHT + 'px',
                 }}
                 data-activity-index={activityIndex}
               >
