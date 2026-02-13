@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import HoverBtn from "./HoverBtn";
 import menu from "../../assets/menu.svg";
@@ -13,7 +14,9 @@ export default function Header({
   noneSidebar = false,
   hideMobileMenu = false,
 }) {
+  const navigate = useNavigate();
   return (
+    
     <div
       className={`fixed top-0 left-0 w-full z-50 bg-secondarybrand
                   flex flex-col items-center 
@@ -32,7 +35,7 @@ export default function Header({
 
         {/* Logo */}
         <div className="absolute top-[3.56rem] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:top-0 sm:left-0">
-          <Logo />
+          <Logo onClick={() => navigate("/")}/>
         </div>
 
         {/* 웹에서 noneSidebar일 때 MenuTab */}
