@@ -5,17 +5,19 @@ import grid from "../../assets/grid-left.svg";
 
 export default function PmContent() {
   return (
-    <div className="relative w-full  flex flex-col justify-start items-start gap-[2.75rem] min-h-[55.6rem] pb-[2.31rem]">
+    <div className="relative w-full  overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[55.6rem] pb-[2.31rem]">
 
       {/* =======================
           모바일용 hr
       ======================= */}
-      <hr className="w-[25.125rem] border-t-[0.7px] border-line sm:hidden" />
+      <hr className="w-full border-t-[0.7px] border-line sm:hidden" />
 
       {/* =======================
           웹용 hr (absolute)
       ======================= */}
       <hr className="hidden sm:block absolute top-0 right-0 w-[44.5rem] border-t-[0.7px] border-line" />
+      
+      <div className="px-[1.19rem] sm:px-0">
 
       {/* =======================
           웹 레이아웃 (absolute)
@@ -125,6 +127,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
           <img src={pm3} className="w-full" />
           <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
         </div>
+      </div>
       </div>
     </div>
   );

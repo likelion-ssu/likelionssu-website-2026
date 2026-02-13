@@ -11,7 +11,7 @@ export default function ProductManager() {
         <PmIntro/>
         <Lineup/>
       </div>
-      <div className='w-full sm:w-[90rem] pt-[3.375rem] sm:pt-[0rem] pb-[1.23rem] sm:pb-[0rem] px-[1.19rem] sm:px-0'>
+      <div className='w-full sm:w-[90rem] pt-[3.375rem] sm:pt-[0rem] pb-[1.23rem] sm:pb-[0rem] '>
         <PmContent/>
       </div>
       <div className='w-full sm:w-[63.4375rem]'>
