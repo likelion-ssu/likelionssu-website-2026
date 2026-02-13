@@ -6,6 +6,7 @@ import {
   CORE_VALUES,
 } from "../../../data/about";
 import activityCheckIcon from "../../../assets/activity-check.svg";
+import RoadmapMobile from "./RoadmapMobile";
 
 /**
  * 오른쪽 스크롤 텍스트 영역.
@@ -14,7 +15,7 @@ import activityCheckIcon from "../../../assets/activity-check.svg";
 // eslint-disable-next-line no-unused-vars -- 다음 단계에서 Scroll Spy / 클릭 스크롤 연결 시 사용
 export default function AboutContent({ activeIndex, onSectionEnter }) {
   return (
-    <div className="min-h-screen py-12 px-8 sm:px-12 text-color-text">
+    <div className="min-h-screen py-9 px-5 sm:px-12 text-color-text">
       {/* ABOUT US - 중앙 정렬 */}
       <section className="mb-16 text-center max-w-3xl mx-auto">
         <h1 className="typo-title1e mb-6">ABOUT US</h1>
@@ -22,9 +23,9 @@ export default function AboutContent({ activeIndex, onSectionEnter }) {
       </section>
 
       {/* 세로로 반 나눔: 왼쪽 ROADMAP / 오른쪽 YeonHheok, Core Values, Management Team */}
-      <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 pl-4">
-        {/* 왼쪽: ROADMAP */}
-        <section className="flex-1 min-w-0">
+      <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 sm:pl-4">
+        {/* 왼쪽: ROADMAP - 데스크톱은 리스트만, 모바일은 클릭 시 이미지 3장 펼침 */}
+        <section className="flex-1 min-w-0 hidden sm:block">
           <h2 className="typo-pretitle2e mb-5">ROADMAP</h2>
           <div className="space-y-8">
             {ROADMAP_SECTIONS.map((section) => (
@@ -54,9 +55,12 @@ export default function AboutContent({ activeIndex, onSectionEnter }) {
             ))}
           </div>
         </section>
+        <div className="order-2 sm:order-none">
+          <RoadmapMobile />
+        </div>
 
-        {/* 오른쪽: YeonHheok, Core Values, Management Team */}
-        <div className="flex-1 min-w-0 flex flex-col gap-10 sm:gap-12">
+        {/* 오른쪽: 연혁, Core Values, Management Team - 모바일에서 먼저 표시 */}
+        <div className="flex-1 min-w-0 flex flex-col gap-10 sm:gap-12 order-1 sm:order-none">
           <section>
             <h2 className="typo-pretitle2e mb-6">YeonHheok</h2>
             <ul className="typo-bodyk1 space-y-1">
