@@ -22,7 +22,7 @@ export default function ProductManager() {
         <SessionSection />
       </div>
 
-      <div className="mb-[0.81] sm:mb-[1.37rem] flex flex-col items-end sm:flex-row sm:justify-between sm:items-end w-full mt-[6.19rem] px-[1.25rem] sm:px-0 sm:mt-[10.69rem] sm:w-[75.8125rem]">
+      <div className="mb-[0.81rem] sm:mb-[1.37rem] flex flex-col items-end sm:flex-row sm:justify-between sm:items-end w-full mt-[6.19rem] px-[1.25rem] sm:px-0 sm:mt-[10.69rem] sm:w-[75.8125rem]">
       <p className="hidden sm:block typo-footer-custom text-text">
         Beautiful moments we will create together
       </p>

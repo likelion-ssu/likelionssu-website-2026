@@ -5,7 +5,7 @@ export default function ImageSlider({ version = "pm" }) {
   const images = sliderImages[version] || [];
 
   // 무한 루프 위해 2번 이어붙임
-  const loopImages = [...images, ...images];
+  const loopImages = [...images, ...images,...images, ...images];
 
   return (
     <div className="w-full overflow-hidden">
