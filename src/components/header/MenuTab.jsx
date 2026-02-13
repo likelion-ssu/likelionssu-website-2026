@@ -7,8 +7,10 @@ export default function MenuTab() {
 
   return (
     <div className="hidden sm:flex items-start gap-[2.5rem] typo-cardtexte text-text">
-      <MenuTextBold>ABOUT US</MenuTextBold>
-
+      <button onClick={() => navigate("/about")}>
+        <MenuTextBold>ABOUT US</MenuTextBold>
+      </button>
+      
       <button onClick={() => navigate("/part")}>
         <MenuTextBold>PART</MenuTextBold>
       </button>
