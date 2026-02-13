@@ -2,11 +2,23 @@
  * About 페이지 데이터
  * - ROADMAP: 오른쪽 텍스트 + 왼쪽 이미지 슬라이드에 공통 사용
  * - 한 "활동" = 로드맵 항목 1개 = 왼쪽 이미지 한 줄(세 장)
+ * - 이미지 이름 {활동순번}-{사진순번}.webp (예: 1-1 = id 0인 첫 활동의 첫 번째 사진)
  */
 
-/** 이미지 플레이스홀더 (실제 에셋으로 교체) */
-const placeholderImage = (n) =>
-  `https://picsum.photos/seed/about${n}/400/300`;
+const aboutAssetModules = import.meta.glob(
+  "../features/About/assets/*.webp",
+  { eager: true, import: "default" }
+);
+
+/** 활동 id(0~15)별 이미지 3장 [url, url, url] */
+const ACTIVITY_IMAGES = Array.from({ length: 16 }, (_, id) => {
+  const n = id + 1;
+  return [
+    aboutAssetModules[`../features/About/assets/${n}-1.webp`],
+    aboutAssetModules[`../features/About/assets/${n}-2.webp`],
+    aboutAssetModules[`../features/About/assets/${n}-3.webp`],
+  ];
+});
 
 /**
  * 로드맵 섹션 (오른쪽 콘텐츠 구조)
@@ -22,39 +34,23 @@ export const ROADMAP_SECTIONS = [
         id: 0,
         label: "회원선발 및 OT",
         isKeyEvent: true,
-        images: [
-          placeholderImage(1),
-          placeholderImage(2),
-          placeholderImage(3),
-        ],
+        images: ACTIVITY_IMAGES[0],
       },
       {
         id: 1,
         label: "공통 교육 세션",
-        images: [
-          placeholderImage(4),
-          placeholderImage(5),
-          placeholderImage(6),
-        ],
+        images: ACTIVITY_IMAGES[1],
       },
       {
         id: 2,
         label: "파트별 교육 세션",
-        images: [
-          placeholderImage(7),
-          placeholderImage(8),
-          placeholderImage(9),
-        ],
+        images: ACTIVITY_IMAGES[2],
       },
       {
         id: 3,
         label: "중앙 아이디어톤",
         isKeyEvent: true,
-        images: [
-          placeholderImage(10),
-          placeholderImage(11),
-          placeholderImage(12),
-        ],
+        images: ACTIVITY_IMAGES[3],
       },
     ],
   },
@@ -65,49 +61,29 @@ export const ROADMAP_SECTIONS = [
       {
         id: 4,
         label: "MT",
-        images: [
-          placeholderImage(13),
-          placeholderImage(14),
-          placeholderImage(15),
-        ],
+        images: ACTIVITY_IMAGES[4],
       },
       {
         id: 5,
         label: "스터디",
-        images: [
-          placeholderImage(16),
-          placeholderImage(17),
-          placeholderImage(18),
-        ],
+        images: ACTIVITY_IMAGES[5],
       },
       {
         id: 6,
         label: "중앙 해커톤",
         isKeyEvent: true,
-        images: [
-          placeholderImage(19),
-          placeholderImage(20),
-          placeholderImage(21),
-        ],
+        images: ACTIVITY_IMAGES[6],
       },
       {
         id: 7,
         label: "하계 봉사 활동",
-        images: [
-          placeholderImage(22),
-          placeholderImage(23),
-          placeholderImage(24),
-        ],
+        images: ACTIVITY_IMAGES[7],
       },
       {
         id: 8,
         label: "어흥콘",
         isKeyEvent: true,
-        images: [
-          placeholderImage(25),
-          placeholderImage(26),
-          placeholderImage(27),
-        ],
+        images: ACTIVITY_IMAGES[8],
       },
     ],
   },
@@ -119,66 +95,38 @@ export const ROADMAP_SECTIONS = [
         id: 9,
         label: "겨울잠",
         isKeyEvent: true,
-        images: [
-          placeholderImage(28),
-          placeholderImage(29),
-          placeholderImage(30),
-        ],
+        images: ACTIVITY_IMAGES[9],
       },
       {
         id: 10,
         label: "홈커밍데이",
-        images: [
-          placeholderImage(31),
-          placeholderImage(32),
-          placeholderImage(33),
-        ],
+        images: ACTIVITY_IMAGES[10],
       },
       {
         id: 11,
         label: "권역별 연합 해커톤",
-        images: [
-          placeholderImage(34),
-          placeholderImage(35),
-          placeholderImage(36),
-        ],
+        images: ACTIVITY_IMAGES[11],
       },
       {
         id: 12,
         label: "기업 연계 해커톤",
-        images: [
-          placeholderImage(37),
-          placeholderImage(38),
-          placeholderImage(39),
-        ],
+        images: ACTIVITY_IMAGES[12],
       },
       {
         id: 13,
         label: "겨울잠 최종 발표",
-        images: [
-          placeholderImage(40),
-          placeholderImage(41),
-          placeholderImage(42),
-        ],
+        images: ACTIVITY_IMAGES[13],
       },
       {
         id: 14,
         label: "14기 수료식",
         isKeyEvent: true,
-        images: [
-          placeholderImage(43),
-          placeholderImage(44),
-          placeholderImage(45),
-        ],
+        images: ACTIVITY_IMAGES[14],
       },
       {
         id: 15,
         label: "우수 활동자 기업 탐방",
-        images: [
-          placeholderImage(46),
-          placeholderImage(47),
-          placeholderImage(48),
-        ],
+        images: ACTIVITY_IMAGES[15],
       },
     ],
   },
