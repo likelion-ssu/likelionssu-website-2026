@@ -34,6 +34,7 @@ export default function ProductDesigner() {
         <Lineup
           onScrollToPmContent={() => scrollToSection(pmContentRef)}
           onScrollToSession={() => scrollToSection(sessionRef)}
+          version="de"
         />
       </div>
 
