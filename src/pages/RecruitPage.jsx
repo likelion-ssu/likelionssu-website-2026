@@ -18,9 +18,13 @@ export default function RecruitPage() {
 
   return (
     <div className="bg-secondarybrand min-h-screen relative">
-      <Header noneSidebar={true} hideCenterLine={true} onMenuClick={toggleSidebar} />
+      <Header
+        noneSidebar={true}
+        hideCenterLine={true}
+        onMenuClick={toggleSidebar}
+      />
 
-      <div className="pt-[4.3rem] sm:pt-0">
+      <div className="pt-[5.9375rem] sm:pt-0">
         <IntroSection />
         <ValueSection />
         <PartSection />

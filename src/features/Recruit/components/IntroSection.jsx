@@ -11,29 +11,29 @@ export default function IntroSection() {
         <h1 className="typo-recruit-title text-primarybrand">POSSIBILLITY</h1>
         <h1 className="typo-recruit-title text-primarybrand">TO</h1>
         <h1 className="typo-recruit-title text-primarybrand">REALITY</h1>
-        <p className="typo-recruit-subtitle text-primarybrand mt-4">
+        <p className="typo-recruit-subtitle text-primarybrand mt-2 sm:mt-4">
           숭실대학교 멋쟁이사자처럼 14기 모집
         </p>
       </div>
 
-      {/* 중앙 그래픽 - 홈 버튼과 동일하게 뷰포트 정중앙 */}
-      <div className="flex justify-center items-center">
+      {/* 중앙 그래픽 - 모바일: calc로 50vh 위치(텍스트 pt 유지하며), PC: flex 중앙 */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(50vh-5.9375rem)] -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0 sm:top-auto flex justify-center items-center">
         <div className="relative shrink-0">
           {/* 배경 이미지 */}
           <img
             src={backgroundImg}
             alt=""
             className="
-              w-[28rem] h-[18rem]
+              w-[min(20rem,90vw)] h-[min(12.86rem,40vh)]
               sm:w-[min(28rem,70vw)]
               sm:h-[min(18rem,45vh)]
               object-contain
             "
           />
 
-          {/* 아이콘 (중앙 고정) - 호버 시 hoverButton 표시, 클릭 시 ValueSection으로 스크롤 */}
+          {/* 아이콘 (중앙 고정) - 호버 시 hoverButton 표시, 클릭 시 ValueSection으로 스크롤, 모바일 짧은 높이에서 축소 */}
           <div
-            className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[4.9841rem] h-[4.9841rem] cursor-pointer"
+            className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[min(3.5rem,10vh)] h-[min(3.5rem,10vh)] sm:w-[4.9841rem] sm:h-[4.9841rem] cursor-pointer"
             onClick={() =>
               document.getElementById("value-section")?.scrollIntoView({
                 behavior: "smooth",
@@ -59,7 +59,7 @@ export default function IntroSection() {
               left-1/2
               top-[48%]
               -translate-y-1/2
-              translate-x-[5rem]
+              translate-x-[2.5rem] sm:translate-x-[5rem]
               typo-recruit-scroll text-text whitespace-nowrap
             "
           >
