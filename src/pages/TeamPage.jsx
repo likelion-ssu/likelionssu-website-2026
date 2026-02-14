@@ -34,6 +34,11 @@ export default function TeamPage() {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   const selectMember = (memberId) => {
+    if (memberId === selectedId) {
+      setSelectedId(null);
+      return;
+    }
+
     setSelectedId(memberId);
 
     const selectedQuote = QUOTES.find(

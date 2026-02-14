@@ -119,10 +119,10 @@ export default function CircularQuotes({ selectedId }) {
             >
               <div style={{ transform: `rotate(${item.rotate}deg)` }}>
                 <p
-                  className={`whitespace-nowrap text-[0.625rem] leading-[1.125rem] tracking-[0.1em] transition-all duration-300 ${
+                  className={`whitespace-nowrap rounded-sm px-1 text-[0.625rem] leading-[1.125rem] tracking-[0.1em] transition-all duration-300 ${
                     isSelected
-                      ? "text-text font-medium opacity-100 scale-105"
-                      : "text-text/55 font-light opacity-100"
+                      ? "bg-white text-text font-light opacity-100"
+                      : "bg-transparent text-text/55 font-light opacity-100"
                   }`}
                 >
                   {quote.text}
