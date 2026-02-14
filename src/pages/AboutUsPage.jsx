@@ -9,6 +9,7 @@ import { useAboutScroll } from "../features/About/hooks/useAboutScroll";
 export default function AboutUsPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrollToIndex, setScrollToIndex] = useState(null);
+  const [isLeftAtEnd, setIsLeftAtEnd] = useState(false);
   
   // 스크롤 인터랙션 훅
   const { activeIndex, setActiveIndex } = useAboutScroll();
@@ -23,6 +24,10 @@ export default function AboutUsPage() {
 
   const handleLeftScrollChange = (index) => {
     setActiveIndex(index);
+  };
+
+  const handleLeftReachEnd = (isAtEnd) => {
+    setIsLeftAtEnd(isAtEnd);
   };
 
   return (
@@ -43,6 +48,7 @@ export default function AboutUsPage() {
             activeIndex={activeIndex}
             scrollToIndex={scrollToIndex}
             onScrollChange={handleLeftScrollChange}
+            onReachEnd={handleLeftReachEnd}
           />
         </div>
         <div 
@@ -63,8 +69,16 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      {/* 푸터가 왼쪽 고정 ActivityVisual 위에 겹치도록 z-10 */}
-      <div className="relative z-10">
+      {/* 푸터 - 왼쪽이 끝까지 스크롤되면 부드럽게 나타나고 사라짐 */}
+      <div 
+        className="relative z-10 transition-all duration-500 ease-out"
+        style={{
+          maxHeight: isLeftAtEnd ? '1000px' : '0',
+          opacity: isLeftAtEnd ? 1 : 0,
+          overflow: 'hidden',
+          pointerEvents: isLeftAtEnd ? 'auto' : 'none',
+        }}
+      >
         <Footer />
       </div>
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />

@@ -12,7 +12,7 @@ const IMG_SIZE_2 = { width: 144, height: 184 };
  * 홀수번째: [크기1, 크기2, 크기1], 짝수번째: [크기2, 크기1, 크기2]
  * 중앙에 하얀색 박스, 첫 활동 위에 빈 공간.
  */
-export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollChange }) {
+export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollChange, onReachEnd }) {
   const activities = ROADMAP_ACTIVITIES_FLAT;
   const containerRef = useRef(null);
   const scrollContainerRef = useRef(null);
@@ -90,6 +90,12 @@ export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollCha
             onScrollChange(closestIndex);
           }
 
+          // 마지막 활동에 도달했는지 체크
+          const isAtLastActivity = closestIndex === activities.length - 1;
+          if (onReachEnd) {
+            onReachEnd(isAtLastActivity);
+          }
+
           ticking = false;
         });
 
@@ -101,7 +107,7 @@ export default function ActivityVisual({ activeIndex, scrollToIndex, onScrollCha
     return () => {
       container.removeEventListener('scroll', handleScroll);
     };
-  }, [activeIndex, onScrollChange]);
+  }, [activeIndex, onScrollChange, onReachEnd, activities.length]);
 
   // 휠 이벤트 제어
   useEffect(() => {
