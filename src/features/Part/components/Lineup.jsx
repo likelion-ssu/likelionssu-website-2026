@@ -3,7 +3,7 @@ import ShortcutBtn from "./ShortcutBtn";
 
 export default function Lineup({ onScrollToPmContent, onScrollToSession }) {
   return (
-    <div className="flex flex-col sm:items-end sm:flex-row sm:justify-between mt-[1.25rem] sm:mt-[2.37rem] w-full flex-1 sm:w-[75.8125rem] gap-[4.44rem]">
+    <div className="flex flex-col sm:items-end sm:flex-row sm:justify-between  w-full flex-1 sm:w-[75.8125rem] gap-[4.44rem]">
       <div className="flex flex-col items-start sm:flex-row gap-[1.88rem] sm:gap-auto">
         <div className="flex flex-col gap-[0.69rem]">
           <div className="typo-small1">기획 파트장</div>
