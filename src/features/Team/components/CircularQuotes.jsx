@@ -1,4 +1,6 @@
-﻿const BASE_QUOTES = [
+﻿import { TEAM_MEMBERS } from "../../../data/team";
+
+const BASE_QUOTES = [
   "프로젝트를 직접 기획하고 멋쟁이들과 함께 실현!",
   "자 회장님이 ‘멋사'로 이행시 하신답니다",
   "1년이라는 시간 안에, 퍼포먼스를 가장 빠르게 끌어올릴",
@@ -36,7 +38,6 @@
   "제가 생각해봤는데요 2026년에는",
 ];
 
-// Figma node 1833:2333 fixed layout (inset percentages + text rotation)
 const LAYOUT = [
   { angle: -44.49, inset: [22.72, 18.29, 56.81, 53.65], rotate: -34.72 },
   { angle: 117.4, inset: [53.87, 52.55, 18.8, 34.03], rotate: 111.74 },
@@ -75,23 +76,39 @@ const LAYOUT = [
   { angle: -93.34, inset: [0, 50.33, 76.19, 45.8], rotate: -87.95 },
 ];
 
-export const QUOTES = BASE_QUOTES.map((text, index) => ({
-  id: index + 1,
-  text,
-  angle: LAYOUT[index].angle,
-}));
+const quoteOwnerMap = new Map();
+TEAM_MEMBERS.forEach((member) => {
+  (member.quotes ?? []).forEach((text, quoteIndex) => {
+    if (!quoteOwnerMap.has(text)) {
+      quoteOwnerMap.set(text, { memberId: member.id, quoteIndex });
+    }
+  });
+});
+
+export const QUOTES = BASE_QUOTES.map((text, index) => {
+  const owner = quoteOwnerMap.get(text);
+
+  return {
+    id: index + 1,
+    text,
+    angle: LAYOUT[index].angle,
+    memberId: owner?.memberId ?? null,
+    quoteIndex: owner?.quoteIndex ?? null,
+  };
+});
 
 export default function CircularQuotes({ selectedId }) {
   return (
     <div className="relative h-full w-full overflow-visible pointer-events-none select-none">
       <div className="absolute left-0 top-0 h-full w-[98.142857%]">
         {LAYOUT.map((item, index) => {
-          const isSelected = selectedId != null && index + 1 === selectedId;
+          const quote = QUOTES[index];
+          const isSelected = quote.memberId != null && quote.memberId === selectedId;
           const [top, right, bottom, left] = item.inset;
 
           return (
             <div
-              key={index + 1}
+              key={quote.id}
               className="absolute flex items-center justify-center"
               style={{
                 top: `${top}%`,
@@ -101,14 +118,14 @@ export default function CircularQuotes({ selectedId }) {
               }}
             >
               <div style={{ transform: `rotate(${item.rotate}deg)` }}>
-            <p
-              className={`whitespace-nowrap text-[0.625rem] leading-[1.125rem] tracking-[0.1em] transition-all duration-300 ${
-                isSelected
-                  ? "text-text font-medium opacity-100 scale-105"
-                  : "text-text/55 font-light opacity-100"
-              }`}
+                <p
+                  className={`whitespace-nowrap text-[0.625rem] leading-[1.125rem] tracking-[0.1em] transition-all duration-300 ${
+                    isSelected
+                      ? "text-text font-medium opacity-100 scale-105"
+                      : "text-text/55 font-light opacity-100"
+                  }`}
                 >
-                  {BASE_QUOTES[index]}
+                  {quote.text}
                 </p>
               </div>
             </div>
