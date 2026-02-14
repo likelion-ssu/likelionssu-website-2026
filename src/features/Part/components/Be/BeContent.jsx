@@ -3,6 +3,7 @@ import be2 from "../../assets/be/be-2.svg";
 import be3 from "../../assets/be/be-3.svg";
 import be3m from "../../assets/be/be-3-m.svg";
 import grid from "../../assets/grid-left.svg";
+import meow from "../../assets/be/meow.svg";
 
 export default function BeContent() {
   return (
@@ -30,27 +31,27 @@ export default function BeContent() {
       {/* 컨텐츠 wrapper */}
       <div className="relative w-full px-[1.19rem] sm:px-0 z-10">
 
-       {/* =======================
-    웹 레이아웃 (최종)
-======================= */}
-<div className="hidden sm:flex w-full justify-center">
-  <div className="w-[76.315rem] mt-[6.19rem] grid grid-cols-[auto_1fr] gap-x-[2.94rem]">
+        {/* =======================
+            웹 레이아웃 (최종)
+        ======================= */}
+        <div className="hidden sm:flex w-full justify-center">
+          <div className="w-[76.315rem] mt-[6.19rem] grid grid-cols-[auto_1fr] gap-x-[2.94rem]">
 
-    {/* 왼쪽 세로 이미지 */}
-    <div className="flex flex-col items-start gap-[1.25rem]">
-      <img src={be2} alt="be2" className="h-[39.5rem]" />
-      <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
-    </div>
+            {/* 왼쪽 세로 이미지 */}
+            <div className="flex flex-col items-start gap-[1.25rem]">
+              <img src={be2} alt="be2" className="h-[39.5rem]" />
+              <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
+            </div>
 
-    {/* 오른쪽 전체 영역 */}
-    <div className="grid grid-cols-2 grid-rows-2 gap-x-[7.44rem] gap-y-[2.81rem]">
+            {/* 오른쪽 전체 영역 */}
+            <div className="grid grid-cols-2 grid-rows-2 gap-x-[7.44rem] gap-y-[2.81rem]">
 
-      {/* 오른쪽 위: 파트장 한마디 */}
-      <div className="flex flex-col gap-[1.25rem] pl-[0.81rem]">
-        <div className="typo-pretitle1k">파트장 한마디</div>
+              {/* 오른쪽 위: 파트장 한마디 */}
+              <div className="flex flex-col gap-[1.25rem] pl-[0.81rem]">
+                <div className="typo-pretitle1k">파트장 한마디</div>
 
-        <p className="typo-body2 whitespace-pre-line">
-          {`안녕하세요 백엔드 파트장 조수한입니다.
+                <p className="typo-body2 whitespace-pre-line">
+                  {`안녕하세요 백엔드 파트장 조수한입니다.
 백엔드에 관심있어하는 여러분들은 생각이 깊고,
 성실하고, 열정 넘치는 멋쟁이들일거라고 생각해요!
 
@@ -58,41 +59,47 @@ export default function BeContent() {
 
 백엔드 파트는 누구보다 가깝고, 의지하고, 서로 긍정적인 영향을 줄 수 있는 파트가 되었으면 해요.
 올 한 해 멋사가 여러분에게 가장 의미 있었던 기억 중 하나로 남기를 바랍니다! 🦁`}
-        </p>
-      </div>
+                </p>
+              </div>
 
-      {/* 오른쪽 위: 추천 블록 */}
-      <div className="flex flex-col pt-[0.5rem]">
-        <div className="typo-subtitlek text-text/30">BE가 고민된다면?</div>
+              {/* 오른쪽 위: 추천 블록 */}
+              <div className="flex flex-col pt-[0.5rem]">
+                <div className="typo-subtitlek text-text/30">BE가 고민된다면?</div>
 
-        <div className="typo-pretitle1k pt-[0.88rem]">
-          이런 사람에게 추천해요
-        </div>
+                <div className="typo-pretitle1k pt-[0.88rem]">
+                  이런 사람에게 추천해요
+                </div>
 
-        <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
-          {`서버와 데이터베이스에 관심 가득하신 분
+                <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
+                  {`서버와 데이터베이스에 관심 가득하신 분
 
 책임감을 가지고 끝까지 목표를 향해 달려가는 경험을 원하시는 분
 
 끊임없이 고민하고, 부딪히며 성장하고 싶으신 분`}
-        </p>
-      </div>
+                </p>
+              </div>
 
-      {/* 오른쪽 아래: 가로 이미지 (2칸 전체 차지) */}
-      <div className="col-span-2 flex flex-col items-start gap-[1.25rem]">
-        <img
-          src={be3}
-          alt="be3"
-          className="w-full h-[15.75rem] object-cover"
-        />
-        <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
-      </div>
+              {/* 오른쪽 아래: 가로 이미지 (2칸 전체 차지) */}
+              <div className="relative col-span-2 flex flex-col items-start gap-[1.25rem]">
+                
+                {/* meow (웹) */}
+                <img
+                  src={meow}
+                  alt="meow"
+                  className="absolute right-[-6.4rem] -top-[5rem] h-[8.625rem] z-20 pointer-events-none"
+                />
 
-    </div>
-  </div>
-</div>
+                <img
+                  src={be3}
+                  alt="be3"
+                  className="w-full h-[15.75rem] object-cover"
+                />
+                <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
+              </div>
 
-
+            </div>
+          </div>
+        </div>
 
         {/* =======================
             모바일 레이아웃 (그대로 유지)
@@ -140,7 +147,15 @@ export default function BeContent() {
           </div>
 
           {/* 모바일 두번째 이미지 */}
-          <div className="flex flex-col items-end gap-[0.81rem]">
+          <div className="relative flex flex-col items-end gap-[0.81rem]">
+
+            {/* meow (모바일) */}
+            <img
+              src={meow}
+              alt="meow"
+              className="absolute right-[-1.19rem] -top-[9.61rem] h-[4.3125rem] z-20 pointer-events-none"
+            />
+
             <img src={be3} alt="be3" className="w-full" />
             <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
           </div>

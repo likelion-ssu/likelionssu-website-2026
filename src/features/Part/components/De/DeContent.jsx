@@ -2,10 +2,24 @@ import React from "react";
 import de2 from "../../assets/de/de-2.svg";
 import de3 from "../../assets/de/de-3.svg";
 import grid from "../../assets/grid-left.svg";
+import hand from "../../assets/de/hand.svg";
 
 export default function DeContent() {
   return (
     <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] pb-[3.49rem] sm:pb-[4.63rem]">
+
+      {/* =======================
+          hand (웹 전용)
+          - height: 9.1875rem
+          - left 벽에 붙기
+          - top에서 7.19rem 떨어짐
+          - 가장 앞
+      ======================= */}
+      <img
+        src={hand}
+        alt="hand"
+        className="hidden sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-50 pointer-events-none"
+      />
 
       {/* grid */}
       <div
@@ -116,7 +130,16 @@ export default function DeContent() {
             </p>
           </div>
 
+          {/* 이미지 묶음 + hand */}
           <div className="relative w-full flex flex-col items-end gap-[0.81rem]">
+
+            <img
+  src={hand}
+  alt="hand"
+  className="absolute left-[-1.19rem] top-0 h-[4.59375rem] z-50 pointer-events-none"
+/>
+
+
             <div className="flex w-full">
               <img src={de2} alt="de2" className="w-1/2 object-cover" />
               <img src={de3} alt="de3" className="w-1/2 object-cover" />

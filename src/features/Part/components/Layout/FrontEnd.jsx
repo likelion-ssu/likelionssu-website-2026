@@ -28,7 +28,7 @@ export default function FrontEnd() {
         className="scroll-mt-[8rem] sm:scroll-mt-[10rem]"
       ></div>
 
-      <div className="pb-[3.375rem] sm:pb-[3.87rem] px-[1.19rem] sm:px-0">
+      <div className="pb-[3.375rem] sm:pb-[2.27rem] px-[1.19rem] sm:px-0">
         <FeIntro />
 
         <Lineup
@@ -42,7 +42,7 @@ export default function FrontEnd() {
       <div
         ref={feContentRef}
         className="w-full sm:w-[90rem] sm:pt-[0rem]  sm:pb-[0rem]
-        scroll-mt-[7.515rem] sm:scroll-mt-[5.56rem]"
+        scroll-mt-[7.515rem] sm:scroll-mt-[3.96rem]"
       >
         <FeContent />
       </div>
