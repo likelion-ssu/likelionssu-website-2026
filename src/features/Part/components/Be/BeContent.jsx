@@ -8,6 +8,7 @@ export default function BeContent() {
   return (
     <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[54.1875rem] pb-[2.68rem]">
 
+      {/* grid + gradient 배경 */}
       <div
         className="absolute bottom-0 left-0 w-[14.15625rem] h-[14.28125rem]
                    sm:w-[28.3125rem] sm:h-[28.5625rem]
@@ -20,72 +21,81 @@ export default function BeContent() {
         <img src={grid} alt="grid" className="w-full h-full object-cover" />
       </div>
 
-      {/* =======================
-          모바일용 hr
-      ======================= */}
+      {/* 모바일용 hr */}
       <hr className="w-full border-t-[0.7px] border-line sm:hidden relative z-10" />
 
-      {/* 웹용 hr (absolute) */}
-<hr className="hidden sm:block absolute top-0 right-0 w-[44.5rem] border-t-[0.7px] border-line z-10" />
+      {/* 웹용 hr */}
+      <hr className="hidden sm:block absolute top-0 right-0 w-[44.5rem] border-t-[0.7px] border-line z-10" />
 
-
-      {/* =======================
-          컨텐츠 wrapper
-      ======================= */}
+      {/* 컨텐츠 wrapper */}
       <div className="relative w-full px-[1.19rem] sm:px-0 z-10">
 
-        {/* =======================
-            웹 레이아웃
-        ======================= */}
-        <div className="hidden sm:block w-full relative">
+       {/* =======================
+    웹 레이아웃 (최종)
+======================= */}
+<div className="hidden sm:flex w-full justify-center">
+  <div className="w-[76.315rem] mt-[6.19rem] grid grid-cols-[auto_1fr] gap-x-[2.94rem]">
 
-          {/* pm2 이미지 블록 */}
-          <div className="absolute top-0 left-[7.25rem] flex flex-col items-start gap-[1.25rem]">
-            <img src={be2} alt="pm2" className="w-[25.5625rem]" />
-            <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
-          </div>
+    {/* 왼쪽 세로 이미지 */}
+    <div className="flex flex-col items-start gap-[1.25rem]">
+      <img src={be2} alt="be2" className="h-[39.5rem]" />
+      <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
+    </div>
 
-          {/* 파트장 한마디 */}
-          <div className="absolute top-[4.94rem] left-[calc(7.25rem+25.5625rem+4.69rem)] flex flex-col gap-[1.25rem]">
-            <div className="typo-pretitle1k">파트장 한마디</div>
-            <p className="typo-body2 whitespace-pre-line">
-              {`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 바꾸는 순간도 있습니다.
+    {/* 오른쪽 전체 영역 */}
+    <div className="grid grid-cols-2 grid-rows-2 gap-x-[7.44rem] gap-y-[2.81rem]">
 
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중요하다고 생각합니다.`}
-            </p>
-          </div>
+      {/* 오른쪽 위: 파트장 한마디 */}
+      <div className="flex flex-col gap-[1.25rem] pl-[0.81rem]">
+        <div className="typo-pretitle1k">파트장 한마디</div>
 
-          {/* 추천 블록 */}
-          <div className="absolute top-[27.06rem] left-[14.81rem]">
-            <div className="typo-subtitlek text-text/30">BE가 고민된다면?</div>
-            <div className="typo-pretitle1k pt-[0.88rem]">
-              이런 사람에게 추천해요
-            </div>
+        <p className="typo-body2 whitespace-pre-line">
+          {`안녕하세요 백엔드 파트장 조수한입니다.
+백엔드에 관심있어하는 여러분들은 생각이 깊고,
+성실하고, 열정 넘치는 멋쟁이들일거라고 생각해요!
 
-            <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
-              {`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
+멋쟁이 아기사자 분들이 백엔드를 선택한 것이 후회되지 않도록 최선을 다해서 세션을 준비하고 있습니다.
 
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
+백엔드 파트는 누구보다 가깝고, 의지하고, 서로 긍정적인 영향을 줄 수 있는 파트가 되었으면 해요.
+올 한 해 멋사가 여러분에게 가장 의미 있었던 기억 중 하나로 남기를 바랍니다! 🦁`}
+        </p>
+      </div>
 
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
-            </p>
-          </div>
+      {/* 오른쪽 위: 추천 블록 */}
+      <div className="flex flex-col pt-[0.5rem]">
+        <div className="typo-subtitlek text-text/30">BE가 고민된다면?</div>
 
-          {/* pm3 이미지 블록 */}
-          <div className="absolute top-[23.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem]">
-            <img src={be3} alt="pm3" className="h-[25.5625rem]" />
-            <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
-          </div>
+        <div className="typo-pretitle1k pt-[0.88rem]">
+          이런 사람에게 추천해요
         </div>
 
+        <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
+          {`서버와 데이터베이스에 관심 가득하신 분
+
+책임감을 가지고 끝까지 목표를 향해 달려가는 경험을 원하시는 분
+
+끊임없이 고민하고, 부딪히며 성장하고 싶으신 분`}
+        </p>
+      </div>
+
+      {/* 오른쪽 아래: 가로 이미지 (2칸 전체 차지) */}
+      <div className="col-span-2 flex flex-col items-start gap-[1.25rem]">
+        <img
+          src={be3}
+          alt="be3"
+          className="w-full h-[15.75rem] object-cover"
+        />
+        <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
         {/* =======================
-            모바일 레이아웃
+            모바일 레이아웃 (그대로 유지)
         ======================= */}
         <div className="sm:hidden flex flex-col gap-[2.75rem] w-full">
 
@@ -94,48 +104,48 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             <div className="typo-pretitle1k">파트장 한마디</div>
 
             <p className="typo-body2 whitespace-pre-wrap">
-              {`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 
-바꾸는 순간도 있습니다.
+              {`안녕하세요 백엔드 파트장 조수한입니다.
+백엔드에 관심있어하는 여러분들은 생각이 깊고,
+성실하고, 열정 넘치는 멋쟁이들일거라고 생각해요!
 
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중
-요하다고 생각합니다.`}
+멋쟁이 아기사자 분들이 백엔드를 선택한 것이 후회되지 않도록 최선을 다해서 세션을 준비하고 있습니다.
+
+백엔드 파트는 누구보다 가깝고, 의지하고, 서로 긍정적인 영향을 줄 수 있는 파트가 되었으면 해요.
+올 한 해 멋사가 여러분에게 가장 의미 있었던 기억 중 하나로 남기를 바랍니다! 🦁`}
             </p>
           </div>
 
-          {/* pm2 이미지 */}
+          {/* 모바일 첫 이미지 */}
           <div className="flex flex-col items-end gap-[0.81rem]">
-            <img src={be2} alt="pm2" className="w-full" />
+            <img src={be3m} alt="be3m" className="w-full" />
             <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
           </div>
 
           {/* 추천 블록 */}
           <div>
             <div className="typo-subtitlek text-text/30">BE가 고민된다면?</div>
+
             <div className="typo-pretitle1k pt-[0.88rem]">
               이런 사람에게 추천해요
             </div>
 
             <p className="typo-body2 pt-[1.19rem] whitespace-pre-wrap">
-              {`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
+              {`서버와 데이터베이스에 관심 가득하신 분
 
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
+책임감을 가지고 끝까지 목표를 향해
+달려가는 경험을 원하시는 분
 
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
+끊임없이 고민하고, 부딪히며 성장하고 싶으신 분`}
             </p>
           </div>
 
-          {/* pm3 이미지 */}
+          {/* 모바일 두번째 이미지 */}
           <div className="flex flex-col items-end gap-[0.81rem]">
-            <img src={be3m} alt="be3" className="w-full" />
+            <img src={be3} alt="be3" className="w-full" />
             <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
           </div>
         </div>
+
       </div>
     </div>
   );
