@@ -31,20 +31,31 @@ export default function AboutUsPage() {
 
       {/* 메인: 모바일 단일 컬럼 / 데스크톱 왼쪽 고정 비주얼 + 오른쪽 스크롤 */}
       <div className="flex w-full min-h-screen pt-[5.9375rem] sm:pt-[3.5625rem]">
-        {/* 왼쪽 고정 영역 - 모바일에서 숨김 */}
-        <div className="hidden sm:block w-1/2 h-screen sticky top-[5.9375rem] sm:top-[3.5625rem] shrink-0 overflow-hidden">
+        {/* 왼쪽 고정 영역 - fixed로 스크롤해도 항상 화면에 고정 */}
+        <div 
+          className="hidden sm:block fixed left-0 w-1/2 overflow-hidden z-0"
+          style={{
+            top: '3.5625rem',
+            height: 'calc(100vh - 3.5625rem)',
+          }}
+        >
           <ActivityVisual 
             activeIndex={activeIndex}
             scrollToIndex={scrollToIndex}
             onScrollChange={handleLeftScrollChange}
           />
         </div>
+        <div 
+          className="hidden sm:block fixed left-[50%] w-[0.7px] bg-line z-0 -translate-x-px"
+          style={{
+            top: '3.5625rem',
+            height: 'calc(100vh - 3.5625rem)',
+          }}
+          aria-hidden
+        />
 
-        {/* 세로 구분선 - Header 하단 border와 동일 스타일 (0.7px, border-line) */}
-        <div className="hidden sm:block w-[0.7px] min-h-screen bg-line shrink-0 self-stretch" />
-
-        {/* 오른쪽 스크롤 영역 - 모바일 전체 너비 */}
-        <div className="w-full sm:w-1/2 shrink-0">
+        {/* 오른쪽 스크롤 영역 - margin으로 왼쪽 영역만큼 비움 */}
+        <div className="w-full sm:w-1/2 sm:ml-[50%] shrink-0 relative z-10 min-h-screen">
           <AboutContent
             activeIndex={activeIndex}
             onActivityClick={handleActivityClick}
@@ -52,7 +63,10 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      <Footer />
+      {/* 푸터가 왼쪽 고정 ActivityVisual 위에 겹치도록 z-10 */}
+      <div className="relative z-10">
+        <Footer />
+      </div>
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </div>
   );
