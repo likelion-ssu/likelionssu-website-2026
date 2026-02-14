@@ -1,11 +1,12 @@
 import React from "react";
 import be2 from "../../assets/be/be-2.svg";
 import be3 from "../../assets/be/be-3.svg";
+import be3m from "../../assets/be/be-3-m.svg";
 import grid from "../../assets/grid-left.svg";
 
 export default function BeContent() {
   return (
-    <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[58rem] pb-[2.68rem]">
+    <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[54.1875rem] pb-[2.68rem]">
 
       <div
         className="absolute bottom-0 left-0 w-[14.15625rem] h-[14.28125rem]
@@ -131,7 +132,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
 
           {/* pm3 이미지 */}
           <div className="flex flex-col items-end gap-[0.81rem]">
-            <img src={be3} alt="pm3" className="w-full" />
+            <img src={be3m} alt="be3" className="w-full" />
             <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
           </div>
         </div>

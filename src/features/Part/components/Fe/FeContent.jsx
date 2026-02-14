@@ -5,7 +5,7 @@ import grid from "../../assets/grid-left.svg";
 
 export default function FeContent() {
   return (
-    <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[58rem] pb-[2.68rem]">
+    <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[54.1875rem] pb-[2.68rem]">
 
       <div
         className="absolute bottom-0 left-0 w-[14.15625rem] h-[14.28125rem]
@@ -33,55 +33,65 @@ export default function FeContent() {
       ======================= */}
       <div className="relative w-full px-[1.19rem] sm:px-0 z-10">
 
-        {/* =======================
-            웹 레이아웃
-        ======================= */}
-        <div className="hidden sm:block w-full relative">
+{/* =======================
+    웹 레이아웃
+======================= */}
+<div className="hidden sm:flex w-full justify-center">
+  <div className="w-[72.3125rem]  mt-[3.19rem] flex flex-col items-start gap-[2.25rem]">
+    
+    <div className="flex flex-row justify-start items-center gap-[4.38rem]">
+      {/* fe2 이미지 블록 */}
+      <div className="flex flex-col items-start gap-[1.25rem]">
+        <img src={fe2} alt="pm2" className="w-[25.5625rem]" />
+        <p className="typo-small1">최다예 하유경 이정안 서해승</p>
+      </div>
 
-          {/* pm2 이미지 블록 */}
-          <div className="absolute top-0 left-[7.25rem] flex flex-col items-start gap-[1.25rem]">
-            <img src={fe2} alt="pm2" className="w-[25.5625rem]" />
-            <p className="typo-small1">최다예 하유경 이정안 서해승</p>
-          </div>
+      {/* 파트장 한마디 */}
+      <div className="flex flex-col gap-[1.25rem]">
+        <div className="typo-pretitle1k">파트장 한마디</div>
+        <p className="typo-body2 whitespace-pre-line">
+          {`안녕하세요 프론트엔드 파트장 서해승입니다.
+시각적인 UI를 설계하고 생동감 있는 사용자 경험을 만드는 프론트엔드는
+개발 분야 중에서도 가장 트렌디하고 매력적인 파트라고 자부합니다!
 
-          {/* 파트장 한마디 */}
-          <div className="absolute top-[4.94rem] left-[calc(7.25rem+25.5625rem+4.69rem)] flex flex-col gap-[1.25rem]">
-            <div className="typo-pretitle1k">파트장 한마디</div>
-            <p className="typo-body2 whitespace-pre-line">
-              {`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 바꾸는 순간도 있습니다.
+저희 파트는 Zero to One으로, 함께 고민하고 서비스를 완성해 나가는 과정을 지향하고 있습니다.
+그렇기 때문에, ‘할 수 있을까?’라는 걱정보다는 ‘하고 싶다!’는열정 하나면 충분합니다.
 
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중요하다고 생각합니다.`}
-            </p>
-          </div>
+저와 함께 프론트엔드를 최강으로 만들 아기사자분들의 지원 기다리고 있겠습니다!`}
+        </p>
+      </div>
+    </div>
 
-          {/* 추천 블록 */}
-          <div className="absolute top-[27.06rem] left-[14.81rem]">
-            <div className="typo-subtitlek text-text/30">FE가 고민된다면?</div>
-            <div className="typo-pretitle1k pt-[0.88rem]">
-              이런 사람에게 추천해요
-            </div>
+    {/* 추천 블록 */}
+    <div className="flex flex-row justify-start items-center gap-[4.38rem]">
+      
+      {/* fe3 이미지 블록 */}
+      <div className="flex flex-col items-start gap-[1.25rem]">
+        <img src={fe3} alt="pm3" className="h-[20.6875rem]" />
+        <p className="typo-small1">최다예 하유경 이정안 서해승</p>
+      </div>
 
-            <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
-              {`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
-
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
-
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
-            </p>
-          </div>
-
-          {/* pm3 이미지 블록 */}
-          <div className="absolute top-[23.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem]">
-            <img src={fe3} alt="pm3" className="h-[25.5625rem]" />
-            <p className="typo-small1">최다예 하유경 이정안 서해승</p>
-          </div>
+      <div>
+        <div className="typo-subtitlek text-text/30">FE가 고민된다면?</div>
+        <div className="typo-pretitle1k pt-[0.88rem]">
+          이런 사람에게 추천해요
         </div>
+
+        <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
+          {`프론트엔드 개발자라는 꿈을 향해 첫발을 내딛고 싶으신 분
+
+사용자 경험의 최전선에서 서비스의 시작부터 끝까지 내 손으로 만들어나가고 싶으신 분
+
+FE 개발을 배우고 싶은 열정은 가득하지만, 어디서부터 시작할지 막막하셨던 분
+
+열정 넘치는  아기사자 동료들과 함께 치열하게 고민하고 성장하고 싶으신 분`}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
         {/* =======================
             모바일 레이아웃
@@ -93,14 +103,16 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             <div className="typo-pretitle1k">파트장 한마디</div>
 
             <p className="typo-body2 whitespace-pre-wrap">
-              {`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 
-바꾸는 순간도 있습니다.
+              {`안녕하세요 프론트엔드 파트장 서해승입니다.
+시각적인 UI를 설계하고 생동감 있는 사용자 경험을
+만드는 프론트엔드는 개발 분야 중에서도 가장 트렌디하고 매력적인 파트라고 자부합니다!
 
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중
-요하다고 생각합니다.`}
+저희 파트는 Zero to One으로, 함께 고민하고 서비스를 완성해 나가는 과정을 지향하고 있습니다.
+그렇기 때문에, ‘할 수 있을까?’라는 걱정보다는
+‘하고 싶다!’는 열정 하나면 충분합니다.
+
+저와 함께 프론트엔드를 최강으로 만들
+아기사자분들의 지원 기다리고 있겠습니다!`}
             </p>
           </div>
 
@@ -118,14 +130,16 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             </div>
 
             <p className="typo-body2 pt-[1.19rem] whitespace-pre-wrap">
-              {`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
+              {`프론트엔드 개발자라는 꿈을 향해 첫발을 내딛고 싶으신 분
 
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
+사용자 경험의 최전선에서 서비스의 시작부터 끝까지
+내 손으로 만들어나가고 싶으신 분
 
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
+FE 개발을 배우고 싶은 열정은 가득하지만,
+어디서부터 시작할지 막막하셨던 분
+
+열정 넘치는  아기사자 동료들과 함께
+치열하게 고민하고 성장하고 싶으신 분`}
             </p>
           </div>
 
