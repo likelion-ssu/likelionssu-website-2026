@@ -34,7 +34,7 @@ export default function SessionSection({ version = "pm" }) {
           </p>
 
           <div className="px-0.4rem sm:px-0">
-            <div className="flex flex-col bg-white w-full h-[31.5rem] sm:h-[37.3125rem] sm:w-[34.8125rem] px-[1rem] py-[0.94rem] sm:px-[1.78rem] sm:py-[1.31rem] rounded-[0.625rem]">
+            <div className="flex flex-col bg-white w-full h-[32rem] sm:h-[37.5rem] sm:w-[34.8125rem] px-[1rem] py-[1.1rem] sm:px-[1.78rem] sm:py-[1.31rem] rounded-[0.625rem]">
 
               <h2 className="text-center">
                 <span className="block sm:hidden typo-subtitlee">
@@ -50,11 +50,11 @@ export default function SessionSection({ version = "pm" }) {
                 {sessionData.sessions.map((item, idx) => (
                   <div
                     key={idx}
-                    className={`flex justify-between items-start pt-[0.31rem] pb-[0.62rem] sm:pt-[0.75rem] sm:pb-[0.62rem] border-t border-line
+                    className={`flex justify-between items-start pt-[0.36rem] pb-[0.62rem] sm:pt-[0.75rem] sm:pb-[0.62rem] border-t border-line
                       ${idx === 0 ? "pt-[0.62rem]" : ""}
                     `}
                   >
-                    <div className="flex flex-col gap-[0.38rem]">
+                    <div className="flex flex-col gap-[0.39rem]">
                       <p className="block sm:hidden typo-buttontextbold">
                         {item.title}
                       </p>
@@ -63,7 +63,7 @@ export default function SessionSection({ version = "pm" }) {
                         {item.title}
                       </p>
 
-                      <div className="flex flex-col gap-[0.38rem] pb-[0.31rem] sm:pb-[0rem]">
+                      <div className="flex flex-col gap-[0.38rem] pb-[0.2rem] sm:pb-[0rem]">
                         {item.desc.map((line, lineIdx) => (
                           <p
                             key={lineIdx}

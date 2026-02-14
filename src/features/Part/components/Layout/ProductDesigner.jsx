@@ -51,7 +51,7 @@ export default function ProductDesigner() {
         ref={sessionRef}
         className="w-full sm:w-[63.4375rem] scroll-mt-[7.515rem] sm:scroll-mt-[2.74rem]"
       >
-        <SessionSection />
+        <SessionSection version = "de"/>
       </div>
 
       {/* 맨 위로 버튼 */}
