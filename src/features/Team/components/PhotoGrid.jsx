@@ -11,7 +11,10 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
             key={member.id}
             type="button"
             data-photo-card="true"
-            onClick={() => onSelect(member.id)}
+            onClick={(event) => {
+              event.stopPropagation();
+              onSelect(member.id);
+            }}
             className="group absolute block h-38.25 w-31.5 overflow-hidden bg-zinc-200 shadow-md transition-transform duration-300 hover:scale-[1.02]"
             style={{
               top: member.position.top,
@@ -23,7 +26,7 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
             <img
               src={member.image}
               alt={member.name}
-              className="h-full w-full object-cover grayscale"
+              className="h-full w-full object-cover object-top grayscale"
               loading="lazy"
               onError={(event) => {
                 event.currentTarget.src = FALLBACK_IMAGE;
