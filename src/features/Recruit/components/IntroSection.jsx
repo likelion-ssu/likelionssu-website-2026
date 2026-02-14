@@ -31,8 +31,15 @@ export default function IntroSection() {
             "
           />
 
-          {/* 아이콘 (중앙 고정) - 호버 시 hoverButton 표시 */}
-          <div className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[4.9841rem] h-[4.9841rem] cursor-pointer">
+          {/* 아이콘 (중앙 고정) - 호버 시 hoverButton 표시, 클릭 시 ValueSection으로 스크롤 */}
+          <div
+            className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[4.9841rem] h-[4.9841rem] cursor-pointer"
+            onClick={() =>
+              document.getElementById("value-section")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+          >
             <img
               src={button}
               alt=""
