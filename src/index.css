@@ -218,6 +218,14 @@
     letter-spacing: 0.1em;
   }
 
+  .typo-recruit-button {
+    font-family: "Interop", sans-serif;
+    font-weight: 500;
+    font-size: 1.2188rem;
+    line-height: 1.3125rem;
+    letter-spacing: 0;
+  }
+
   /* ===========================
     JetBrains Mono
   =========================== */
