@@ -1,11 +1,11 @@
 import React from "react";
-import pm2 from "../../assets/pm/pm-2.svg";
-import pm3 from "../../assets/pm/pm-3.svg";
+import de2 from "../../assets/de/de-2.svg";
+import de3 from "../../assets/de/de-3.svg";
 import grid from "../../assets/grid-left.svg";
 
 export default function DeContent() {
   return (
-    <div className="relative w-full  overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[55.6rem] pb-[2.68rem]">
+    <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[55.6rem] pb-[2.68rem]">
 
       {/* =======================
           모바일용 hr
@@ -16,118 +16,132 @@ export default function DeContent() {
           웹용 hr (absolute)
       ======================= */}
       <hr className="hidden sm:block absolute top-0 right-0 w-[44.5rem] border-t-[0.7px] border-line" />
-      
-      <div className="px-[1.19rem] sm:px-0">
 
-      {/* =======================
-          웹 레이아웃 (absolute)
-      ======================= */}
-      <div className="hidden sm:block w-full">
+      <div className="relative w-full px-[1.19rem] sm:px-0">
 
-        {/* grid + gradient 배경 (맨 아래 왼쪽) */}
+        {/* =======================
+            웹 grid + gradient 배경
+        ======================= */}
         <div
-          className="absolute bottom-0 left-0 w-[28.3125rem] h-[28.5625rem] z-0"
+          className="hidden sm:block absolute bottom-0 left-0 w-[28.3125rem] h-[28.5625rem] z-0"
           style={{
             background:
               "linear-gradient(225deg, #F9F8F5 29.01%, rgba(249, 248, 245, 0.00) 100%)",
           }}
         >
-          <img
-            src={grid}
-            alt="grid"
-            className="w-full h-full object-cover"
-          />
+          <img src={grid} alt="grid" className="w-full h-full object-cover" />
         </div>
 
-        {/* pm2 이미지 블록 */}
-        <div className="absolute top-0 left-[7.25rem] flex flex-col items-start gap-[1.25rem] z-10">
-          <img src={pm2} className="w-[25.5625rem]" />
-          <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+        {/* =======================
+            웹 레이아웃
+        ======================= */}
+        <div className="hidden sm:flex relative z-10 w-full justify-start sm:justify-center items-start">
+
+          {/* 이미지 묶음 */}
+          <div className="relative flex flex-col items-end gap-[1.25rem] mt-[4.87rem]">
+            <div className="flex">
+              <img
+                src={de2}
+                alt="de2"
+                className="w-[21.625rem] h-[42.5625rem] object-cover"
+              />
+              <img
+                src={de3}
+                alt="de3"
+                className="w-[21.625rem] h-[42.5625rem] object-cover"
+              />
+            </div>
+
+            {/* 이미지 묶음 아래 오른쪽 이름 */}
+            <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+          </div>
+
+          {/* 텍스트 묶음 (이미지 묶음에서 오른쪽 5.62rem 떨어짐) */}
+          <div className="flex flex-col gap-[6.75rem] mt-[4.87rem] ml-[5.62rem]">
+
+            {/* 파트장 한마디 */}
+            <div className="flex flex-col gap-[1.25rem]">
+              <div className="typo-pretitle1k">파트장 한마디</div>
+              <p className="typo-body2 whitespace-pre-line">
+{`안녕하세요 디자인 파트장 이연우입니다.
+이 글을 보고 계신다면 멋쟁이사자처럼에 관심이 있거나
+이미 아기사자가 되신 분일 거예요.
+멋사와 함께하는 1년은 분명 후회 없는 시간이 될 거라
+믿습니다.
+
+디자인 파트는 앞으로 저와 함께 1년간 성장하며,
+함께 고민하고 의지하는 든든한 팀이 될 거예요.
+한 해를 하고 싶은 일들로 가득 채우고
+하는 일마다 펑 펑 대박나길 진심으로 응원합니다. 파이팅!`}
+              </p>
+            </div>
+
+            {/* 추천 블록 */}
+            <div>
+              <div className="typo-subtitlek text-text/30">DE가 고민된다면?</div>
+              <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
+
+              <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
+{`UX/UI에 대해 제대로 배워보고 싶은 분
+
+협업 속에서 디자인 역량을 강화하고 싶은 분
+
+성장할 준비는 다 되었습니다..!
+2026년에 터닝포인트가 필요한 분`}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* 파트장 한마디 */}
-        <div className="absolute top-[4.94rem] left-[calc(7.25rem+25.5625rem+4.69rem)] flex flex-col gap-[1.25rem] z-10">
-          <div className="typo-pretitle1k">파트장 한마디</div>
-          <p className="typo-body2 whitespace-pre-line">
-{`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 바꾸는 순간도 있습니다.
+        {/* =======================
+            모바일 레이아웃
+        ======================= */}
+        <div className="sm:hidden flex flex-col gap-[2.75rem] w-full">
 
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중요하다고 생각합니다.`}
-          </p>
+          {/* 파트장 한마디 */}
+          <div className="flex flex-col gap-[1.19rem]">
+            <div className="typo-pretitle1k">파트장 한마디</div>
+
+            <p className="typo-body2 whitespace-pre-wrap">
+{`안녕하세요 디자인 파트장 이연우입니다.
+이 글을 보고 계신다면 멋쟁이사자처럼에 관심이 있거나
+이미 아기사자가 되신 분일 거예요.
+멋사와 함께하는 1년은 분명 후회 없는 시간이 될 거라
+믿습니다.
+
+디자인 파트는 앞으로 저와 함께 1년간 성장하며,
+함께 고민하고 의지하는 든든한 팀이 될 거예요.
+한 해를 하고 싶은 일들로 가득 채우고
+하는 일마다 펑 펑 대박나길 진심으로 응원합니다. 파이팅!`}
+            </p>
+          </div>
+
+          {/* 이미지 2개 묶음 w-full로 양옆 딱 붙게 */}
+          <div className="relative w-full flex flex-col items-end gap-[0.81rem]">
+            <div className="flex w-full">
+              <img src={de2} alt="de2" className="w-1/2 object-cover" />
+              <img src={de3} alt="de3" className="w-1/2 object-cover" />
+            </div>
+
+            {/* 이미지 묶음 아래 오른쪽 이름 */}
+            <p className="typo-small1">이연우 이현채</p>
+          </div>
+
+          {/* 추천 블록 */}
+          <div>
+            <div className="typo-subtitlek text-text/30">DE가 고민된다면?</div>
+            <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
+
+            <p className="typo-body2 pt-[1.19rem] whitespace-pre-wrap">
+{`UX/UI에 대해 제대로 배워보고 싶은 분
+
+협업 속에서 디자인 역량을 강화하고 싶은 분
+
+성장할 준비는 다 되었습니다..!
+2026년에 터닝포인트가 필요한 분`}
+            </p>
+          </div>
         </div>
-
-        {/* 추천 블록 */}
-        <div className="absolute top-[27.06rem] left-[14.81rem] z-10">
-          <div className="typo-subtitlek text-text/30">PM이 고민된다면?</div>
-          <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
-
-          <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
-{`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
-
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
-
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
-          </p>
-        </div>
-
-        {/* pm3 이미지 블록 */}
-        <div className="absolute top-[25.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem] z-10">
-          <img src={pm3} className="h-[25.5625rem]" />
-          <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
-        </div>
-      </div>
-
-      {/* =======================
-          모바일 레이아웃
-      ======================= */}
-      <div className="sm:hidden flex flex-col gap-[2.75rem] w-full">
-
-        <div className="flex flex-col gap-[1.19rem]">
-          <div className="typo-pretitle1k">파트장 한마디</div>
-
-          <p className="typo-body2 whitespace-pre-wrap">
-{`일을 하다 보면 속도가 결정적인 순간이 있습니다.
-동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 
-바꾸는 순간도 있습니다.
-
-저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
-그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중
-요하다고 생각합니다.`}
-          </p>
-        </div>
-
-        <div className="flex flex-col items-end gap-[0.81rem]">
-          <img src={pm2} className="w-full" />
-          <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
-        </div>
-
-        <div>
-          <div className="typo-subtitlek text-text/30">PM이 고민된다면?</div>
-          <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
-
-          <p className="typo-body2 pt-[1.19rem] whitespace-pre-wrap">
-{`아직 모든 답을 알고 있진 않아도,
-사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
-
-개발이나 디자인을 완벽히 알진 못하지만,
-그래서 더 많이 묻고 배우는 걸 두려워하지 않는 분
-
-AI를 자주 써보며 ‘이걸 어떻게 하면
-제품 경험으로 만들 수 있을까’를 계속 고민해보는 분`}
-          </p>
-        </div>
-
-        <div className="flex flex-col items-end gap-[0.81rem]">
-          <img src={pm3} className="w-full" />
-          <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
-        </div>
-      </div>
       </div>
     </div>
   );
