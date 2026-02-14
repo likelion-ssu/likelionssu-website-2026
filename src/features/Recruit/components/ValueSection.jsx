@@ -10,7 +10,7 @@ export default function ValueSection() {
   return (
     <section
       id="value-section"
-      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem] py-16 sm:py-20"
+      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem] pt-8 pb-16 sm:pt-10 sm:pb-20"
     >
       {/* 타이틀 - 모바일 subtitlee / PC pretitle1e */}
       <h2 className="text-center text-primarybrand mb-12 sm:mb-16">
@@ -101,22 +101,30 @@ export default function ValueSection() {
         </article>
       </div>
 
-      {/* 하단 RECRUIT 버튼 */}
-      <div className="flex justify-center items-center max-w-[83.40625rem] mx-auto">
-        <div className="relative flex items-center">
-          <a
-            href={APPLY_URL}
-            className="flex items-center gap-3 bg-text text-light px-6 sm:px-8 py-4 rounded-[0.25rem] typo-cardtexte hover:opacity-90 transition-opacity"
-          >
-            <span>RECRUIT -</span>
-            <img
-              src={buttonIcon}
-              alt=""
-              className="w-[1.25rem] h-[1.25rem] sm:w-[1.5rem] sm:h-[1.5rem]"
-            />
-            <span>14기 지원하러 가기</span>
-          </a>
-        </div>
+      {/* 하단 RECRUIT 버튼 - PC: 2번째 레이아웃 / 모바일: 3번째 레이아웃 */}
+      <div className="flex justify-center items-center w-full max-w-[83.40625rem] mx-auto">
+        <a
+          href={APPLY_URL}
+          className="w-full max-w-[26.5rem] sm:max-w-[31rem]
+             flex items-center justify-center gap-3
+             text-light px-[1.64rem] sm:px-[1.5rem]
+             border border-light sm:border-0 bg-black
+             hover:opacity-90 transition-opacity"
+        >
+          <span className="typo-cardtexte sm:hidden">RECRUIT -</span>
+          <span className="hidden sm:block typo-subtitlee">RECRUIT -</span>
+          <img
+            src={buttonIcon}
+            alt=""
+            className="h-[2.8125rem] sm:h-[3.7711rem] object-contain px-[1rem] sm:px-[2rem]"
+          />
+          <span className="typo-buttontextbold sm:hidden">
+            14기 지원하러 가기
+          </span>
+          <span className="hidden sm:block typo-recruit-button ">
+            14기 지원하러 가기
+          </span>
+        </a>
       </div>
     </section>
   );
