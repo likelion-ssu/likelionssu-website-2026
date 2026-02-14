@@ -1,5 +1,6 @@
 import React from "react";
 import { sessionVersions } from "../../../data/sessions";
+import gridright from "../assets/grid-right.svg";
 
 export default function SessionSection({ version = "pm" }) {
   const sessionData = sessionVersions[version];
@@ -7,16 +8,32 @@ export default function SessionSection({ version = "pm" }) {
   return (
     <div className="relative w-full flex flex-col pt-[3.375rem] sm:pt-[6.81rem]">
 
-      {/* 모바일: 화면 끝까지 */}
-      <hr className="sm:hidden absolute top-0 left-0 w-screen border-t-[0.7px] border-line" />
+      {/* 모바일 */}
+      <hr className="z-10 sm:hidden absolute top-0 left-0 w-screen border-t-[0.7px] border-line" />
 
-      {/* 웹: 컨텐츠 시작점(6.81rem 아래)에 맞춰서 라인 */}
-      <div className="hidden sm:flex absolute top-[0rem] left-1/2 -translate-x-1/2 w-screen justify-end pointer-events-none">
+      {/* 웹 */}
+      <div className="z-10 hidden sm:flex absolute top-[0rem] left-1/2 -translate-x-1/2 w-screen justify-end pointer-events-none">
         <hr className="w-[44.5rem] border-t-[0.7px] border-line" />
       </div>
 
+      <div className="hidden sm:flex absolute top-0 sm:left-1/2 sm:-translate-x-1/2 w-screen justify-end pointer-events-none">
+        <img
+          src={gridright}
+          alt="grid"
+          className="w-[13.875rem] h-[14.09375rem] sm:w-[27.75rem] sm:h-[28.1875rem] object-cover"
+        />
+      </div>
+      <div className="sm:hidden absolute top-0 right-0 pointer-events-none z-0">
+        <img
+          src={gridright}
+          alt="grid"
+          className="w-[13.875rem] h-[14.09375rem] sm:w-[27.75rem] sm:h-[28.1875rem] object-cover"
+        />
+      </div>
+
+
       {/* 컨텐츠 wrapper */}
-      <div className="w-full flex flex-col sm:flex-row px-[1.19rem] sm:px-0">
+      <div className="z-10 w-full flex flex-col sm:flex-row px-[1.19rem] sm:px-0">
 
         {/* 상단 소개 */}
         <div className="flex flex-col items-start sm:mt-[3.38rem] gap-[1.12rem] order-1 sm:order-2 sm:ml-[4.69rem]">
