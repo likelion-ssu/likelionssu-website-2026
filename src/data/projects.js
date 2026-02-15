@@ -66,6 +66,50 @@ import yessir2 from "../features/Project/assets/12th/yessir-2.webp";
 import yessir4 from "../features/Project/assets/12th/yessir-4.webp";
 import yessir5 from "../features/Project/assets/12th/yessir-5.webp";
 
+//13기
+import classiverse1 from "../features/Project/assets/13th/classiverse-1.webp";
+import classiverse2 from "../features/Project/assets/13th/classiverse-2.webp";
+import classiverse3 from "../features/Project/assets/13th/classiverse-3.webp";
+import classiverse4 from "../features/Project/assets/13th/classiverse-4.webp";
+import dasoni1 from "../features/Project/assets/13th/dasoni-1.webp";
+import dasoni2 from "../features/Project/assets/13th/dasoni-2.webp";
+import dasoni3 from "../features/Project/assets/13th/dasoni-3.webp";
+import dasoni4 from "../features/Project/assets/13th/dasoni-4.webp";
+import go1 from "../features/Project/assets/13th/go-1.webp";
+import go2 from "../features/Project/assets/13th/go-2.webp";
+import go3 from "../features/Project/assets/13th/go-3.webp";
+import go4 from "../features/Project/assets/13th/go-4.webp";
+import gooroom1 from "../features/Project/assets/13th/gooroom-1.webp";
+import gooroom2 from "../features/Project/assets/13th/gooroom-2.webp";
+import gooroom3 from "../features/Project/assets/13th/gooroom-3.webp";
+import gooroom4 from "../features/Project/assets/13th/gooroom-4.webp";
+import idda1 from "../features/Project/assets/13th/IDDA-1.webp";
+import idda2 from "../features/Project/assets/13th/IDDA-2.webp";
+import idda3 from "../features/Project/assets/13th/IDDA-3.webp";
+import idda4 from "../features/Project/assets/13th/IDDA-4.webp";
+import jibbangso1 from "../features/Project/assets/13th/jibbangso-1.webp";
+import jibbangso2 from "../features/Project/assets/13th/jibbangso-2.webp";
+import jibbangso3 from "../features/Project/assets/13th/jibbangso-3.webp";
+import jibbangso4 from "../features/Project/assets/13th/jibbangso-4.webp";
+import pin4u1 from "../features/Project/assets/13th/Pin4U-1.webp";
+import pin4u2 from "../features/Project/assets/13th/Pin4U-2.webp";
+import pin4u3 from "../features/Project/assets/13th/Pin4U-3.webp";
+import promptstudio1 from "../features/Project/assets/13th/promptstudio-1.webp";
+import promptstudio2 from "../features/Project/assets/13th/promptstudio-2.webp";
+import promptstudio3 from "../features/Project/assets/13th/promptstudio-3.webp";
+import promptstudio4 from "../features/Project/assets/13th/promptstudio-4.webp";
+import shijang1 from "../features/Project/assets/13th/shijang-1.webp";
+import shijang2 from "../features/Project/assets/13th/shijang-2.webp";
+import shijang3 from "../features/Project/assets/13th/shijang-3.webp";
+import shijang4 from "../features/Project/assets/13th/shijang-4.webp";
+import sumshiu1 from "../features/Project/assets/13th/sumshiu-1.webp";
+import sumshiu2 from "../features/Project/assets/13th/sumshiu-2.webp";
+import sumshiu3 from "../features/Project/assets/13th/sumshiu-3.webp";
+import sumshiu4 from "../features/Project/assets/13th/sumshiu-4.webp";
+import yeah1 from "../features/Project/assets/13th/yeah-1.webp";
+import yeah2 from "../features/Project/assets/13th/yeah-2.webp";
+import yeah3 from "../features/Project/assets/13th/yeah-3.webp";
+import yeah4 from "../features/Project/assets/13th/yeah-4.webp";
 const PROJECTS_RAW = [
   // 해커톤
   {
@@ -314,6 +358,240 @@ const PROJECTS_RAW = [
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/DE6nss4ymbM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  // 13기 아이디어톤
+  {
+    id: 15,
+    title: "예아",
+    number: 13,
+    category: "아이디어톤",
+    description: "AI를 활용한 면접 준비 서비스",
+    about:
+      "면접은 언제나 떨리고 긴장되는 과정입니다. 예아는 이직이나 취업 등 다양한 상황에서 면접을 준비하는 사람들에게 AI 면접관과의 모의면접 경험과 AI 분석 기반 면접 레포트를 제공합니다. 이를 통해 사용자는 실전과 같은 상황에서 모의면접을 경험할 수 있으며, 꼬리질문, 상황에 따른 질문 방식, 면접관과의 대면 상황 등을 미리 준비할 수 있습니다. 또한 함께 제공되는 레포트를 통해 자신의 면접 역량에 대한 구체적인 장단점을 파악할 수 있으며, 이는 서비스의 지속적인 사용과 최종적으로 사용자의 합격으로 이어집니다.",
+    stack: [],
+    team: "금민우 박현지 김연희 서해승 양예원 조수한",
+    coverImage: yeah1,
+    images: [yeah1, yeah2, yeah3, yeah4],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 16,
+    title: "뭐하라고~?뭐하러Go!",
+    number: 13,
+    category: "아이디어톤",
+    description: "AI 활용 나만의 일정 맞춤 서비스",
+    about:
+      "나만의 맞춤형 일정으로 더 효율적으로! 해야 할 일은 늘어나도 뭐부터 해야 될지 모르는 대학생들을 타겟팅한 AI 메모 서비스입니다. 시험 일정과 목표 공부시간, 공부 방법 입력 시 자동으로 과목별 공부 일정을 생성합니다. 또한 자기 전 오늘의 플랜을 To-Do List로 체크하며 하루를 돌아보고, 자기 전 루틴을 추천합니다.",
+    stack: [],
+    team: "구세영 이연우 이정안 최다예 최원재",
+    coverImage: go1,
+    images: [go1, go2, go3, go4],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 17,
+    title: "지빵소",
+    number: 13,
+    category: "아이디어톤",
+    description: '"설명하는 나, 학습하는 AI" AI 학습 베이커리',
+    about:
+      "지빵소는 사용자가 AI에게 답을 받는 대신, 스스로 설명하며 사고하도록 돕는 쌍방향 학습 플랫폼입니다. 음성·필기 입력을 기반으로 AI가 이해 과정의 빈틈을 짚고 질문과 피드백을 제공해 자기설명 효과와 메타인지를 강화합니다. 또한 학습자의 '아하 모먼트'를 축적·공유해 다음 학습자의 이해까지 돕는 지식 순환 구조를 갖추었습니다.",
+    stack: [],
+    team: "장민영 이수현 이예림 황선우 오영록 조해원",
+    coverImage: jibbangso1,
+    images: [jibbangso1, jibbangso2, jibbangso3, jibbangso4],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 18,
+    title: "Gooroom",
+    number: 13,
+    category: "아이디어톤",
+    description: "AI 기반 룸메이트 구하기 서비스",
+    about:
+      "\"나와 딱 맞는 룸메이트, 어디서 구할 수 있을까?\" 높아지는 월세 가격, 늘어나는 2030 1인가구 비율과 물가상승률. 이로 인해 공동주거에 대한 관심은 나날이 높아지고 있습니다. Gooroom은 '룸메이트를 구하는 순간'에 집중하였습니다. 룸메이트를 찾는 번거로움을 덜어주고, AI 기반 생활패턴 분석과 매칭률 계산을 통해 나와 잘 맞는 사용자를 찾을 수 있는 룸메이트 탐색 서비스입니다.",
+    stack: [],
+    team: "김민서 이현채 하유경 문근 이성윤",
+    coverImage: gooroom1,
+    images: [gooroom1, gooroom2, gooroom3, gooroom4],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  // 13기 해커톤
+  {
+    id: 19,
+    title: "숨쉬어",
+    number: 13,
+    category: "해커톤",
+    description: "AI 대화로 피해 기록 증거화 플랫폼",
+    about:
+      "숨쉬어는 피해자가 AI와 대화하듯 경험을 말하면, 이를 자동으로 구조화해 법적 활용이 가능한 기록으로 정리해주는 플랫폼입니다. 사건 내용은 타임스탬프와 함께 안전하게 저장되어 증거 신뢰성을 확보하고, 상담·신고·법적 대응에 바로 사용할 수 있는 문서로 변환됩니다. 또한 AI가 관련 법률 정보와 지원 기관을 연결해 후속 대응까지 지원합니다.",
+    stack: [
+      "React",
+      "Vercel",
+      "Styled Components",
+      "FastAPI",
+      "MySQL",
+      "Spring Boot",
+      "AWS S3",
+      "Gemini",
+      "ChatGPT",
+    ],
+    team: "장민영 박현지 이예림 서해승 오영록 조해원",
+    coverImage: sumshiu1,
+    images: [sumshiu1, sumshiu2, sumshiu3, sumshiu4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DO5uHgjkvIA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    id: 20,
+    title: "Pin4U",
+    number: 13,
+    category: "해커톤",
+    description: "지인 기반 장소 추천 플랫폼",
+    about:
+      "SNS 및 온라인 플랫폼에 광고성 콘텐츠 범람으로 소상공인의 마케팅 의존도는 높아졌지만 소비자의 진정성 있는 정보에 대한 신뢰는 하락하고 있습니다. Pin4U는 광고와 가짜후기에 지쳐 진짜 취향을 공유하고 진솔한 추천을 나누고 싶은 2030을 타겟으로 하여 지인 기반의 장소 추천을 제공합니다. 사용자는 추천받고 싶은 지역과 추천 받고 싶은 분위기 등 원하는 것을 메모하면 url 링크를 생성하여 링크를 통해 지인들이 장소 추천해주며 나만의 지도를 만들 수 있습니다.",
+    stack: [
+      "React",
+      "JavaScript",
+      "Axios",
+      "Styled Components",
+      "Spring Boot",
+      "PostgreSQL",
+      "Flyway",
+      "Docker",
+      "Github Actions",
+      "AWS S3",
+    ],
+    team: "구세영 이수현 이현채 이정안 하유경 이성윤",
+    coverImage: pin4u1,
+    images: [pin4u1, pin4u2, pin4u3],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DO53rT4ksKe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    id: 21,
+    title: "시장에가면",
+    number: 13,
+    category: "해커톤",
+    description: "발견의 즐거움이 있는 전통시장 탐험 서비스",
+    about:
+      "지도 앱에도 없는 숨은 맛집을 소개하고, 전통시장 방문 경험 속 즐거움을 선사합니다. 기존 지도 서비스의 정보 부족과 비등록 점포 문제로 인해 외면받는 전통시장의 현실에 주목했습니다. 단순한 전통시장 지도를 넘어서 시장 내 업종 구분, AI 탐방 코스 추천, 그리고 사용자 직접 제보 기능을 제공해 소비자의 발길을 다시 전통시장으로 이끕니다.",
+    stack: [
+      "React",
+      "Vercel",
+      "Styled Components",
+      "Spring Boot",
+      "PostgreSQL",
+      "Cohere AI",
+    ],
+    team: "금민우 이연우 양예원 문근 최원재",
+    coverImage: shijang1,
+    images: [shijang1, shijang2, shijang3, shijang4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DO5344DEs8K/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    id: 22,
+    title: "이불 밖은 따뜻해",
+    number: 13,
+    category: "해커톤",
+    description: "고립은둔 청년을 위한 온라인 플랫폼",
+    about:
+      "고립은둔청년 전국 54만명, 서울특별시 13만명. 사회적 관계가 부족하거나, 대부분의 시간을 집에서 보내는 고립은둔청년은 심각한 사회문제로 대두되고 있습니다. IDDA는 집 밖으로 나가고 싶어하지만, 무기력함으로 인해 어려움을 겪는 고립은둔청년의 pain point를 해결하기 위해, 사용자의 고립 단계에 맞는 난이도의 미션을 제공하여 점진적으로 외출을 유도하는 서비스입니다.",
+    stack: ["JavaScript", "React", "Spring Boot", "MySQL", "ChatGPT"],
+    team: "김민서 김연희 최다예 황선우 조수한",
+    coverImage: idda1,
+    images: [idda1, idda2, idda3, idda4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DO57HKHEv2S/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  // 13기 겨울잠
+  {
+    id: 23,
+    title: "다소니",
+    number: 13,
+    category: "겨울잠",
+    description: "사랑하는 사람을 기억하기 위한 온라인 추모 서비스",
+    about:
+      "사랑하는 사람을 떠나보낸다면, 우리는 어디에서, 어떻게 추모할 수 있을까요? 현대인은 바쁜 일상 속에서 충분한 애도 과정을 거치기 어렵습니다. 다소니는 AI를 활용해 새로운 방식으로 고인을 추모할 수 있는 온라인 서비스입니다. 시간과 장소의 제약 없이, 일상 속에서 고인을 기억하고 추모할 수 있는 공간을 제공합니다.",
+    stack: [
+      "JavaScript",
+      "React",
+      "FastAPI",
+      "MySQL",
+      "Spring Boot",
+      "AWS S3",
+      "Gemini",
+      "ChatGPT",
+    ],
+    team: "김민서 박현지 이예림 이현채 최다예 황선우 오영록 조해원",
+    coverImage: dasoni1,
+    images: [dasoni1, dasoni2, dasoni3, dasoni4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DUAHjjAEsi8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    id: 24,
+    title: "PROMPT STUDIO",
+    number: 13,
+    category: "겨울잠",
+    description:
+      "좋은 프롬프트를 복사해서, 내 스타일로 바로 완성. AI 작업을 쉽고 간단하게 만들어주는 플랫폼",
+    about:
+      "Prompt Studio는 누구나 좋은 프롬프트를 가져와 자신의 스타일에 맞게 바로 다듬고 활용할 수 있도록 만든 도구형 플랫폼입니다. 특히 인라인 피드백 서비스를 통해 수정 과정에서 즉각적인 개선 제안을 받아, 복사-수정-실행 전 과정을 하나의 흐름으로 자연스럽게 연결합니다. 이를 통해 복잡한 설정 없이도 AI 작업을 빠르고 쉽게 수행하고 결과물 완성도를 높일 수 있습니다.",
+    stack: [
+      "React",
+      "Vercel",
+      "Styled Components",
+      "Spring Boot",
+      "MySQL",
+      "Spring AI",
+      "ChatGPT",
+      "DALL-E 3",
+      "Qdrant",
+    ],
+    team: "장민영 구세영 김연희 서해승 하유경 조수한 최원재",
+    coverImage: promptstudio1,
+    images: [promptstudio1, promptstudio2, promptstudio3, promptstudio4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DUAHbvLEsWp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    id: 25,
+    title: "CLASSIVERSE",
+    number: 13,
+    category: "겨울잠",
+    description: "등장인물과 대화하며 탐험하는 나만의 고전 유니버스",
+    about:
+      "\"읽고 싶지만 엄두가 안 나는 고전, 빠르게 완독할 수 없을까?\" 고전 문학의 '긴 호흡'과 '어려운 문체'로 독서를 포기하는 2030세대를 위해 Classiverse는 핵심 요약과 여러 등장인물 시점의 전개로 재구성하여, 문학 독서를 새로운 경험으로 바꾼 콘텐츠 플랫폼입니다.",
+    stack: [
+      "React",
+      "JavaScript",
+      "Axios",
+      "Styled Components",
+      "Spring Boot",
+      "PostgreSQL",
+      "Flyway",
+      "Docker",
+      "Github Actions",
+      "AWS S3",
+    ],
+    team: "금민우 이수현 이연우 양예원 이정안 문근 이성윤",
+    coverImage: classiverse1,
+    images: [classiverse1, classiverse2, classiverse3, classiverse4],
+    githubUrl: null,
+    instagramUrl:
+      "https://www.instagram.com/p/DUAHOgwks43/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
 ];
 
