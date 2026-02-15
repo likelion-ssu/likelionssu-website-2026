@@ -1,0 +1,22 @@
+// src/data/imageSliderData.js
+
+import pm1 from "../features/Part/assets/pm/pm-slide-1.svg";
+import pm2 from "../features/Part/assets/pm/pm-slide-2.svg";
+import pm3 from "../features/Part/assets/pm/pm-slide-3.svg";
+import de1 from "../features/Part/assets/de/de-slide-1.svg";
+import de2 from "../features/Part/assets/de/de-slide-2.svg";
+import de3 from "../features/Part/assets/de/de-slide-3.svg";
+import de4 from "../features/Part/assets/de/de-slide-4.svg";
+import fe1 from "../features/Part/assets/fe/fe-slide-1.svg";
+import fe2 from "../features/Part/assets/fe/fe-slide-2.svg";
+import fe3 from "../features/Part/assets/fe/fe-slide-3.svg";
+import be1 from "../features/Part/assets/be/be-slide-1.svg"
+
+
+
+export const sliderImages = {
+  pm: [pm1, pm2, pm3],
+  de: [de1, de2, de3, de4],
+  fe: [fe1,fe2,fe3],
+  be: [be1],
+};
