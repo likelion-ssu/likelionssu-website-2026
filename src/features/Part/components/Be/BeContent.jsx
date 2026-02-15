@@ -76,7 +76,7 @@ export default function BeContent() {
                 <img
                   src={meow}
                   alt="meow"
-                  className="absolute right-[-6.4rem] -top-[5rem] h-[8.625rem] z-20 pointer-events-none"
+                  className="swing-diagonal absolute right-[-6.4rem] -top-[5rem] h-[8.625rem] z-20 pointer-events-none"
                 />
 
                 <img
@@ -134,7 +134,7 @@ export default function BeContent() {
             <img
               src={meow}
               alt="meow"
-              className="absolute right-[-1.19rem] -top-[9.61rem] h-[4.3125rem] z-20 pointer-events-none"
+              className="swing-diagonal absolute right-[-1.47rem] -top-[9.61rem] h-[4.3125rem] z-20 pointer-events-none"
             />
 
             <img src={be3} alt="be3" className="w-full" />
