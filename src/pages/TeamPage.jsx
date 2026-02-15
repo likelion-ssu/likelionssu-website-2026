@@ -21,6 +21,22 @@ const DESKTOP_QUOTES_SCALE = 0.9;
 const MOBILE_QUOTES_SCALE = 0.95;
 const DESKTOP_QUOTES_OFFSET_LEFT_REM = 17.5;
 const DESKTOP_QUOTES_OFFSET_TOP_REM = -6;
+const PHOTO_GRID_BASE_WIDTH_REM = 41.48944;
+const PHOTO_GRID_BASE_HEIGHT_REM = 30.00275;
+const DESKTOP_PHOTO_GRID_SCALE = 0.95;
+const MOBILE_PHOTO_GRID_SCALE = 0.5;
+const DESKTOP_PHOTO_GRID_WIDTH_REM =
+  PHOTO_GRID_BASE_WIDTH_REM * DESKTOP_PHOTO_GRID_SCALE;
+const DESKTOP_PHOTO_GRID_HEIGHT_REM =
+  PHOTO_GRID_BASE_HEIGHT_REM * DESKTOP_PHOTO_GRID_SCALE;
+const MOBILE_PHOTO_GRID_WIDTH_REM =
+  PHOTO_GRID_BASE_WIDTH_REM * MOBILE_PHOTO_GRID_SCALE;
+const MOBILE_PHOTO_GRID_HEIGHT_REM =
+  PHOTO_GRID_BASE_HEIGHT_REM * MOBILE_PHOTO_GRID_SCALE;
+const MOBILE_PHOTO_GRID_LEFT_REM =
+  (QUOTES_BASE_SIZE_REM - MOBILE_PHOTO_GRID_WIDTH_REM) / 2;
+const MOBILE_PHOTO_GRID_TOP_REM =
+  (QUOTES_BASE_SIZE_REM - MOBILE_PHOTO_GRID_HEIGHT_REM) / 2;
 
 function normalizeAngle(angle) {
   const normalized = angle % 360;
@@ -138,14 +154,29 @@ export default function TeamPage() {
             {/* Desktop */}
             <div className="mx-auto hidden h-[43.75rem] w-full max-w-[60rem] lg:block">
               <div className="relative h-full w-full">
-                <div className="absolute left-1/2 top-6 h-[30.25rem] w-[38.125rem] -translate-x-1/2">
-                  <PhotoGrid
-                    members={TEAM_MEMBERS}
-                    selectedId={selectedId}
-                    onSelect={selectMember}
-                  />
+                <div
+                  className="absolute left-1/2 top-6 -translate-x-1/2"
+                  style={{
+                    width: `${DESKTOP_PHOTO_GRID_WIDTH_REM}rem`,
+                    height: `${DESKTOP_PHOTO_GRID_HEIGHT_REM}rem`,
+                  }}
+                >
                   <div
-                    className="absolute"
+                    className="origin-top-left relative z-10"
+                    style={{
+                      width: `${PHOTO_GRID_BASE_WIDTH_REM}rem`,
+                      height: `${PHOTO_GRID_BASE_HEIGHT_REM}rem`,
+                      transform: `scale(${DESKTOP_PHOTO_GRID_SCALE})`,
+                    }}
+                  >
+                    <PhotoGrid
+                      members={TEAM_MEMBERS}
+                      selectedId={selectedId}
+                      onSelect={selectMember}
+                    />
+                  </div>
+                  <div
+                    className="absolute z-0"
                     style={{
                       left: `${DESKTOP_QUOTES_OFFSET_LEFT_REM}rem`,
                       top: `${DESKTOP_QUOTES_OFFSET_TOP_REM}rem`,
@@ -188,9 +219,33 @@ export default function TeamPage() {
                     transformOrigin: "top left",
                   }}
                 >
+                  <div
+                    className="absolute z-10"
+                    style={{
+                      left: `${MOBILE_PHOTO_GRID_LEFT_REM}rem`,
+                      top: `${MOBILE_PHOTO_GRID_TOP_REM}rem`,
+                      width: `${MOBILE_PHOTO_GRID_WIDTH_REM}rem`,
+                      height: `${MOBILE_PHOTO_GRID_HEIGHT_REM}rem`,
+                    }}
+                  >
+                    <div
+                      className="origin-top-left"
+                      style={{
+                        width: `${PHOTO_GRID_BASE_WIDTH_REM}rem`,
+                        height: `${PHOTO_GRID_BASE_HEIGHT_REM}rem`,
+                        transform: `scale(${MOBILE_PHOTO_GRID_SCALE})`,
+                      }}
+                    >
+                      <PhotoGrid
+                        members={TEAM_MEMBERS}
+                        selectedId={selectedId}
+                        onSelect={selectMember}
+                      />
+                    </div>
+                  </div>
                   <MotionDiv
                     style={{ rotate: rotation, willChange: "transform" }}
-                    className="h-full w-full transform-gpu"
+                    className="absolute inset-0 z-0 h-full w-full transform-gpu"
                   >
                     <CircularQuotes selectedId={selectedId} />
                   </MotionDiv>

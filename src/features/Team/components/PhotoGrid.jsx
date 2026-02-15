@@ -1,4 +1,6 @@
 const FALLBACK_IMAGE = "/vite.svg";
+const PHOTO_CARD_WIDTH_REM = 7.90188;
+const PHOTO_CARD_HEIGHT_REM = 9.59513;
 
 export default function PhotoGrid({ members, selectedId, onSelect }) {
   return (
@@ -15,12 +17,14 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
               event.stopPropagation();
               onSelect(member.id);
             }}
-            className="group absolute block h-38.25 w-31.5 overflow-hidden bg-zinc-200 shadow-md transition-transform duration-300 hover:scale-[1.02]"
+            className="group absolute block overflow-hidden bg-zinc-200 shadow-md transition-transform duration-300 hover:scale-[1.02]"
             style={{
               top: member.position.top,
               left: member.position.left,
               transform: `rotate(${member.rotation}deg)`,
               zIndex: isSelected ? 30 : member.zIndex,
+              width: `${PHOTO_CARD_WIDTH_REM}rem`,
+              height: `${PHOTO_CARD_HEIGHT_REM}rem`,
             }}
           >
             <img
