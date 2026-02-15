@@ -508,3 +508,55 @@
     animation: none;
   }
 }
+
+
+/* ===========================
+    왼쪽 아래로 까딱 
+=========================== */
+@keyframes swing-diagonal {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-5deg); }
+  50%  { transform: rotate(-5deg); }
+  75%  { transform: rotate(0deg); }  
+  100% { transform: rotate(0deg); }
+}
+
+.swing-diagonal {
+  transform-origin: 100% 100%;
+  animation: swing-diagonal 2.5s infinite;
+}
+
+/* ===========================
+   왼쪽 아래로 까딱 (오른쪽 밑 고정)
+=========================== */
+@keyframes swing-diagonale {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-3deg); } /* 왼쪽 아래로 기울임 */
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(0deg); }  
+  100% { transform: rotate(0deg); }
+}
+
+.swing-diagonale {
+  transform-origin: 100% 100%; /* 오른쪽 아래 고정 */
+  animation: swing-diagonale 2.5s infinite;
+}
+
+
+/* ===========================
+   오른쪽 아래로 까딱
+=========================== */
+@keyframes swing-diagonal-right {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(5deg); }  
+  50%  { transform: rotate(5deg); }
+  75%  { transform: rotate(0deg); } 
+  100% { transform: rotate(0deg); }
+}
+
+.swing-diagonal-right {
+  transform-origin: 0% 100%; 
+  animation: swing-diagonal-right 2.5s infinite;
+}
+
+

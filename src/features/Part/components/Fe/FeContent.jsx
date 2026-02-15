@@ -38,7 +38,7 @@ export default function FeContent() {
                 <img
                   src={cap}
                   alt="cap"
-                  className="absolute left-[-7rem] top-[-6.62rem] h-[11.6875rem] z-50 pointer-events-none"
+                  className="swing-diagonale absolute left-[-7rem] top-[-6.62rem] h-[11.6875rem] z-50 pointer-events-none"
                 />
 
                 <img src={fe2} alt="fe2" className="w-[25.5625rem]" />
@@ -120,7 +120,7 @@ FE 개발을 배우고 싶은 열정은 가득하지만, 어디서부터 시작�
             <img
               src={cap}
               alt="cap"
-              className="absolute left-[-2.88rem] top-[-3.31rem] h-[5.84375rem] z-50 pointer-events-none"
+              className="swing-diagonale absolute left-[-2.88rem] top-[-3.31rem] h-[5.84375rem] z-50 pointer-events-none"
             />
 
             <img src={fe2} alt="fe2" className="w-full" />

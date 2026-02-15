@@ -11,7 +11,7 @@ export default function DeContent() {
       <img
         src={hand}
         alt="hand"
-        className="hidden sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-20 pointer-events-none"
+        className="hidden swing-diagonal-right sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-20 pointer-events-none"
       />
       
       <div
@@ -118,7 +118,7 @@ export default function DeContent() {
             <img
   src={hand}
   alt="hand"
-  className="absolute left-[-1.19rem] top-0 h-[4.59375rem] z-50 pointer-events-none"
+  className="swing-diagonal-right absolute left-[-1.9rem] top-0 h-[4.59375rem] z-50 pointer-events-none"
 />
 
 

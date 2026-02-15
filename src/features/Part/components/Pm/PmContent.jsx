@@ -48,10 +48,7 @@ export default function PmContent() {
 
           <div className="absolute top-[27.06rem] left-[14.81rem]">
             <div className="typo-subtitlek text-text/30">PM이 고민된다면?</div>
-            <div className="typo-pretitle1k pt-[0.88rem]">
-              이런 사람에게 추천해요
-            </div>
-
+            <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
             <p className="typo-body2 pt-[1.25rem] whitespace-pre-wrap">
               {`아직 모든 답을 알고 있진 않아도,
 사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
@@ -65,19 +62,18 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
           </div>
 
           {/* PM3 이미지 */}
-          <div className="absolute top-[23.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem]">
+          <div className="z-1 absolute top-[23.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem]">
             <img src={pm3} alt="pm3" className="h-[25.5625rem]" />
             <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
           </div>
 
-          {/* Camera 이미지: PM3 바로 위 */}
-          <img
-            src={camera}
-            alt="camera"
-            className="absolute z-20
-                       right-[2.57rem] top-[15.62rem] w-[5.93rem] h-[8rem]
-                       sm:right-[9.5rem] sm:top-[15.62rem] sm:w-[11.875rem] sm:h-[8rem]"
-          />
+          {/* 웹 Camera */}
+<img
+  src={camera}
+  alt="camera"
+  className="absolute z-0 swing-diagonal
+             right-[9.5rem] top-[15.62rem] w-[11.875rem] h-[8rem]"
+/>
         </div>
 
         {/* 모바일 */}
@@ -85,7 +81,6 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
 
           <div className="flex flex-col gap-[1.19rem]">
             <div className="typo-pretitle1k">파트장 한마디</div>
-
             <p className="typo-body2 whitespace-pre-wrap">
               {`일을 하다 보면 속도가 결정적인 순간이 있습니다.
 동시에, 무엇을 선택하고 무엇을 버릴지의 판단이 결과를 
@@ -93,8 +88,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
 
 저는 팀의 모든 선택이 완벽할 수는 없다고 생각합니다.
 그래서 더 빠르게 결정하고,
-필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중
-요하다고 생각합니다.`}
+필요하다면 빠르게 수정할 수 있는 기준을 만드는 것이 중요하다고 생각합니다.`}
             </p>
           </div>
 
@@ -105,10 +99,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
 
           <div>
             <div className="typo-subtitlek text-text/30">PM이 고민된다면?</div>
-            <div className="typo-pretitle1k pt-[0.88rem]">
-              이런 사람에게 추천해요
-            </div>
-
+            <div className="typo-pretitle1k pt-[0.88rem]">이런 사람에게 추천해요</div>
             <p className="typo-body2 pt-[1.19rem] whitespace-pre-wrap">
               {`아직 모든 답을 알고 있진 않아도,
 사용자 한 명의 불편함에는 끝까지 이유를 묻고 싶은 분
@@ -121,16 +112,16 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             </p>
           </div>
 
-          <div className="flex flex-col items-end gap-[0.81rem]">
-            <img src={pm3} alt="pm3" className="w-full" />
+          <div className=" relative flex flex-col items-end gap-[0.81rem]">
+            <img src={pm3} alt="pm3" className="z-1 w-full" />
             <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
 
-            {/* 모바일 Camera 이미지: PM3 바로 위 */}
-            <img
-              src={camera}
-              alt="camera"
-              className="absolute z-20 right-[2.57rem] top-[calc(100%-26.3rem)] w-[5.93rem] h-[8rem]"
-            />
+            {/* 모바일 Camera */}
+<img
+  src={camera}
+  alt="camera"
+  className="absolute z-0 swing-diagonal right-[2.57rem] top-[calc(100%-26.3rem)] w-[5.93rem] h-[8rem]"
+/>
           </div>
         </div>
       </div>
