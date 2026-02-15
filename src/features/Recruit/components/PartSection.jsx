@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import pmImg from "../assets/PartSection_pm_img.svg";
 import deImg from "../assets/PartSection_de_img.svg";
@@ -27,23 +27,28 @@ function PartCard({
   className = "",
   headerClassName = "",
   imgClassName = "",
+  showTextOverlay = false, // 모바일 pressed 시 텍스트 이미지 표시
+  onImagePress,
+  isMobile = false,
 }) {
   // 가로 한 줄: [링크 | 타이틀 | 링크]. BE(아래 헤더)일 때만 버튼 위 / BE 아래
   const isBEBottom = label === "BE" && headerPos === "bottom";
 
   const TitleAndButtons = (
     <div
-      className={`grid grid-cols-[1fr_auto_1fr] items-start w-full px-2 sm:px-2 ${headerClassName}`}
+      className={`grid grid-cols-[1fr_auto_1fr] items-end sm:items-start w-full px-2 sm:px-2 ${headerClassName}`}
     >
       <Link
         to={`/part?tab=${label}`}
-        className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-start pr-4 hover:text-primarybrand"
+        className={`text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-start pr-4 hover:text-primarybrand ${isMobile ? "active:text-primarybrand focus:text-primarybrand" : ""}`}
       >
-        ← 파트 소개 보러 가기
+        {isMobile ? "← 파트 소개보기" : "← 파트 소개 보러 가기"}
       </Link>
 
       <h3
-        className={`text-text typo-title1e whitespace-nowrap justify-self-center ${isBEBottom ? "mt-2 sm:mt-3" : "self-start -mt-10"}`}
+        className={`text-text ${isMobile ? "typo-pretitle1e" : "typo-title1e"} whitespace-nowrap justify-self-center ${
+          isBEBottom ? "mt-2 sm:mt-3" : "mt-0 sm:-mt-10"
+        }`}
       >
         {label}
       </h3>
@@ -52,7 +57,7 @@ function PartCard({
         href={PRECOURSE_URLS[label]}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-end pl-4 hover:text-primarybrand"
+        className={`text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-end pl-4 hover:text-primarybrand ${isMobile ? "active:text-primarybrand focus:text-primarybrand" : ""}`}
       >
         프리코스 영상 →
       </a>
@@ -60,7 +65,11 @@ function PartCard({
   );
 
   const Image = (
-    <div className="group flex justify-center relative block cursor-default">
+    <div
+      role={onImagePress ? "button" : undefined}
+      onClick={onImagePress}
+      className={`group flex justify-center relative block ${onImagePress ? "cursor-pointer" : "cursor-default"}`}
+    >
       <img
         src={img}
         alt={label}
@@ -70,7 +79,7 @@ function PartCard({
         <img
           src={textImg}
           alt=""
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${textImgClassName}`}
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain transition-opacity duration-300 pointer-events-none ${showTextOverlay ? "opacity-100" : "opacity-0 group-hover:opacity-100"} ${textImgClassName}`}
         />
       )}
     </div>
@@ -81,7 +90,9 @@ function PartCard({
       {headerPos === "top" ? (
         <>
           {TitleAndButtons}
-          <div className="mt-2 sm:mt-3 mb-1">{Image}</div>
+          <div className={`${isMobile ? "mt-5" : "mt-2"} sm:mt-3 mb-6 sm:mb-1`}>
+            {Image}
+          </div>
         </>
       ) : (
         <>
@@ -94,43 +105,70 @@ function PartCard({
 }
 
 export default function PartSection() {
+  const [pressedMobilePart, setPressedMobilePart] = useState(null);
+
+  const handleMobileImagePress = (label) => {
+    setPressedMobilePart((prev) => (prev === label ? null : label));
+  };
+
   return (
     <section
       id="part-section"
       className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem] py-12 sm:py-16"
     >
       <div className="max-w-[75rem] mx-auto">
-        {/* 모바일: 세로 스택 */}
+        {/* 모바일: 제목 먼저, 그 다음 PM → DE → FE → BE */}
         <div className="sm:hidden flex flex-col gap-10">
-          <PartCard
-            label="PM"
-            img={pmImg}
-            textImg={pmText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
-          />
-          <PartCard label="DE" img={deImg} textImg={deText} />
-
-          <div className="text-center py-2">
-            <h2 className="text-primarybrand typo-footer2ew tracking-wide">
-              Built Around Four Forces
-            </h2>
+          <div className="text-center pb-[2.5rem]">
             <img
               src={circle}
               alt=""
-              className="mt-7 w-[2rem] h-[2rem] mx-auto"
+              className="mb-[1.25rem] w-[1.6095rem] h-[1.6095rem] mx-auto"
             />
+            <h2 className="text-primarybrand typo-subtitlee tracking-wide">
+              Built Around Four Forces
+            </h2>
           </div>
 
-          <PartCard label="FE" img={feImg} textImg={feText} />
-          <PartCard
-            label="BE"
-            img={beImg}
-            textImg={beText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
-            headerPos="bottom"
-          />
-        </div>
+          <div className="flex flex-col gap-[2.5rem] px-[2.5rem]">
+            <PartCard
+              label="PM"
+              img={pmImg}
+              textImg={pmText}
+              textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+              isMobile
+              showTextOverlay={pressedMobilePart === "PM"}
+              onImagePress={() => handleMobileImagePress("PM")}
+            />
+            <PartCard
+              label="DE"
+              img={deImg}
+              textImg={deText}
+              isMobile
+              showTextOverlay={pressedMobilePart === "DE"}
+              onImagePress={() => handleMobileImagePress("DE")}
+            />
 
+            <PartCard
+              label="FE"
+              img={feImg}
+              textImg={feText}
+              isMobile
+              showTextOverlay={pressedMobilePart === "FE"}
+              onImagePress={() => handleMobileImagePress("FE")}
+            />
+            <PartCard
+              label="BE"
+              img={beImg}
+              textImg={beText}
+              textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+              headerPos="top"
+              isMobile
+              showTextOverlay={pressedMobilePart === "BE"}
+              onImagePress={() => handleMobileImagePress("BE")}
+            />
+          </div>
+        </div>
         {/* 데스크탑(sm~): absolute 배치 */}
         <div className="hidden sm:block relative w-full min-h-[40rem]">
           {/* 중앙 문구 */}
