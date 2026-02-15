@@ -440,7 +440,7 @@
 }
 
 .animate-slider {
-  animation: slider 12s linear infinite;
+  animation: slider 28s linear infinite;
 }
 
 @keyframes homeTransitionBackdrop {
