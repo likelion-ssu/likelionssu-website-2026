@@ -17,14 +17,14 @@ export default function IntroSection() {
       </div>
 
       {/* 중앙 그래픽 - Home과 동일한 중앙 기준으로 배치 */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(50vh-5.9375rem)] -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0 sm:top-auto flex justify-center items-center">
+      <div className="absolute left-1/2 top-[calc(50vh-5.9375rem)] -translate-x-1/2 -translate-y-1/2 sm:top-1/2 flex justify-center items-center">
         <div className="relative shrink-0">
           {/* 배경 이미지 */}
           <img
             src={backgroundImg}
             alt=""
             className="
-              w-[min(28rem,92vw)] h-auto max-h-[18rem]
+              w-[28rem] h-[18rem]
               sm:w-[min(28rem,70vw)]
               sm:h-[min(18rem,45vh)]
               object-contain
