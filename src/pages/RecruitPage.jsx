@@ -24,16 +24,16 @@ export default function RecruitPage() {
         onMenuClick={toggleSidebar}
       />
 
-      <div className="pt-[5.9375rem] sm:pt-0">
-        <IntroSection />
+      <IntroSection />
+
+      <div className="animate-recruit-content-enter">
         <ValueSection />
         <PartSection />
         <RoadmapSection />
         <TimelineSection />
         <FaqSection />
+        <Footer />
       </div>
-
-      <Footer />
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </div>
   );

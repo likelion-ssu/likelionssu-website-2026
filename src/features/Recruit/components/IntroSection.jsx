@@ -7,7 +7,7 @@ export default function IntroSection() {
   return (
     <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 sm:px-[3.75rem] pb-8 pt-[5.9375rem] sm:pt-[3.5625rem]">
       {/* 좌측 상단 텍스트 - absolute로 그래픽 위치에 영향 없게 수정 */}
-      <div className="absolute left-4 sm:left-[3.75rem] top-[2.5rem] sm:top-[3.5625rem] flex flex-col z-10">
+      <div className="absolute left-4 sm:left-[3.75rem] top-[2.5rem] sm:top-[3.5625rem] flex flex-col z-10 animate-recruit-content-enter">
         <h1 className="typo-recruit-title text-primarybrand">POSSIBILLITY</h1>
         <h1 className="typo-recruit-title text-primarybrand">TO</h1>
         <h1 className="typo-recruit-title text-primarybrand">REALITY</h1>
@@ -16,8 +16,8 @@ export default function IntroSection() {
         </p>
       </div>
 
-      {/* 중앙 그래픽 - 모바일: calc로 50vh 위치(텍스트 pt 유지하며), PC: flex 중앙 */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(50vh-5.9375rem)] -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0 sm:top-auto flex justify-center items-center">
+      {/* 중앙 그래픽 - Home과 동일한 중앙 기준으로 배치 */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
         <div className="relative shrink-0">
           {/* 배경 이미지 */}
           <img
@@ -33,7 +33,7 @@ export default function IntroSection() {
 
           {/* 아이콘 (중앙 고정) - 호버 시 hoverButton 표시, 클릭 시 ValueSection으로 스크롤, 모바일 짧은 높이에서 축소 */}
           <div
-            className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[min(3.5rem,10vh)] h-[min(3.5rem,10vh)] sm:w-[4.9841rem] sm:h-[4.9841rem] cursor-pointer"
+            className="group absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 w-[min(3.5rem,10vh)] h-[min(3.5rem,10vh)] sm:w-[4.9841rem] sm:h-[4.9841rem] cursor-pointer animate-recruit-content-enter"
             onClick={() =>
               document.getElementById("value-section")?.scrollIntoView({
                 behavior: "smooth",
@@ -60,7 +60,7 @@ export default function IntroSection() {
               top-[48%]
               -translate-y-1/2
               translate-x-[2.5rem] sm:translate-x-[5rem]
-              typo-recruit-scroll text-text whitespace-nowrap
+              typo-recruit-scroll text-text whitespace-nowrap animate-recruit-content-enter
             "
           >
             모집 상세 보러 가기
