@@ -3,15 +3,15 @@ export default function ProjectCard({
   number,
   category,
   description,
-  imageUrl,
+  coverImage,
 }) {
   return (
     <article className="bg-white overflow-hidden flex flex-col w-[20.6rem] h-[15.9rem] p-[0.63rem] cursor-pointer border border-white transition-shadow hover:shadow-[10px_10px_20px_0_rgba(0,0,0,0.1)]">
-      {/* 이미지 */}
+      {/* 표지 이미지 */}
       <div className="w-full h-[11.6rem] bg-emptyimg overflow-hidden">
-        {imageUrl ? (
+        {coverImage ? (
           <img
-            src={imageUrl}
+            src={coverImage}
             alt={title}
             className="w-full h-full object-cover"
           />

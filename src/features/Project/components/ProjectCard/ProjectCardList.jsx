@@ -21,7 +21,7 @@ export default function ProjectCardList({ projects, selectedFilter }) {
             number={project.number}
             category={project.category}
             description={project.description}
-            imageUrl={project.imageUrl}
+            coverImage={project.coverImage}
           />
         </Link>
       ))}
