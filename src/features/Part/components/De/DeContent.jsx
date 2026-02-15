@@ -11,7 +11,7 @@ export default function DeContent() {
       <img
         src={hand}
         alt="hand"
-        className="hidden sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-50 pointer-events-none"
+        className="hidden sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-20 pointer-events-none"
       />
       
       <div
