@@ -9,10 +9,10 @@ export default function ClosingSection() {
   return (
     <section
       id="closing-section"
-      className="bg-secondarybrand w-full px-4 sm:px-[3.75rem]"
+      className="bg-secondarybrand w-full px-4 lg:px-[3.75rem]"
     >
       <div className="max-w-[75rem] mx-auto flex flex-row flex-wrap items-center justify-between gap-4">
-        <p className="text-text typo-footer1em sm:typo-pretitle1e">
+        <p className="text-text typo-footer1em lg:typo-pretitle1e">
           From Passion to Impact
         </p>
         <button

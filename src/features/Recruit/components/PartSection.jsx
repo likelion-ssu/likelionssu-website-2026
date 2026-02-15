@@ -36,7 +36,7 @@ function PartCard({
 
   const TitleAndButtons = (
     <div
-      className={`grid grid-cols-[1fr_auto_1fr] items-end sm:items-start w-full px-2 sm:px-2 ${headerClassName}`}
+      className={`grid grid-cols-[1fr_auto_1fr] items-end lg:items-start w-full px-2 lg:px-2 ${headerClassName}`}
     >
       <Link
         to={`/part?tab=${label}`}
@@ -47,7 +47,7 @@ function PartCard({
 
       <h3
         className={`text-text ${isMobile ? "typo-pretitle1e" : "typo-title1e"} whitespace-nowrap justify-self-center ${
-          isBEBottom ? "mt-2 sm:mt-3" : "mt-0 sm:-mt-10"
+          isBEBottom ? "mt-2 lg:mt-3" : "mt-0 lg:-mt-10"
         }`}
       >
         {label}
@@ -73,7 +73,7 @@ function PartCard({
       <img
         src={img}
         alt={label}
-        className={`w-full max-w-[10rem] sm:max-w-[14rem] h-auto object-contain group-hover:scale-105 transition-transform duration-300 ${imgClassName}`}
+        className={`w-full max-w-[10rem] lg:max-w-[14rem] h-auto object-contain group-hover:scale-105 transition-transform duration-300 ${imgClassName}`}
       />
       {textImg && (
         <img
@@ -90,14 +90,14 @@ function PartCard({
       {headerPos === "top" ? (
         <>
           {TitleAndButtons}
-          <div className={`${isMobile ? "mt-5" : "mt-2"} sm:mt-3 mb-6 sm:mb-1`}>
+          <div className={`${isMobile ? "mt-5" : "mt-2"} lg:mt-3 mb-6 lg:mb-1`}>
             {Image}
           </div>
         </>
       ) : (
         <>
           {Image}
-          <div className="mt-2 sm:mt-3">{TitleAndButtons}</div>
+          <div className="mt-2 lg:mt-3">{TitleAndButtons}</div>
         </>
       )}
     </div>
@@ -114,28 +114,29 @@ export default function PartSection() {
   return (
     <section
       id="part-section"
-      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem] py-12 sm:py-16"
+      className="scroll-mt-[5.9375rem] lg:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 lg:px-[3.75rem] py-12 lg:py-16"
     >
       <div className="max-w-[75rem] mx-auto">
-        {/* 모바일: 제목 먼저, 그 다음 PM → DE → FE → BE */}
-        <div className="sm:hidden flex flex-col gap-10">
-          <div className="text-center pb-[2.5rem]">
-            <img
-              src={circle}
-              alt=""
-              className="mb-[1.25rem] w-[1.6095rem] h-[1.6095rem] mx-auto"
-            />
-            <h2 className="text-primarybrand typo-subtitlee tracking-wide">
-              Built Around Four Forces
-            </h2>
-          </div>
+        {/* 모바일: 제목·카드 같은 중앙 축 — 한 컬럼으로 묶고, 카드만 패딩 */}
+        <div className="lg:hidden flex flex-col gap-10">
+          <div className="w-full max-w-[22rem] mx-auto">
+            <div className="text-center pb-[2.5rem]">
+              <img
+                src={circle}
+                alt=""
+                className="mb-[1.25rem] w-[1.6095rem] h-[1.6095rem] mx-auto"
+              />
+              <h2 className="text-primarybrand typo-subtitlee tracking-wide">
+                Built Around Four Forces
+              </h2>
+            </div>
 
-          <div className="flex flex-col gap-[2.5rem] px-[2.5rem]">
+            <div className="flex flex-col gap-[2.5rem] px-4">
             <PartCard
               label="PM"
               img={pmImg}
               textImg={pmText}
-              textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+              textImgClassName="!min-w-[20rem] !max-w-[28rem]"
               isMobile
               showTextOverlay={pressedMobilePart === "PM"}
               onImagePress={() => handleMobileImagePress("PM")}
@@ -161,16 +162,17 @@ export default function PartSection() {
               label="BE"
               img={beImg}
               textImg={beText}
-              textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+              textImgClassName="!min-w-[20rem] !max-w-[28rem]"
               headerPos="top"
               isMobile
               showTextOverlay={pressedMobilePart === "BE"}
               onImagePress={() => handleMobileImagePress("BE")}
             />
+            </div>
           </div>
         </div>
-        {/* 데스크탑(sm~): absolute 배치 */}
-        <div className="hidden sm:block relative w-full min-h-[40rem]">
+        {/* 데스크탑(lg~): absolute 배치 */}
+        <div className="hidden lg:block relative w-full min-h-[40rem]">
           {/* 중앙 문구 */}
           <div className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 text-center">
             <h2 className="text-primarybrand typo-footer2ew tracking-wide">
@@ -219,7 +221,7 @@ export default function PartSection() {
             textImgClassName="!min-w-[16rem] !max-w-[22rem]"
             headerPos="bottom"
             className="absolute left-[50%] top-[45%] w-[28%]"
-            imgClassName="sm:max-w-[13rem]"
+            imgClassName="lg:max-w-[13rem]"
           />
         </div>
       </div>

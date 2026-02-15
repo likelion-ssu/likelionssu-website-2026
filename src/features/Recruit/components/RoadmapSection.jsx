@@ -6,14 +6,14 @@ import circleSelected from "../assets/RoadmapSection_circle_selected.svg";
 export default function RoadmapSection() {
   const [selectedNode, setSelectedNode] = useState("교육세션");
   const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" && window.innerWidth < 640,
+    typeof window !== "undefined" && window.innerWidth < 1024,
   );
   const selectedContent = ROADMAP_ITEMS.find(
     (i) => i.id === selectedNode,
   )?.content;
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
+    const check = () => setIsMobile(window.innerWidth < 1024);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -79,20 +79,20 @@ export default function RoadmapSection() {
   return (
     <section
       id="roadmap-section"
-      className="flex flex-col w-full min-h-[32rem] bg-secondarybrand pt-[4rem] pb-[4rem] sm:pt-[10rem] sm:pb-[10rem]"
+      className="flex flex-col w-full min-h-[32rem] bg-secondarybrand pt-[4rem] pb-[4rem] lg:pt-[10rem] lg:pb-[10rem]"
     >
       {/* 섹션 타이틀 "Our Annual Roadmap" - 모바일 subtitlee / PC pretitle1e */}
-      <h2 className="text-primarybrand text-center px-4 pt-6 pb-[2.5rem] sm:pb-4">
-        <span className="typo-subtitlee sm:hidden">Our Annual Roadmap</span>
-        <span className="hidden sm:block typo-pretitle1e">
+      <h2 className="text-primarybrand text-center px-4 pt-6 pb-[2.5rem] lg:pb-4">
+        <span className="typo-subtitlee lg:hidden">Our Annual Roadmap</span>
+        <span className="hidden lg:block typo-pretitle1e">
           Our Annual Roadmap
         </span>
       </h2>
 
       {/* 하단: 로드맵 + 콘텐츠 (PC: 가로 / 모바일: 세로) */}
-      <div className="flex flex-1 flex-col sm:flex-row">
+      <div className="flex flex-1 flex-col lg:flex-row">
         {/* 좌측: 로드맵 (노드 + 연결선) - 모바일에서 더 꽉 차게 */}
-        <div className="relative flex-1 min-h-[17rem] sm:min-h-[32rem] flex items-center justify-center px-2 sm:px-5 py-4 sm:py-3">
+        <div className="relative flex-1 min-h-[17rem] lg:min-h-[32rem] flex items-center justify-center px-2 lg:px-5 py-4 lg:py-3">
           <div className="relative w-full max-w-[50rem] aspect-[9/6] mx-auto">
             {/* SVG 컨테이너 */}
             <svg
@@ -131,8 +131,8 @@ export default function RoadmapSection() {
                           className={`
                           ${isMobile ? "w-[6rem] h-[4rem] p-2.5 gap-1" : "w-[5.9375rem] min-w-[5.9375rem] max-w-[5.9375rem] h-[3.4375rem] min-h-[3.4375rem] max-h-[3.4375rem] p-[0.625rem] gap-[0.3rem]"}
                           flex justify-center items-center box-border
-                          rounded-[1.25rem] sm:rounded-[1.875rem]
-                          border border-text sm:border-[0.0313rem]
+                          rounded-[1.25rem] lg:rounded-[1.875rem]
+                          border border-text lg:border-[0.0313rem]
                           text-center overflow-hidden
                           ${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"} text-text cursor-pointer
                           transition-colors
@@ -180,9 +180,9 @@ export default function RoadmapSection() {
           </div>
         </div>
         {/* 우측/아래: 콘텐츠 패널 - 모바일: 타이틀+설명 아래 이미지 3개 가로 / PC: 기존 그리드 유지 */}
-        <div className="w-full sm:w-[35rem] shrink-0 px-4 pt-0 pb-3 sm:px-0 sm:pr-8 sm:py-8 bg-secondarybrand flex flex-col justify-center">
+        <div className="w-full lg:w-[35rem] shrink-0 px-4 pt-0 pb-3 lg:px-0 lg:pr-8 lg:py-8 bg-secondarybrand flex flex-col justify-center">
           {/* 모바일: 타이틀+설명 아래 이미지 3개 가로 */}
-          <div className="space-y-4 sm:hidden">
+          <div className="space-y-4 lg:hidden">
             <div className="space-y-2">
               <h2 className="typo-cardtextk text-text font-bold">
                 {selectedContent?.title ?? "로드맵"}
@@ -219,7 +219,7 @@ export default function RoadmapSection() {
           </div>
 
           {/* PC: 기존 레이아웃 그대로 */}
-          <div className="hidden sm:block space-y-4">
+          <div className="hidden lg:block space-y-4">
             <h2 className="typo-cardtextk text-text">
               {selectedContent?.title ?? "로드맵"}
             </h2>

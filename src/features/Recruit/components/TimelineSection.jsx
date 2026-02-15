@@ -18,18 +18,18 @@ export default function TimelineSection() {
   return (
     <section
       id="timeline-section"
-      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem]"
+      className="scroll-mt-[5.9375rem] lg:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 lg:px-[3.75rem]"
     >
       {/* 타이틀 - 모바일 subtitlee / PC pretitle1e */}
-      <h2 className="text-center text-primarybrand mb-12 sm:mb-16">
-        <span className="typo-subtitlee sm:hidden">Application Timeline</span>
-        <span className="hidden sm:block typo-pretitle1e">
+      <h2 className="text-center text-primarybrand mb-12 lg:mb-16">
+        <span className="typo-subtitlee lg:hidden">Application Timeline</span>
+        <span className="hidden lg:block typo-pretitle1e">
           Application Timeline
         </span>
       </h2>
 
       {/* PC: 가로 타임라인 */}
-      <div className="hidden sm:block w-full max-w-[47.5625rem] mx-auto">
+      <div className="hidden lg:block w-full max-w-[47.5625rem] mx-auto">
         <div className="flex flex-col">
           {/* 텍스트 라인 */}
           <div className="px-1 py-1">
@@ -55,7 +55,7 @@ export default function TimelineSection() {
       </div>
 
       {/* 모바일: 세로 타임라인 */}
-      <div className="sm:hidden flex justify-center -ml-20">
+      <div className="lg:hidden flex justify-center -ml-20">
         <div className="relative inline-block h-[27.75rem]">
           <div className="flex gap-10">
             <img
