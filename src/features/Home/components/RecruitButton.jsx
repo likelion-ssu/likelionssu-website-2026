@@ -4,16 +4,25 @@ import MenuTextRecruit from "../../../components/menu_text/MenuTextRecruit";
 import ellipsem from "../assets/ellipse-m.svg";
 import ellipsew from "../assets/ellipse-w.svg";
 
-export default function RecruitButton() {
+export default function RecruitButton({ onRecruitClick, disabled = false }) {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (disabled) return;
+    if (onRecruitClick) {
+      onRecruitClick();
+      return;
+    }
+    navigate("/recruit");
+  };
 
   return (
     <div
       className="relative flex justify-center items-center cursor-pointer"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      onClick={() => navigate("/recruit")}
+      onClick={handleClick}
     >
       {/* 모바일 ellipse */}
       <img src={ellipsem} className="block sm:hidden" alt="ellipse-mobile" />
