@@ -8,7 +8,7 @@ import CircularQuotes, { QUOTES } from "../features/Team/components/CircularQuot
 import PhotoGrid from "../features/Team/components/PhotoGrid";
 
 const MotionDiv = motion.div;
-const TARGET_ANCHOR_ANGLE = 0;
+const TARGET_ANCHOR_ANGLE = -15;
 const AUTO_ROTATE_DEG = 360;
 const AUTO_ROTATE_DURATION_SEC = 95;
 const ALIGN_MIN_DURATION_SEC = 0.35;
@@ -16,8 +16,11 @@ const ALIGN_MAX_DURATION_SEC = 1.1;
 const ALIGN_SPEED_DEG_PER_SEC = 220;
 const LARGE_ROTATION_THRESHOLD_DEG = 180;
 const LARGE_ROTATION_SPEED_MULTIPLIER = 1.4;
-const DESKTOP_QUOTES_SIZE_REM = 43.75;
+const QUOTES_BASE_SIZE_REM = 43.75;
+const DESKTOP_QUOTES_SCALE = 0.9;
 const MOBILE_QUOTES_SCALE = 0.95;
+const DESKTOP_QUOTES_OFFSET_LEFT_REM = 17.5;
+const DESKTOP_QUOTES_OFFSET_TOP_REM = -6;
 
 function normalizeAngle(angle) {
   const normalized = angle % 360;
@@ -131,6 +134,8 @@ export default function TeamPage() {
           <h1 className="typo-title1e text-text text-center">TEAM</h1>
 
           <div className="mt-8 sm:mt-[2.9375rem]">
+
+            {/* Desktop */}
             <div className="mx-auto hidden h-[43.75rem] w-full max-w-[60rem] lg:block">
               <div className="relative h-full w-full">
                 <div className="absolute left-1/2 top-6 h-[30.25rem] w-[38.125rem] -translate-x-1/2">
@@ -139,8 +144,19 @@ export default function TeamPage() {
                     selectedId={selectedId}
                     onSelect={selectMember}
                   />
-                  <div className="absolute left-[17.5rem] top-[-4rem] h-[43.75rem] w-[43.75rem]">
-                    <div className="h-full w-full origin-center scale-90 transform-gpu">
+                  <div
+                    className="absolute"
+                    style={{
+                      left: `${DESKTOP_QUOTES_OFFSET_LEFT_REM}rem`,
+                      top: `${DESKTOP_QUOTES_OFFSET_TOP_REM}rem`,
+                      width: `${QUOTES_BASE_SIZE_REM}rem`,
+                      height: `${QUOTES_BASE_SIZE_REM}rem`,
+                    }}
+                  >
+                    <div
+                      className="h-full w-full origin-center transform-gpu"
+                      style={{ transform: `scale(${DESKTOP_QUOTES_SCALE})` }}
+                    >
                       <MotionDiv
                         style={{ rotate: rotation, willChange: "transform" }}
                         className="h-full w-full origin-center transform-gpu"
@@ -153,11 +169,12 @@ export default function TeamPage() {
               </div>
             </div>
 
+            {/* Mobile */}
             <div className="mx-auto w-full lg:hidden">
               <div
                 className="relative w-screen self-start overflow-x-clip overflow-y-visible"
                 style={{
-                  height: `${DESKTOP_QUOTES_SIZE_REM * MOBILE_QUOTES_SCALE}rem`,
+                  height: `${QUOTES_BASE_SIZE_REM * MOBILE_QUOTES_SCALE}rem`,
                   marginLeft: "calc(50% - 50vw)",
                   contain: "paint",
                 }}
@@ -165,8 +182,8 @@ export default function TeamPage() {
                 <div
                   className="absolute left-0 top-0"
                   style={{
-                    width: `${DESKTOP_QUOTES_SIZE_REM}rem`,
-                    height: `${DESKTOP_QUOTES_SIZE_REM}rem`,
+                    width: `${QUOTES_BASE_SIZE_REM}rem`,
+                    height: `${QUOTES_BASE_SIZE_REM}rem`,
                     transform: `translateX(-50%) scale(${MOBILE_QUOTES_SCALE})`,
                     transformOrigin: "top left",
                   }}
