@@ -442,3 +442,50 @@
 .animate-slider {
   animation: slider 12s linear infinite;
 }
+
+@keyframes homeTransitionBackdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes homeTransitionLayer2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(4) rotate(20deg);
+  }
+}
+
+@keyframes homeTransitionLayer3 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(4) rotate(20deg);
+  }
+}
+
+.animate-home-transition-backdrop {
+  animation: homeTransitionBackdrop 220ms ease-out forwards;
+}
+
+.animate-home-transition-layer2 {
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: homeTransitionLayer2 720ms linear forwards;
+}
+
+.animate-home-transition-layer3 {
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: homeTransitionLayer3 720ms linear forwards;
+}
