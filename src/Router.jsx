@@ -5,6 +5,7 @@ import PartPage from "./pages/PartPage";
 import ProjectPage from "./pages/ProjectPage";
 import RecruitPage from "./pages/RecruitPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import TeamPage from "./pages/TeamPage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/project", element: <ProjectPage /> },
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "recruit", element: <RecruitPage /> },
+      { path: "/team", element: <TeamPage /> },
     ],
   },
 ]);

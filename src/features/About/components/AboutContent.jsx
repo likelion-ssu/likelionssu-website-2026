@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ROADMAP_SECTIONS,
   ABOUT_INTRO,
@@ -16,6 +17,8 @@ export default function AboutContent({
   activeIndex, 
   onActivityClick
 }) {
+  const navigate = useNavigate();
+
   // 전체 활동 인덱스 계산
   const getGlobalIndex = (sectionIndex, activityIndex) => {
     let globalIndex = 0;
@@ -103,9 +106,10 @@ export default function AboutContent({
           </section>
 
           <section>
-            <a
-              href="#"
-              className="typo-pretitle2e text-text inline-flex items-center gap-2 relative pt-7.5"
+            <button
+              type="button"
+              onClick={() => navigate("/team")}
+              className="typo-pretitle2e text-text inline-flex items-center gap-2 relative pt-7.5 cursor-pointer border-0 bg-transparent p-0 font-inherit"
             >
               <span>Management Team</span>
               <img
@@ -116,7 +120,7 @@ export default function AboutContent({
                 aria-hidden
               />
               <span className="absolute left-0 right-0 bottom-[-4px] h-[1px] bg-text"></span>
-            </a>
+            </button>
           </section>
         </div>
       </div>
