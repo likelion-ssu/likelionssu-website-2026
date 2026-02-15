@@ -10,7 +10,13 @@ import feText from "../assets/PartSection_fe_text.svg";
 import beText from "../assets/PartSection_be_text.svg";
 import circle from "../assets/RoadmapSection_circle.svg";
 
-const PRECOURSE_URL = "#"; // 프리코스 영상 링크로 교체
+// 파트별 프리코스 영상 URL
+const PRECOURSE_URLS = {
+  PM: "https://youtube.com/playlist?list=PL0_ZM90TPnbYPazLWsikA0WsChrZLzAIL&si=ZIJax7muWJ8vUehk",
+  DE: "https://youtube.com/playlist?list=PLGh_uyBM2dBLUh9HftRzkpCFV57dpLpJR&si=rwxZXz_JHJKJYYti",
+  FE: "https://www.youtube.com/watch?v=OGFgdro160I&list=PLomA8CWFV7xygG3Nt0jQQnT6KXQ0bjV77",
+  BE: "https://www.youtube.com/playlist?list=PLm25o_YohhFvXRGOXe_9qWx60UGwxgfLu",
+};
 
 function PartCard({
   label,
@@ -30,7 +36,7 @@ function PartCard({
       className={`grid grid-cols-[1fr_auto_1fr] items-start w-full px-2 sm:px-2 ${headerClassName}`}
     >
       <Link
-        to="/part"
+        to={`/part?tab=${label}`}
         className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-start pr-4 hover:text-primarybrand"
       >
         ← 파트 소개 보러 가기
@@ -42,12 +48,14 @@ function PartCard({
         {label}
       </h3>
 
-      <Link
-        to={PRECOURSE_URL}
+      <a
+        href={PRECOURSE_URLS[label]}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline justify-self-end pl-4 hover:text-primarybrand"
       >
         프리코스 영상 →
-      </Link>
+      </a>
     </div>
   );
 
