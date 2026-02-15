@@ -14,7 +14,7 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
           width: "2.65%",
           height: "3.67%",
           boxShadow: "inset 0 0.8px 1.6px rgba(0, 0, 0, 0.25)",
-          zIndex: 20,
+          zIndex: 40,
         }}
       />
       <div
@@ -26,7 +26,7 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
           width: "2.65%",
           height: "3.67%",
           boxShadow: "inset 0 0.8px 1.6px rgba(0, 0, 0, 0.25)",
-          zIndex: 20,
+          zIndex: 40,
         }}
       />
 
@@ -67,8 +67,8 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
                 isSelected ? "opacity-100" : "opacity-0"
               }`}
             >
-              <p className="text-sm font-medium">{member.part}</p>
-              <p className="mt-1 text-lg font-semibold">{member.name}</p>
+              <p className="text-small1 color-light">{member.part}</p>
+              <p className="mt-1 text-small1 color-light">{member.name}</p>
             </div>
           </button>
         );

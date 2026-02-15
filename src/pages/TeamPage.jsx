@@ -26,6 +26,7 @@ const PHOTO_GRID_BASE_WIDTH_REM = 41.48944;
 const PHOTO_GRID_BASE_HEIGHT_REM = 30.00275;
 const DESKTOP_PHOTO_GRID_SCALE = 0.95;
 const MOBILE_PHOTO_GRID_SCALE = 0.5;
+const TABLET_PHOTO_GRID_SCALE = 0.7;
 const DESKTOP_PHOTO_GRID_WIDTH_REM =
   PHOTO_GRID_BASE_WIDTH_REM * DESKTOP_PHOTO_GRID_SCALE;
 const DESKTOP_PHOTO_GRID_HEIGHT_REM =
@@ -34,6 +35,10 @@ const MOBILE_PHOTO_GRID_WIDTH_REM =
   PHOTO_GRID_BASE_WIDTH_REM * MOBILE_PHOTO_GRID_SCALE;
 const MOBILE_PHOTO_GRID_HEIGHT_REM =
   PHOTO_GRID_BASE_HEIGHT_REM * MOBILE_PHOTO_GRID_SCALE;
+const TABLET_PHOTO_GRID_WIDTH_REM =
+  PHOTO_GRID_BASE_WIDTH_REM * TABLET_PHOTO_GRID_SCALE;
+const TABLET_PHOTO_GRID_HEIGHT_REM =
+  PHOTO_GRID_BASE_HEIGHT_REM * TABLET_PHOTO_GRID_SCALE;
 const MOBILE_PHOTO_GRID_TOP_REM = 1;
 
 function normalizeAngle(angle) {
@@ -49,6 +54,7 @@ export default function TeamPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   const rotation = useMotionValue(0);
   const autoRotateAnimationRef = useRef(null);
@@ -78,19 +84,35 @@ export default function TeamPage() {
   }, [startAutoRotate]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    const mobileMediaQuery = window.matchMedia("(max-width: 1023px)");
+    const tabletMediaQuery = window.matchMedia(
+      "(min-width: 768px) and (max-width: 1023px)",
+    );
 
-    const updateIsMobile = () => {
-      setIsMobile(mediaQuery.matches);
+    const updateViewportFlags = () => {
+      setIsMobile(mobileMediaQuery.matches);
+      setIsTablet(tabletMediaQuery.matches);
     };
 
-    updateIsMobile();
-    mediaQuery.addEventListener("change", updateIsMobile);
+    updateViewportFlags();
+    mobileMediaQuery.addEventListener("change", updateViewportFlags);
+    tabletMediaQuery.addEventListener("change", updateViewportFlags);
 
     return () => {
-      mediaQuery.removeEventListener("change", updateIsMobile);
+      mobileMediaQuery.removeEventListener("change", updateViewportFlags);
+      tabletMediaQuery.removeEventListener("change", updateViewportFlags);
     };
   }, []);
+
+  const mobilePhotoGridScale = isTablet
+    ? TABLET_PHOTO_GRID_SCALE
+    : MOBILE_PHOTO_GRID_SCALE;
+  const mobilePhotoGridWidthRem = isTablet
+    ? TABLET_PHOTO_GRID_WIDTH_REM
+    : MOBILE_PHOTO_GRID_WIDTH_REM;
+  const mobilePhotoGridHeightRem = isTablet
+    ? TABLET_PHOTO_GRID_HEIGHT_REM
+    : MOBILE_PHOTO_GRID_HEIGHT_REM;
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const closeSidebar = () => setIsSidebarOpen(false);
@@ -231,8 +253,8 @@ export default function TeamPage() {
                   className="absolute left-1/2 z-10 -translate-x-1/2"
                   style={{
                     top: `${MOBILE_PHOTO_GRID_TOP_REM}rem`,
-                    width: `${MOBILE_PHOTO_GRID_WIDTH_REM}rem`,
-                    height: `${MOBILE_PHOTO_GRID_HEIGHT_REM}rem`,
+                    width: `${mobilePhotoGridWidthRem}rem`,
+                    height: `${mobilePhotoGridHeightRem}rem`,
                   }}
                 >
                   <div
@@ -240,7 +262,7 @@ export default function TeamPage() {
                     style={{
                       width: `${PHOTO_GRID_BASE_WIDTH_REM}rem`,
                       height: `${PHOTO_GRID_BASE_HEIGHT_REM}rem`,
-                      transform: `scale(${MOBILE_PHOTO_GRID_SCALE})`,
+                      transform: `scale(${mobilePhotoGridScale})`,
                     }}
                   >
                     <PhotoGrid
