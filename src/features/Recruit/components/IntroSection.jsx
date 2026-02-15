@@ -5,9 +5,9 @@ import hoverButton from "../assets/IntroSection_hoverButton.svg";
 
 export default function IntroSection() {
   return (
-    <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 sm:px-[3.75rem] pb-8 pt-[5.9375rem] sm:pt-[3.5625rem]">
+    <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 sm:px-[3.75rem] pb-8 pt-0 sm:pt-[3.5625rem]">
       {/* 좌측 상단 텍스트 - absolute로 그래픽 위치에 영향 없게 수정 */}
-      <div className="absolute left-4 sm:left-[3.75rem] top-[2.5rem] sm:top-[3.5625rem] flex flex-col z-10 animate-recruit-content-enter">
+      <div className="absolute left-4 sm:left-[3.75rem] top-[1rem] sm:top-[3.5625rem] flex flex-col z-10 animate-recruit-content-enter">
         <h1 className="typo-recruit-title text-primarybrand">POSSIBILLITY</h1>
         <h1 className="typo-recruit-title text-primarybrand">TO</h1>
         <h1 className="typo-recruit-title text-primarybrand">REALITY</h1>
@@ -17,14 +17,14 @@ export default function IntroSection() {
       </div>
 
       {/* 중앙 그래픽 - Home과 동일한 중앙 기준으로 배치 */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(50vh-5.9375rem)] -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0 sm:top-auto flex justify-center items-center">
         <div className="relative shrink-0">
           {/* 배경 이미지 */}
           <img
             src={backgroundImg}
             alt=""
             className="
-              w-[28rem] h-[18rem]
+              w-[min(28rem,92vw)] h-auto max-h-[18rem]
               sm:w-[min(28rem,70vw)]
               sm:h-[min(18rem,45vh)]
               object-contain
@@ -60,7 +60,7 @@ export default function IntroSection() {
               top-[48%]
               -translate-y-1/2
               translate-x-[2.5rem] sm:translate-x-[5rem]
-              typo-recruit-scroll text-text whitespace-nowrap animate-recruit-content-enter
+              typo-recruit-scroll text-text max-w-[8rem] sm:max-w-none whitespace-normal sm:whitespace-nowrap leading-tight animate-recruit-content-enter
             "
           >
             모집 상세 보러 가기

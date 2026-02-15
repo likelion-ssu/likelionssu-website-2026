@@ -24,7 +24,9 @@ export default function RecruitPage() {
         onMenuClick={toggleSidebar}
       />
 
-      <IntroSection />
+      <div className="pt-[5.9375rem] sm:pt-0">
+        <IntroSection />
+      </div>
 
       <div className="animate-recruit-content-enter">
         <ValueSection />
