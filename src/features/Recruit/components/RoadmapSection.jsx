@@ -79,7 +79,7 @@ export default function RoadmapSection() {
   return (
     <section
       id="roadmap-section"
-      className="flex flex-col w-full min-h-[32rem] bg-secondarybrand"
+      className="flex flex-col w-full min-h-[32rem] bg-secondarybrand pt-[4rem] pb-[4rem] sm:pt-[10rem] sm:pb-[10rem]"
     >
       {/* 섹션 타이틀 "Our Annual Roadmap" - 모바일 subtitlee / PC pretitle1e */}
       <h2 className="text-primarybrand text-center px-4 pt-6 pb-[2.5rem] sm:pb-4">
@@ -113,8 +113,8 @@ export default function RoadmapSection() {
                 const { x, y } = getNodePosition(index);
                 const isSelected = selectedNode === item.id;
 
-                const fw = isMobile ? 120 : 78;
-                const fh = isMobile ? 80 : 51;
+                const fw = isMobile ? 120 : 95;
+                const fh = isMobile ? 80 : 55;
                 return (
                   <g key={item.id}>
                     {/* 노드 배경 */}
@@ -129,18 +129,19 @@ export default function RoadmapSection() {
                           type="button"
                           onClick={() => setSelectedNode(item.id)}
                           className={`
-                          ${isMobile ? "w-[6rem] h-[4rem] p-2.5" : "w-[4.875rem] h-[3.1875rem] p-2"}
-                          flex justify-center items-center gap-1
-                          rounded-[1.25rem] border border-text
-                          text-center
-                          ${isMobile ? "typo-bodyk1" : "typo-small1"} text-text cursor-pointer
+                          ${isMobile ? "w-[6rem] h-[4rem] p-2.5 gap-1" : "w-[5.9375rem] min-w-[5.9375rem] max-w-[5.9375rem] h-[3.4375rem] min-h-[3.4375rem] max-h-[3.4375rem] p-[0.625rem] gap-[0.3rem]"}
+                          flex justify-center items-center box-border
+                          rounded-[1.25rem] sm:rounded-[1.875rem]
+                          border border-text sm:border-[0.0313rem]
+                          text-center overflow-hidden
+                          ${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"} text-text cursor-pointer
                           transition-colors
-                          ${isSelected ? "bg-primarybrand text-white font-bold" : "bg-light hover:bg-[#FFFFFF] hover:border-primarybrand hover:text-primarybrand"}
+                          ${isSelected ? "bg-primarybrand text-white font-bold border-none" : "bg-light hover:bg-[#FFFFFF] hover:border-primarybrand hover:text-primarybrand"}
                         `}
                         >
                           {item.labelLines ? (
                             <span
-                              className={`flex flex-col leading-tight ${isMobile ? "typo-bodyk1" : "typo-small1"}`}
+                              className={`flex flex-col justify-center leading-tight line-clamp-2 ${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"}`}
                             >
                               {item.labelLines.map((line, i) => (
                                 <span key={i}>{line}</span>
@@ -148,7 +149,7 @@ export default function RoadmapSection() {
                             </span>
                           ) : (
                             <span
-                              className={`${isMobile ? "typo-bodyk1" : "typo-small1"} whitespace-nowrap`}
+                              className={`${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"} whitespace-nowrap`}
                             >
                               {item.label}
                             </span>
@@ -157,7 +158,7 @@ export default function RoadmapSection() {
                             <img
                               src={isSelected ? circleSelected : loadingcircle}
                               alt=""
-                              className="w-[0.6035rem] h-[0.6035rem] ml-0.5 shrink-0"
+                              className="w-[0.6639rem] h-[0.6639rem] ml-0.5 shrink-0"
                             />
                           )}
                         </button>
