@@ -7,7 +7,7 @@ import camera from "../../assets/pm/camera.svg";
 export default function PmContent() {
   return (
     <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] min-h-[58rem] pb-[2.68rem]">
-
+      
       {/* 배경 그리드 */}
       <div
         className="absolute bottom-0 left-0 w-[14.15625rem] h-[14.28125rem]
@@ -68,12 +68,12 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
           </div>
 
           {/* 웹 Camera */}
-<img
-  src={camera}
-  alt="camera"
-  className="absolute z-0 swing-diagonal
-             right-[9.5rem] top-[15.62rem] w-[11.875rem] h-[8rem]"
-/>
+          <img
+            src={camera}
+            alt="camera"
+            className="absolute z-0 swing-diagonal
+                       right-[9.5rem] top-[15.62rem] w-[11.875rem] h-[8rem]"
+          />
         </div>
 
         {/* 모바일 */}
@@ -92,8 +92,22 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             </p>
           </div>
 
+          {/* ✅ pm2 + camera 묶기 */}
           <div className="flex flex-col items-end gap-[0.81rem]">
-            <img src={pm2} alt="pm2" className="w-full" />
+            
+            <div className="relative w-full">
+              <img src={pm2} alt="pm2" className="w-full relative z-10" />
+
+              {/* 모바일 Camera (pm2 기준으로 고정됨) */}
+              <img
+                src={camera}
+                alt="camera"
+                className="absolute z-0 swing-diagonal
+                           right-[2.57rem] top-[-6.1rem]
+                           w-[6rem] h-[8.1rem]"
+              />
+            </div>
+
             <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
           </div>
 
@@ -112,19 +126,15 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             </p>
           </div>
 
-          <div className=" relative flex flex-col items-end gap-[0.81rem]">
-            <img src={pm3} alt="pm3" className="z-1 w-full" />
+          {/* pm3는 그냥 단독 */}
+          <div className="flex flex-col items-end gap-[0.81rem]">
+            <img src={pm3} alt="pm3" className="w-full" />
             <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
-
-            {/* 모바일 Camera */}
-<img
-  src={camera}
-  alt="camera"
-  className="absolute z-0 swing-diagonal right-[2.57rem] top-[calc(100%-26.3rem)] w-[5.93rem] h-[8rem]"
-/>
           </div>
+
         </div>
       </div>
     </div>
   );
 }
+
