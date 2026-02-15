@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -19,7 +20,19 @@ export default function Footer() {
     >
 
       <div className="w-full flex justify-between items-end whitespace-pre">
-        ABOUT  /  PART  /  PROJECT
+        <div className="flex items-end gap-2.5">
+          <Link to="/about" className="hover:text-primarybrand transition-colors">
+            ABOUT
+          </Link>
+          <span>/</span>
+          <Link to="/part" className="hover:text-primarybrand transition-colors">
+            PART
+          </Link>
+          <span>/</span>
+          <Link to="/project" className="hover:text-primarybrand transition-colors">
+            PROJECT
+          </Link>
+        </div>
       </div>
 
       <br />
@@ -34,8 +47,22 @@ export default function Footer() {
           <p>CONTACT</p>
           <div className="flex flex-row gap-[1.875rem]">
             <p>ssu@likelion.org</p>
-            <p>INSTA</p>
-            <p>GIT</p>
+            <a
+              href="https://www.instagram.com/likelion_ssu/?hl=ko"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primarybrand transition-colors"
+            >
+              INSTA
+            </a>
+            <a
+              href="https://github.com/likelion-ssu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primarybrand transition-colors"
+            >
+              GIT
+            </a>
           </div>
         </div>
 

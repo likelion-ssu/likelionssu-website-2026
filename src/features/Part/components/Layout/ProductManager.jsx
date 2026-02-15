@@ -22,7 +22,7 @@ export default function ProductManager() {
 
   return (
     <div className="flex flex-col items-center w-full overflow-x-hidden">
-      {/* 맨 위 기준점 */}
+
       <div
         ref={topRef}
         className="scroll-mt-[8rem] sm:scroll-mt-[10rem]"
@@ -37,16 +37,16 @@ export default function ProductManager() {
         />
       </div>
 
-      {/* 파트장 한마디 섹션 */}
+
       <div
         ref={pmContentRef}
-        className="w-full sm:w-[90rem] pt-[3.375rem] sm:pt-[0rem] pb-[0.86rem] sm:pb-[0rem]
+        className="w-full sm:w-[90rem] sm:pt-[0rem]  sm:pb-[0rem]
         scroll-mt-[4.515rem] sm:scroll-mt-[5.56rem]"
       >
         <PmContent />
       </div>
 
-      {/* 세션 소개 섹션 */}
+
       <div
         ref={sessionRef}
         className="w-full sm:w-[63.4375rem] scroll-mt-[7.515rem] sm:scroll-mt-[2.74rem]"
@@ -54,7 +54,7 @@ export default function ProductManager() {
         <SessionSection />
       </div>
 
-      {/* 맨 위로 버튼 */}
+
       <div className=" mb-[0.81rem] sm:mb-[1.37rem] flex flex-col items-end sm:flex-row sm:justify-between sm:items-end w-full mt-[6.19rem] px-[1.25rem] sm:px-0 sm:mt-[10.69rem] sm:w-[75.8125rem]">
         <p className="hidden sm:block typo-footer-custom text-text">
           Beautiful moments we will create together

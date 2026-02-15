@@ -21,7 +21,7 @@ export default function PartMenu({
         ${isActive ? "bg-white" : "bg-secondarybrand"}
       `}
     >
-      {/* 모바일 */}
+    
       <p
         className={`
           typo-buttontext text-center
@@ -32,7 +32,6 @@ export default function PartMenu({
         {mobileText}
       </p>
 
-      {/* 웹 */}
       <p
         className={`
           hidden sm:block text-center whitespace-nowrap

@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import recruit from "../../assets/recruit.svg";
 import recruithover from "../../assets/recruit-hover.svg";
 import recruitwhite from "../../assets/recruit-white.svg";
 
-export default function MenuTextRecruit({ variant = "default", isHover = false }) {
+export default function MenuTextRecruit({
+  variant = "default",
+  isHover = false,
+  onClick,
+}) {
+  const [isInnerHover, setIsInnerHover] = useState(false);
+  const hovered = isHover || isInnerHover;
   const isWhite = variant === "white";
+  const Wrapper = onClick ? "button" : "div";
 
   return (
-    <div className="relative gap-[0.75rem]">
+    <Wrapper
+      {...(onClick ? { type: "button" } : {})}
+      className={`relative gap-[0.75rem] ${onClick ? "cursor-pointer bg-transparent border-0 p-0 text-left" : ""}`}
+      onClick={onClick}
+      onMouseEnter={() => setIsInnerHover(true)}
+      onMouseLeave={() => setIsInnerHover(false)}
+    >
 
       {/* 화이트 모바일용: 글자+아이콘+선 가운데 정렬 */}
       {isWhite && (
@@ -16,14 +29,14 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
             {/* Text */}
             <p
               className="typo-cardtexte"
-              style={{ color: isHover ? "var(--color-primarybrand)" : "#FFF" }}
+              style={{ color: hovered ? "var(--color-primarybrand)" : "#FFF" }}
             >
               RECRUIT
             </p>
 
             {/* Icon */}
             <img
-              src={isHover ? recruithover : recruitwhite}
+              src={hovered ? recruithover : recruitwhite}
               alt="recruit-icon"
               className="h-[1.13131rem] mb-[0.12rem]"
             />
@@ -33,7 +46,7 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
           <span
             className="h-[1px] w-[6.46875rem]"
             style={{
-              backgroundColor: isHover ? "var(--color-primarybrand)" : "#FFF",
+              backgroundColor: hovered ? "var(--color-primarybrand)" : "#FFF",
             }}
           />
         </div>
@@ -44,7 +57,7 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
         <div className="hidden sm:flex items-center gap-[0.75rem]">
           <p
             style={{
-              color: isHover ? "var(--color-primarybrand)" : "#FFF",
+              color: hovered ? "var(--color-primarybrand)" : "#FFF",
               textAlign: "right",
               fontFamily: '"JetBrains Mono"',
               fontSize: "1.5rem",
@@ -58,7 +71,7 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
 
           {/* 웹 아이콘 */}
           <img
-            src={isHover ? recruithover : recruitwhite}
+            src={hovered ? recruithover : recruitwhite}
             alt="recruit-icon"
             className="w-[1.59375rem] h-[1.60275rem]"
           />
@@ -71,14 +84,14 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
           <p
             className="typo-cardtexte"
             style={{
-              color: isHover ? "var(--color-primarybrand)" : "var(--color-text)",
+              color: hovered ? "var(--color-primarybrand)" : "var(--color-text)",
             }}
           >
             RECRUIT
           </p>
 
           <img
-            src={isHover ? recruithover : recruit}
+            src={hovered ? recruithover : recruit}
             alt="recruit-icon"
             className="w-[1.0625rem] h-[1.0685rem]"
           />
@@ -88,7 +101,7 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
             className="absolute h-[1px] bottom-[-0.07rem]"
             style={{
               width: "5.75rem",
-              backgroundColor: isHover ? "var(--color-primarybrand)" : "var(--color-text)",
+              backgroundColor: hovered ? "var(--color-primarybrand)" : "var(--color-text)",
             }}
           />
         </div>
@@ -100,10 +113,10 @@ export default function MenuTextRecruit({ variant = "default", isHover = false }
           className="absolute h-[1px] bottom-[-0.07rem] hidden sm:block"
           style={{
             width: "8.625rem",
-            backgroundColor: isHover ? "var(--color-primarybrand)" : "#FFF",
+            backgroundColor: hovered ? "var(--color-primarybrand)" : "#FFF",
           }}
         />
       )}
-    </div>
+    </Wrapper>
   );
 }
