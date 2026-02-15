@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "../components/header/Header";
 import SideBar from "../components/sidebar/SideBar";
@@ -26,6 +26,11 @@ export default function PartPage() {
     setSearchParams({ tab: part });
   };
 
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activePart]);
+
   return (
     <div className="bg-secondarybrand min-h-screen relative">
       <Header onMenuClick={toggleSidebar} />
@@ -35,10 +40,10 @@ export default function PartPage() {
 
         {/* 레이아웃 들어올 자리 */}
         <div>
-          {activePart === "PM" && <PM />}
-          {activePart === "DE" && <DE />}
-          {activePart === "FE" && <FE />}
-          {activePart === "BE" && <BE />}
+          {activePart === "PM" && <PM key="PM" />}
+          {activePart === "DE" && <DE key="DE" />}
+          {activePart === "FE" && <FE key="FE" />}
+          {activePart === "BE" && <BE key="BE" />}
         </div>
       </div>
 
