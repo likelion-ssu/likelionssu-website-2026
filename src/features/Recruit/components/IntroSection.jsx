@@ -5,7 +5,7 @@ import hoverButton from "../assets/IntroSection_hoverButton.svg";
 
 export default function IntroSection() {
   return (
-    <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 sm:px-[3.75rem] pb-8 pt-0 sm:pt-[3.5625rem]">
+    <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 sm:px-[3.75rem] pb-0 pt-0 sm:pt-[3.5625rem]">
       {/* 좌측 상단 텍스트 - absolute로 그래픽 위치에 영향 없게 수정 */}
       <div className="absolute left-4 sm:left-[3.75rem] top-[1rem] sm:top-[3.5625rem] flex flex-col z-10 animate-recruit-content-enter">
         <h1 className="typo-recruit-title text-primarybrand">POSSIBILLITY</h1>

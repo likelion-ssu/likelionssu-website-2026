@@ -51,7 +51,7 @@ export default function FaqSection() {
   return (
     <section
       id="faq-section"
-      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem] pt-8 pb-16 sm:pt-10 sm:pb-20"
+      className="scroll-mt-[5.9375rem] sm:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 sm:px-[3.75rem]"
     >
       {/* 모바일: 열린 카드 있을 때만, 바깥 클릭 시 닫는 백드롭 */}
       {openFaqIndex !== null && (

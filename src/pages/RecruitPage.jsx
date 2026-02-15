@@ -25,19 +25,21 @@ export default function RecruitPage() {
         onMenuClick={toggleSidebar}
       />
 
-      <div className="overflow-x-hidden">
-        <div className="pt-[5.9375rem] sm:pt-0">
+      <div className="overflow-x-hidden flex flex-col gap-[6.88rem] sm:gap-[16rem]">
+        <div className="pt-[5.9375rem] sm:pt-0 animate-recruit-content-enter">
           <IntroSection />
         </div>
 
-        <div className="animate-recruit-content-enter">
+        <div className="animate-recruit-content-enter flex flex-col gap-[6.88rem] sm:gap-[16rem]">
           <ValueSection />
           <PartSection />
           <RoadmapSection />
           <TimelineSection />
           <FaqSection />
-          <ClosingSection />
-          <Footer />
+          <div className="flex flex-col">
+            <ClosingSection />
+            <Footer />
+          </div>
         </div>
       </div>
       <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
