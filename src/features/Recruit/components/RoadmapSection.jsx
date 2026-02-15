@@ -84,7 +84,9 @@ export default function RoadmapSection() {
       {/* 섹션 타이틀 "Our Annual Roadmap" - 모바일 subtitlee / PC pretitle1e */}
       <h2 className="text-primarybrand text-center px-4 pt-6 pb-2 sm:pb-4">
         <span className="typo-subtitlee sm:hidden">Our Annual Roadmap</span>
-        <span className="hidden sm:block typo-pretitle1e">Our Annual Roadmap</span>
+        <span className="hidden sm:block typo-pretitle1e">
+          Our Annual Roadmap
+        </span>
       </h2>
 
       {/* 하단: 로드맵 + 콘텐츠 (PC: 가로 / 모바일: 세로) */}
@@ -177,7 +179,7 @@ export default function RoadmapSection() {
           </div>
         </div>
         {/* 우측/아래: 콘텐츠 패널 - 모바일: 타이틀+설명 아래 이미지 3개 가로 / PC: 기존 그리드 유지 */}
-        <div className="w-full sm:w-[35rem] shrink-0 px-4 py-6 sm:px-0 sm:pr-8 sm:py-8 bg-secondarybrand flex flex-col justify-center">
+        <div className="w-full sm:w-[35rem] shrink-0 px-4 py-3 sm:px-0 sm:pr-8 sm:py-8 bg-secondarybrand flex flex-col justify-center">
           {/* 모바일: 타이틀+설명 아래 이미지 3개 가로 */}
           <div className="space-y-4 sm:hidden">
             <div className="space-y-2">
@@ -189,7 +191,7 @@ export default function RoadmapSection() {
               </p>
             </div>
             {selectedContent?.images && (
-              <div className="flex gap-3">
+              <div className="flex gap-[0.38rem]">
                 <div className="flex-1 min-w-0 aspect-[116/68] overflow-hidden">
                   <img
                     src={selectedContent.images[0]}
