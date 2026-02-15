@@ -7,6 +7,9 @@ import session3 from "../features/Recruit/assets/RoadmapSection_session_3.svg";
 import idea1 from "../features/Recruit/assets/RoadmapSection_idea_1.svg";
 import idea2 from "../features/Recruit/assets/RoadmapSection_idea_2.svg";
 import idea3 from "../features/Recruit/assets/RoadmapSection_idea_3.svg";
+import study1 from "../features/Recruit/assets/RoadmapSection_study_1.svg";
+import study2 from "../features/Recruit/assets/RoadmapSection_study_2.svg";
+import study3 from "../features/Recruit/assets/RoadmapSection_study_3.svg";
 import hack1 from "../features/Recruit/assets/RoadmapSection_hack_1.svg";
 import hack2 from "../features/Recruit/assets/RoadmapSection_hack_2.svg";
 import hack3 from "../features/Recruit/assets/RoadmapSection_hack_3.svg";
@@ -22,9 +25,6 @@ import homecoming3 from "../features/Recruit/assets/RoadmapSection_homecoming_3.
 import newhack1 from "../features/Recruit/assets/RoadmapSection_newhack_1.svg";
 import newhack2 from "../features/Recruit/assets/RoadmapSection_newhack_2.svg";
 import newhack3 from "../features/Recruit/assets/RoadmapSection_newhack_3.svg";
-import companyhack1 from "../features/Recruit/assets/RoadmapSection_companyhack_1.svg";
-import companyhack2 from "../features/Recruit/assets/RoadmapSection_companyhack_2.svg";
-import companyhack3 from "../features/Recruit/assets/RoadmapSection_companyhack_3.svg";
 import end1 from "../features/Recruit/assets/RoadmapSection_end_1.svg";
 import end2 from "../features/Recruit/assets/RoadmapSection_end_2.svg";
 import end3 from "../features/Recruit/assets/RoadmapSection_end_3.svg";
@@ -63,6 +63,18 @@ export const ROADMAP_ITEMS = [
       description:
         "아이디어톤은 첫 번째로 진행되는 프로젝트가 될 거예요. 팀원들과 생각을 나누고, 합을 맞춰보면 어느새 마무리 되어 있는..! 재밌는 시간이에요.",
       images: [idea1, idea2, idea3],
+    },
+  },
+  {
+    id: "여름방학스터디",
+    label: "어름방학 스터디",
+    labelLines: ["여름방학", "스터디"],
+    hasAsterisk: false,
+    content: {
+      title: "6월",
+      description:
+        "여름방학 동안 다양한 스터디를 진행하며, 함께 성장해요. 공부도, 노는 것도 다같이 하면 효과는 2배~ 1등으로 성장하고 1등으로 즐겨요!",
+      images: [study1, study2, study3],
     },
   },
   {
@@ -111,27 +123,15 @@ export const ROADMAP_ITEMS = [
     },
   },
   {
-    id: "권역별연합해커톤",
-    label: "권역별 연합 해커톤",
-    labelLines: ["권역별", "연합 해커톤"],
+    id: "대학연합해커톤",
+    label: "대학 연합 해커톤",
+    labelLines: ["대학", "연합 해커톤"],
     hasAsterisk: false,
     content: {
-      title: "11월",
+      title: "12월",
       description:
-        "권역별 연합 해커톤은 여러 대학과 함께하는 대회에요. 이번 해에 추가된 행사인데요, 함께 교류하며 다 같이 성장하는 시간이랍니다.",
+        "대학 연합 해커톤은 여러 대학과 함께하는 대회에요. 이번 해에 추가된 행사인데요, 함께 교류하며 다 같이 성장하는 시간이랍니다.",
       images: [newhack1, newhack2, newhack3],
-    },
-  },
-  {
-    id: "기업연계해커톤",
-    label: "기업 연계 해커톤",
-    labelLines: ["기업 연계", "해커톤"],
-    hasAsterisk: false,
-    content: {
-      title: "11월",
-      description:
-        "기업과 함께하는 해커톤도 준비되어 있어요. 기대되시죠? 정말 재밌을 거라 자부해요.",
-      images: [companyhack1, companyhack2, companyhack3],
     },
   },
   {
