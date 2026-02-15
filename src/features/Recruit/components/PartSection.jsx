@@ -4,6 +4,10 @@ import pmImg from "../assets/PartSection_pm_img.svg";
 import deImg from "../assets/PartSection_de_img.svg";
 import feImg from "../assets/PartSection_fe_img.svg";
 import beImg from "../assets/PartSection_be_img.svg";
+import pmText from "../assets/PartSection_pm_text.svg";
+import deText from "../assets/PartSection_de_text.svg";
+import feText from "../assets/PartSection_fe_text.svg";
+import beText from "../assets/PartSection_be_text.svg";
 import circle from "../assets/RoadmapSection_circle.svg";
 
 const PRECOURSE_URL = "#"; // 프리코스 영상 링크로 교체
@@ -11,6 +15,8 @@ const PRECOURSE_URL = "#"; // 프리코스 영상 링크로 교체
 function PartCard({
   label,
   img,
+  textImg,
+  textImgClassName = "",
   headerPos = "top", // "top" | "bottom"
   className = "",
   headerClassName = "",
@@ -46,16 +52,20 @@ function PartCard({
   );
 
   const Image = (
-    <Link
-      to={`/part?tab=${label}`}
-      className="cursor-pointer flex justify-center"
-    >
+    <div className="group flex justify-center relative block cursor-default">
       <img
         src={img}
         alt={label}
-        className={`w-full max-w-[10rem] sm:max-w-[14rem] h-auto object-contain hover:scale-105 transition-transform ${imgClassName}`}
+        className={`w-full max-w-[10rem] sm:max-w-[14rem] h-auto object-contain group-hover:scale-105 transition-transform duration-300 ${imgClassName}`}
       />
-    </Link>
+      {textImg && (
+        <img
+          src={textImg}
+          alt=""
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${textImgClassName}`}
+        />
+      )}
+    </div>
   );
 
   return (
@@ -63,12 +73,12 @@ function PartCard({
       {headerPos === "top" ? (
         <>
           {TitleAndButtons}
-          <div className="mt-0">{Image}</div>
+          <div className="mt-2 sm:mt-3 mb-1">{Image}</div>
         </>
       ) : (
         <>
           {Image}
-          <div className="mt-1 sm:mt-2">{TitleAndButtons}</div>
+          <div className="mt-2 sm:mt-3">{TitleAndButtons}</div>
         </>
       )}
     </div>
@@ -84,8 +94,13 @@ export default function PartSection() {
       <div className="max-w-[75rem] mx-auto">
         {/* 모바일: 세로 스택 */}
         <div className="sm:hidden flex flex-col gap-10">
-          <PartCard label="PM" img={pmImg} />
-          <PartCard label="DE" img={deImg} />
+          <PartCard
+            label="PM"
+            img={pmImg}
+            textImg={pmText}
+            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+          />
+          <PartCard label="DE" img={deImg} textImg={deText} />
 
           <div className="text-center py-2">
             <h2 className="text-primarybrand typo-footer2ew tracking-wide">
@@ -98,8 +113,14 @@ export default function PartSection() {
             />
           </div>
 
-          <PartCard label="FE" img={feImg} />
-          <PartCard label="BE" img={beImg} headerPos="bottom" />
+          <PartCard label="FE" img={feImg} textImg={feText} />
+          <PartCard
+            label="BE"
+            img={beImg}
+            textImg={beText}
+            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+            headerPos="bottom"
+          />
         </div>
 
         {/* 데스크탑(sm~): absolute 배치 */}
@@ -120,6 +141,8 @@ export default function PartSection() {
           <PartCard
             label="PM"
             img={pmImg}
+            textImg={pmText}
+            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
             headerPos="top"
             className="absolute left-[4%] top-[0%] w-[30%]"
           />
@@ -128,6 +151,7 @@ export default function PartSection() {
           <PartCard
             label="DE"
             img={deImg}
+            textImg={deText}
             headerPos="top"
             className="absolute right-[4%] top-[6%] w-[30%]"
           />
@@ -136,6 +160,7 @@ export default function PartSection() {
           <PartCard
             label="FE"
             img={feImg}
+            textImg={feText}
             headerPos="top"
             className="absolute left-[0%] bottom-[8%] w-[30%]"
           />
@@ -144,6 +169,8 @@ export default function PartSection() {
           <PartCard
             label="BE"
             img={beImg}
+            textImg={beText}
+            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
             headerPos="bottom"
             className="absolute left-[50%] top-[45%] w-[28%]"
             imgClassName="sm:max-w-[13rem]"
