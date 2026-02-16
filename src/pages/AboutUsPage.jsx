@@ -70,8 +70,11 @@ export default function AboutUsPage() {
       </div>
 
       {/* 푸터 - 왼쪽이 끝까지 스크롤되면 부드럽게 나타나고 사라짐 */}
-      <div 
-        className="relative z-10 transition-all duration-500 ease-out"
+      <div className="relative z-10 sm:hidden">
+        <Footer />
+      </div>
+      <div
+        className="hidden sm:block relative z-10 transition-all duration-500 ease-out"
         style={{
           maxHeight: isLeftAtEnd ? '1000px' : '0',
           opacity: isLeftAtEnd ? 1 : 0,
