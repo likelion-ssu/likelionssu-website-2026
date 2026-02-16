@@ -11,12 +11,12 @@ export default function FeIntro() {
           <span className="whitespace-pre-line sm:hidden block">
             {`Tell US
 About
-the Fe Part`}
+the FE Part`}
           </span>
 
           <span className="hidden sm:block whitespace-pre-line">
             {`Tell US 
-About the Fe Part`}
+About the FE Part`}
           </span>
         </div>
 

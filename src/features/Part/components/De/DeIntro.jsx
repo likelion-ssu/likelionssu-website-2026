@@ -11,12 +11,12 @@ export default function DeIntro() {
           <span className="whitespace-pre-line sm:hidden block">
             {`Tell US
 About
-the De Part`}
+the DE Part`}
           </span>
 
           <span className="hidden sm:block whitespace-pre-line">
             {`Tell US 
-About the De Part`}
+About the DE Part`}
           </span>
         </div>
 

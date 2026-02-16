@@ -22,7 +22,7 @@ export default function Header({
       className={`fixed top-0 left-0 w-full ${
         transitionMode
           ? "z-[140] bg-transparent border-transparent"
-          : "z-50 bg-secondarybrand border-b-[0.7px] border-line"
+          : "z-30 bg-secondarybrand border-b-[0.7px] border-line"
       }
                   flex flex-col items-center 
                   h-[5.9375rem] sm:h-[3.5625rem] sm:pt-[0.625rem] sm:pb-[0.0625rem] gap-[0.5565rem]
