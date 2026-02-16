@@ -4,7 +4,7 @@ import loadingcircle from "../assets/RoadmapSection_circle.svg";
 import circleSelected from "../assets/RoadmapSection_circle_selected.svg";
 
 export default function RoadmapSection() {
-  const [selectedNode, setSelectedNode] = useState("교육세션");
+  const [selectedNode, setSelectedNode] = useState("회원선발");
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" && window.innerWidth < 1024,
   );
