@@ -27,7 +27,7 @@ export default function PartMenuTab({ activePart, setActivePart }) {
         sm:sticky
         top-[5.9375rem] sm:top-[3.5625rem]
         z-40 
-        w-full 
+        w-full
         flex flex-col items-center
         bg-secondarybrand
       `}
@@ -57,6 +57,7 @@ export default function PartMenuTab({ activePart, setActivePart }) {
           webText="Backend Developer"
           isActive={activePart === "BE"}
           onClick={() => setActivePart("BE")}
+          mobileRightBorder = {true}
         />
       </div>
 

@@ -8,27 +8,48 @@ export default function DeContent() {
   return (
     <div className="relative w-full overflow-x-hidden flex flex-col justify-start items-start gap-[2.75rem] pb-[3.49rem] sm:pb-[4.63rem]">
 
-      <img
-        src={hand}
-        alt="hand"
-        className="hidden swing-diagonal-right sm:block absolute left-0 top-[7.19rem] h-[9.1875rem] z-20 pointer-events-none"
-      />
-      
+      {/* =======================
+          GRID (viewport 기준 고정)
+      ======================= */}
       <div
-        className="absolute bottom-[0rem] left-0 w-[14.15625rem] h-[14.28125rem]
-                   sm:bottom-[0rem] sm:w-[28.3125rem] sm:h-[28.5625rem]
-                   z-0 pointer-events-none"
+        className="
+          absolute bottom-0 left-1/2 -translate-x-1/2 
+          w-screen flex justify-start pointer-events-none z-0
+        "
         style={{
           background:
             "linear-gradient(225deg, #F9F8F5 29.01%, rgba(249, 248, 245, 0.00) 100%)",
         }}
       >
-        <img src={grid} alt="grid" className="w-full h-full object-cover" />
+        <img
+          src={grid}
+          alt="grid"
+          className="
+            w-[14.15625rem] h-[14.28125rem] object-cover
+            sm:w-[28.3125rem] sm:h-[28.5625rem]
+          "
+        />
       </div>
 
+      {/* =======================
+          HAND (웹 viewport 기준 고정)
+      ======================= */}
+      <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 w-screen justify-start pointer-events-none z-20">
+        <img
+          src={hand}
+          alt="hand"
+          className="swing-diagonal-right absolute left-0 top-[7.19rem] h-[9.1875rem]"
+        />
+      </div>
 
+      {/* =======================
+          HR
+      ======================= */}
       <hr className="w-full border-t-[0.7px] border-line sm:hidden relative z-10" />
-      <hr className="hidden sm:block absolute top-0 right-0 w-[44.5rem] border-t-[0.7px] border-line z-10" />
+
+      <div className="hidden sm:flex absolute top-0 left-1/2 -translate-x-1/2 w-screen justify-end pointer-events-none z-10">
+        <hr className="w-[44.5rem] border-t-[0.7px] border-line" />
+      </div>
 
       <div className="relative w-full px-[1.19rem] sm:px-0 z-10">
 
@@ -36,8 +57,6 @@ export default function DeContent() {
             웹 레이아웃
         ======================= */}
         <div className="hidden sm:flex w-full justify-start sm:justify-center items-start">
-
-      
           <div className="relative flex flex-col items-start gap-[1.25rem] mt-[4.87rem]">
             <div className="flex">
               <img
@@ -94,7 +113,6 @@ export default function DeContent() {
             모바일 레이아웃
         ======================= */}
         <div className="sm:hidden flex flex-col gap-[2.75rem] w-full">
-
           <div className="flex flex-col gap-[1.19rem]">
             <div className="typo-pretitle1k">파트장 한마디</div>
 
@@ -112,15 +130,12 @@ export default function DeContent() {
             </p>
           </div>
 
-         
           <div className="relative w-full flex flex-col items-end gap-[0.81rem]">
-
             <img
-  src={hand}
-  alt="hand"
-  className="swing-diagonal-right absolute left-[-1.9rem] top-0 h-[4.59375rem] z-50 pointer-events-none"
-/>
-
+              src={hand}
+              alt="hand"
+              className="swing-diagonal-right absolute left-[-1.9rem] top-0 h-[4.59375rem] z-50 pointer-events-none"
+            />
 
             <div className="flex w-full">
               <img src={de2} alt="de2" className="w-1/2 object-cover" />

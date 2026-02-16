@@ -20,7 +20,7 @@ export default function ImageSlider({ version = "pm" }) {
             key={`${version}-${idx}`}
             src={img}
             alt={`slide-${idx}`}
-            className="w-[5.15625rem] h-[3.1875rem] sm:w-[10.3125rem] sm:h-[6.375rem] object-cover shrink-0"
+            className="w-[6.703125rem] h-[4.14375rem] sm:w-[10.3125rem] sm:h-[6.375rem] object-cover shrink-0"
             decoding="async"
           />
         ))}
