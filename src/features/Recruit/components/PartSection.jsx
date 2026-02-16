@@ -115,7 +115,12 @@ export default function PartSection() {
       <div className="max-w-[75rem] mx-auto">
         {/* 모바일: 제목 먼저, 그 다음 PM → DE → FE → BE */}
         <div className="sm:hidden flex flex-col gap-10">
-          <div className="text-center py-[2.5rem]">
+          <div className="text-center py-[2.5rem] flex flex-col items-center">
+            <img
+              src={circle}
+              alt=""
+              className="w-[1.6095rem] h-[1.6095rem] mb-[2.5rem] mx-auto"
+            />
             <h2 className="text-primarybrand typo-subtitlee tracking-wide">
               Built Around Four Forces
             </h2>
