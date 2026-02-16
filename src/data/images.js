@@ -1,31 +1,31 @@
 // src/data/imageSliderData.js
 
-import pm1 from "../features/Part/assets/pm/pm-slide-1.svg";
-import pm2 from "../features/Part/assets/pm/pm-slide-2.svg";
-import pm3 from "../features/Part/assets/pm/pm-slide-3.svg";
-import pm4 from "../features/Part/assets/pm/pm-slide-4.svg";
+import pm1 from "../features/Part/assets/slider-webp/pm/pm-slide-1.webp";
+import pm2 from "../features/Part/assets/slider-webp/pm/pm-slide-2.webp";
+import pm3 from "../features/Part/assets/slider-webp/pm/pm-slide-3.webp";
+import pm4 from "../features/Part/assets/slider-webp/pm/pm-slide-4.webp";
 
-import de1 from "../features/Part/assets/de/de-slide-1.svg";
-import de2 from "../features/Part/assets/de/de-slide-2.svg";
-import de3 from "../features/Part/assets/de/de-slide-3.svg";
-import de4 from "../features/Part/assets/de/de-slide-4.svg";
-import de5 from "../features/Part/assets/de/de-slide-5.svg";
-import de6 from "../features/Part/assets/de/de-slide-6.svg";
-import de7 from "../features/Part/assets/de/de-slide-7.svg";
+import de1 from "../features/Part/assets/slider-webp/de/de-slide-1.webp";
+import de2 from "../features/Part/assets/slider-webp/de/de-slide-2.webp";
+import de3 from "../features/Part/assets/slider-webp/de/de-slide-3.webp";
+import de4 from "../features/Part/assets/slider-webp/de/de-slide-4.webp";
+import de5 from "../features/Part/assets/slider-webp/de/de-slide-5.webp";
+import de6 from "../features/Part/assets/slider-webp/de/de-slide-6.webp";
+import de7 from "../features/Part/assets/slider-webp/de/de-slide-7.webp";
 
-import fe1 from "../features/Part/assets/fe/fe-slide-1.svg";
-import fe2 from "../features/Part/assets/fe/fe-slide-2.svg";
-import fe3 from "../features/Part/assets/fe/fe-slide-3.svg";
-import fe4 from "../features/Part/assets/fe/fe-slide-4.svg";
-import fe5 from "../features/Part/assets/fe/fe-slide-5.svg";
-import fe6 from "../features/Part/assets/fe/fe-slide-6.svg";
-import fe7 from "../features/Part/assets/fe/fe-slide-7.svg";
+import fe1 from "../features/Part/assets/slider-webp/fe/fe-slide-1.webp";
+import fe2 from "../features/Part/assets/slider-webp/fe/fe-slide-2.webp";
+import fe3 from "../features/Part/assets/slider-webp/fe/fe-slide-3.webp";
+import fe4 from "../features/Part/assets/slider-webp/fe/fe-slide-4.webp";
+import fe5 from "../features/Part/assets/slider-webp/fe/fe-slide-5.webp";
+import fe6 from "../features/Part/assets/slider-webp/fe/fe-slide-6.webp";
+import fe7 from "../features/Part/assets/slider-webp/fe/fe-slide-7.webp";
 
-import be1 from "../features/Part/assets/be/be-slide-1.svg";
-import be2 from "../features/Part/assets/be/be-slide-2.svg";
-import be3 from "../features/Part/assets/be/be-slide-3.svg";
-import be4 from "../features/Part/assets/be/be-slide-4.svg";
-import be5 from "../features/Part/assets/be/be-slide-5.svg";
+import be1 from "../features/Part/assets/slider-webp/be/be-slide-1.webp";
+import be2 from "../features/Part/assets/slider-webp/be/be-slide-2.webp";
+import be3 from "../features/Part/assets/slider-webp/be/be-slide-3.webp";
+import be4 from "../features/Part/assets/slider-webp/be/be-slide-4.webp";
+import be5 from "../features/Part/assets/slider-webp/be/be-slide-5.webp";
 
 
 

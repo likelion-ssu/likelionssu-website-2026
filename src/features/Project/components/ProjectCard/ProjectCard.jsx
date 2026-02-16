@@ -1,19 +1,26 @@
+import SmartImage from "./SmartImage";
+
 export default function ProjectCard({
   title,
   number,
   category,
   description,
   coverImage,
+  loading = "lazy",
+  fetchPriority = "low",
 }) {
   return (
     <article className="bg-white overflow-hidden flex flex-col w-[20.6rem] h-[15.9rem] p-[0.63rem] cursor-pointer border border-white transition-shadow hover:shadow-[10px_10px_20px_0_rgba(0,0,0,0.1)]">
       {/* 표지 이미지 */}
       <div className="w-full h-[11.6rem] bg-emptyimg overflow-hidden">
         {coverImage ? (
-          <img
+          <SmartImage
+            key={coverImage}
             src={coverImage}
             alt={title}
             className="w-full h-full object-cover"
+            loading={loading}
+            fetchPriority={fetchPriority}
           />
         ) : (
           <div className="w-full h-full" />

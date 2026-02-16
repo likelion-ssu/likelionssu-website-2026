@@ -110,6 +110,7 @@ import yeah1 from "../features/Project/assets/13th/yeah-1.webp";
 import yeah2 from "../features/Project/assets/13th/yeah-2.webp";
 import yeah3 from "../features/Project/assets/13th/yeah-3.webp";
 import yeah4 from "../features/Project/assets/13th/yeah-4.webp";
+import { PROJECT_THUMBNAILS_BY_ID } from "./projectThumbnails";
 const PROJECTS_RAW = [
   // 해커톤
   {
@@ -595,4 +596,9 @@ const PROJECTS_RAW = [
   },
 ];
 
-export const PROJECTS = [...PROJECTS_RAW].sort((a, b) => b.id - a.id);
+export const PROJECTS = [...PROJECTS_RAW]
+  .map((project) => ({
+    ...project,
+    thumbnailImage: PROJECT_THUMBNAILS_BY_ID[project.id] ?? project.coverImage,
+  }))
+  .sort((a, b) => b.id - a.id);

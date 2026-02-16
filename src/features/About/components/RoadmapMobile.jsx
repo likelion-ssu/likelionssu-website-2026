@@ -108,6 +108,9 @@ export default function RoadmapMobile() {
                                   src={src}
                                   alt=""
                                   className="w-full h-full object-cover"
+                                  loading="lazy"
+                                  decoding="async"
+                                  fetchPriority="low"
                                 />
                                 {isSelected && (
                                   <span className="absolute inset-0 flex items-center justify-center p-2 bg-hoverimg">
