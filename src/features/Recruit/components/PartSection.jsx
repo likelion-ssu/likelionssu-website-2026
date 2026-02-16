@@ -71,13 +71,13 @@ function PartCard({
       <img
         src={img}
         alt={label}
-        className={`w-[10rem] h-[10rem] sm:w-[14rem] sm:h-[14rem] object-contain group-hover:scale-105 transition-transform duration-300 ${imgClassName}`}
+        className={`w-[10rem] h-[10rem] sm:w-[14rem] sm:h-[14rem] object-contain ${imgClassName}`}
       />
       {textImg && (
         <img
           src={textImg}
           alt=""
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain transition-opacity duration-300 pointer-events-none ${showTextOverlay ? "opacity-100" : "opacity-0 group-hover:opacity-100"} ${textImgClassName}`}
+          className={`absolute left-1/2 top-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain pointer-events-none transition-all duration-750 ease-in-out ${showTextOverlay ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-0 group-hover:opacity-100 group-hover:-translate-x-1/2"} ${textImgClassName}`}
         />
       )}
     </div>
@@ -88,7 +88,7 @@ function PartCard({
       {headerPos === "top" ? (
         <>
           {TitleAndButtons}
-          <div className="mt-2 sm:mt-3 mb-1">{Image}</div>
+          <div className="mt-4 sm:mt-3 mb-1">{Image}</div>
         </>
       ) : (
         <>
@@ -126,7 +126,7 @@ export default function PartSection() {
             img={pmImg}
             textImg={pmText}
             textImgClassName="!min-w-[16rem] !max-w-[22rem]"
-            imgClassName="!w-[7.5rem] !h-[7.5rem] sm:!w-[11rem] sm:!h-[11rem]"
+            imgClassName="!w-[11rem] !h-[11rem] sm:!w-[11rem] sm:!h-[11rem]"
             showTextOverlay={pressedMobilePart === "PM"}
             onImagePress={() => handleMobileImagePress("PM")}
           />
@@ -149,7 +149,7 @@ export default function PartSection() {
             label="BE"
             img={beImg}
             textImg={beText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+            textImgClassName="!min-w-[22rem]"
             headerPos="top"
             showTextOverlay={pressedMobilePart === "BE"}
             onImagePress={() => handleMobileImagePress("BE")}
