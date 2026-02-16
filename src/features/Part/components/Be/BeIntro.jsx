@@ -11,12 +11,12 @@ export default function BeIntro() {
           <span className="whitespace-pre-line sm:hidden block">
             {`Tell US
 About
-the Be Part`}
+the BE Part`}
           </span>
 
           <span className="hidden sm:block whitespace-pre-line">
             {`Tell US 
-About the Be Part`}
+About the BE Part`}
           </span>
         </div>
 
