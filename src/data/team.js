@@ -1,17 +1,17 @@
-﻿import team1 from "../features/Team/assets/1.png";
-import team2 from "../features/Team/assets/2.png";
-import team3 from "../features/Team/assets/3.png";
-import team4 from "../features/Team/assets/4.png";
-import team5 from "../features/Team/assets/5.png";
-import team6 from "../features/Team/assets/6.png";
-import team7 from "../features/Team/assets/7.png";
-import team8 from "../features/Team/assets/8.png";
-import team9 from "../features/Team/assets/9.png";
-import team10 from "../features/Team/assets/10.png";
-import team11 from "../features/Team/assets/11.png";
-import team12 from "../features/Team/assets/12.png";
-import team13 from "../features/Team/assets/13.png";
-import team14 from "../features/Team/assets/14.png";
+﻿import team1 from "../features/Team/assets/1.webp";
+import team2 from "../features/Team/assets/2.webp";
+import team3 from "../features/Team/assets/3.webp";
+import team4 from "../features/Team/assets/4.webp";
+import team5 from "../features/Team/assets/5.webp";
+import team6 from "../features/Team/assets/6.webp";
+import team7 from "../features/Team/assets/7.webp";
+import team8 from "../features/Team/assets/8.webp";
+import team9 from "../features/Team/assets/9.webp";
+import team10 from "../features/Team/assets/10.webp";
+import team11 from "../features/Team/assets/11.webp";
+import team12 from "../features/Team/assets/12.webp";
+import team13 from "../features/Team/assets/13.webp";
+import team14 from "../features/Team/assets/14.webp";
 
 export const TEAM_MEMBERS = [
   {
@@ -174,3 +174,4 @@ export const TEAM_MEMBERS = [
     zIndex: 14,
   },
 ];
+
