@@ -6,17 +6,17 @@
  */
 
 const aboutAssetModules = import.meta.glob(
-  "../features/About/assets/*.webp",
-  { eager: true, import: "default" }
+  "../features/About/assets/thumbnails/*.webp",
+  { eager: true, import: "default" },
 );
 
 /** 활동 id(0~15)별 이미지 3장 [url, url, url] */
 const ACTIVITY_IMAGES = Array.from({ length: 16 }, (_, id) => {
   const n = id + 1;
   return [
-    aboutAssetModules[`../features/About/assets/${n}-1.webp`],
-    aboutAssetModules[`../features/About/assets/${n}-2.webp`],
-    aboutAssetModules[`../features/About/assets/${n}-3.webp`],
+    aboutAssetModules[`../features/About/assets/thumbnails/${n}-1.webp`],
+    aboutAssetModules[`../features/About/assets/thumbnails/${n}-2.webp`],
+    aboutAssetModules[`../features/About/assets/thumbnails/${n}-3.webp`],
   ];
 });
 

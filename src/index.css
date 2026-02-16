@@ -454,7 +454,10 @@ body,
 }
 
 .animate-slider {
-  animation: slider 28s linear infinite;
+  animation: slider 40s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @keyframes homeTransitionBackdrop {
@@ -572,4 +575,3 @@ body,
   transform-origin: 0% 100%; 
   animation: swing-diagonal-right 2.5s infinite;
 }
-
