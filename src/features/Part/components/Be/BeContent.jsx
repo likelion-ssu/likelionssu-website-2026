@@ -37,7 +37,7 @@ export default function BeContent() {
               <p className="typo-small1">이성윤 최원재 조해원 조수한</p>
             </div>
 
-            <div className="grid grid-cols-2 grid-rows-2 gap-x-[7.44rem] gap-y-[2.81rem]">
+            <div className="grid grid-cols-2 grid-rows-2 gap-x-[5.5rem] gap-y-[2.81rem]">
 
               <div className="flex flex-col gap-[1.25rem] pl-[0.81rem]">
                 <div className="typo-pretitle1k">파트장 한마디</div>
@@ -47,10 +47,13 @@ export default function BeContent() {
 백엔드에 관심있어하는 여러분들은 생각이 깊고,
 성실하고, 열정 넘치는 멋쟁이들일거라고 생각해요!
 
-멋쟁이 아기사자 분들이 백엔드를 선택한 것이 후회되지 않도록 최선을 다해서 세션을 준비하고 있습니다.
+멋쟁이 아기사자 분들이 백엔드를 선택한 것이 후회되지 
+않도록 최선을 다해서 세션을 준비하고 있습니다.
 
-백엔드 파트는 누구보다 가깝고, 의지하고, 서로 긍정적인 영향을 줄 수 있는 파트가 되었으면 해요.
-올 한 해 멋사가 여러분에게 가장 의미 있었던 기억 중 하나로 남기를 바랍니다! 🦁`}
+백엔드 파트는 누구보다 가깝고, 의지하고, 서로 긍정적
+인 영향을 줄 수 있는 파트가 되었으면 해요.
+올 한 해 멋사가 여러분에게 가장 의미 있었던 기억 중 하
+나로 남기를 바랍니다! 🦁`}
                 </p>
               </div>
 
