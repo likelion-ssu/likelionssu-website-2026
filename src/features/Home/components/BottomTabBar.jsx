@@ -7,7 +7,7 @@ export default function BottomTabbar() {
 
   return (
     <div className="w-full bg-white flex">
-      <BottomTab text="ABOUT US" />
+      <BottomTab text="ABOUT US" onClick={() => navigate("/about")} />
       <BottomTab text="PART" onClick={() => navigate("/part")} />
       <BottomTab text="PROJECT" onClick={() => navigate("/project")} />
     </div>
