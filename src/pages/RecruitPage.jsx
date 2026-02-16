@@ -26,7 +26,7 @@ export default function RecruitPage() {
       />
 
       <div className="overflow-x-hidden flex flex-col gap-[6.88rem] lg:gap-[16rem]">
-        <div className="pt-[5.9375rem] lg:pt-0 animate-recruit-content-enter">
+        <div className="pt-[5.9375rem] lg:pt-0">
           <IntroSection />
         </div>
 
