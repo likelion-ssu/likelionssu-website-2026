@@ -14,7 +14,7 @@ import circle from "../assets/RoadmapSection_circle.svg";
 const PRECOURSE_URLS = {
   PM: "https://youtube.com/playlist?list=PL0_ZM90TPnbYPazLWsikA0WsChrZLzAIL&si=ZIJax7muWJ8vUehk",
   DE: "https://youtube.com/playlist?list=PLGh_uyBM2dBLUh9HftRzkpCFV57dpLpJR&si=rwxZXz_JHJKJYYti",
-  FE: "https://www.youtube.com/watch?v=OGFgdro160I&list=PLomA8CWFV7xygG3Nt0jQQnT6KXQ0bjV77",
+  FE: "https://youtube.com/playlist?list=PLomA8CWFV7xygG3Nt0jQQnT6KXQ0bjV77&si=abT26cKPPmDgHeFy",
   BE: "https://www.youtube.com/playlist?list=PLm25o_YohhFvXRGOXe_9qWx60UGwxgfLu",
 };
 
@@ -132,42 +132,42 @@ export default function PartSection() {
             </div>
 
             <div className="flex flex-col gap-[2.5rem] px-4">
-            <PartCard
-              label="PM"
-              img={pmImg}
-              textImg={pmText}
-              textImgClassName="!min-w-[20rem] !max-w-[28rem]"
-              isMobile
-              showTextOverlay={pressedMobilePart === "PM"}
-              onImagePress={() => handleMobileImagePress("PM")}
-            />
-            <PartCard
-              label="DE"
-              img={deImg}
-              textImg={deText}
-              isMobile
-              showTextOverlay={pressedMobilePart === "DE"}
-              onImagePress={() => handleMobileImagePress("DE")}
-            />
+              <PartCard
+                label="PM"
+                img={pmImg}
+                textImg={pmText}
+                textImgClassName="!min-w-[20rem] !max-w-[28rem]"
+                isMobile
+                showTextOverlay={pressedMobilePart === "PM"}
+                onImagePress={() => handleMobileImagePress("PM")}
+              />
+              <PartCard
+                label="DE"
+                img={deImg}
+                textImg={deText}
+                isMobile
+                showTextOverlay={pressedMobilePart === "DE"}
+                onImagePress={() => handleMobileImagePress("DE")}
+              />
 
-            <PartCard
-              label="FE"
-              img={feImg}
-              textImg={feText}
-              isMobile
-              showTextOverlay={pressedMobilePart === "FE"}
-              onImagePress={() => handleMobileImagePress("FE")}
-            />
-            <PartCard
-              label="BE"
-              img={beImg}
-              textImg={beText}
-              textImgClassName="!min-w-[20rem] !max-w-[28rem]"
-              headerPos="top"
-              isMobile
-              showTextOverlay={pressedMobilePart === "BE"}
-              onImagePress={() => handleMobileImagePress("BE")}
-            />
+              <PartCard
+                label="FE"
+                img={feImg}
+                textImg={feText}
+                isMobile
+                showTextOverlay={pressedMobilePart === "FE"}
+                onImagePress={() => handleMobileImagePress("FE")}
+              />
+              <PartCard
+                label="BE"
+                img={beImg}
+                textImg={beText}
+                textImgClassName="!min-w-[20rem] !max-w-[28rem]"
+                headerPos="top"
+                isMobile
+                showTextOverlay={pressedMobilePart === "BE"}
+                onImagePress={() => handleMobileImagePress("BE")}
+              />
             </div>
           </div>
         </div>
