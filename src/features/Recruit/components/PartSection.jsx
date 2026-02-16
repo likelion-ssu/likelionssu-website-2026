@@ -175,10 +175,10 @@ export default function PartSection() {
             label="PM"
             img={pmImg}
             textImg={pmText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+            textImgClassName="!min-w-[14.5rem] !max-w-[19.5rem]"
             imgClassName="!w-[7.5rem] !h-[7.5rem] sm:!w-[11rem] sm:!h-[11rem]"
             headerPos="top"
-            className="absolute left-[4%] top-[0%] w-[30%]"
+            className="absolute left-[10%] top-[0%] w-[30%]"
           />
 
           {/* DE */}
@@ -187,7 +187,7 @@ export default function PartSection() {
             img={deImg}
             textImg={deText}
             headerPos="top"
-            className="absolute right-[4%] top-[6%] w-[30%]"
+            className="absolute right-[3%] top-[6%] w-[30%]"
           />
 
           {/* FE */}
@@ -199,14 +199,14 @@ export default function PartSection() {
             className="absolute left-[0%] bottom-[8%] w-[30%]"
           />
 
-          {/* BE (헤더 아래) */}
+          {/* BE - PM과 대각선 대칭 (우하단) */}
           <PartCard
             label="BE"
             img={beImg}
             textImg={beText}
             textImgClassName="!min-w-[16rem] !max-w-[22rem]"
             headerPos="bottom"
-            className="absolute left-[50%] top-[45%] w-[28%]"
+            className="absolute right-[20%] bottom-[5%] w-[30%]"
           />
         </div>
       </div>
