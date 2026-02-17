@@ -17,6 +17,7 @@ export default function Header({
   transitionMode = false,
 }) {
   const navigate = useNavigate();
+
   return (
     <div
       className={`fixed top-0 left-0 w-full ${
@@ -33,9 +34,8 @@ export default function Header({
                    sm:w-[83.40625rem] sm:justify-between sm:items-center sm:h-[3.5625rem]
                    ${transitionMode ? "z-[150]" : ""}`}
       >
-        {/* 헤더 가운데 세로선 (웹에서 noneSidebar일 때) */}
-        {/* Recruit 페이지에서는 세로선 숨김 */}
-        {noneSidebar && !hideCenterLine && (
+        {/* 헤더 가운데 세로선 */}
+        {noneSidebar && !hideCenterLine && !transitionMode && (
           <div className="hidden sm:block absolute left-1/2 sm:top-[-0.625rem] -translate-x-1/2 w-[0.0625rem] sm:h-[3.5625rem] bg-line" />
         )}
 
