@@ -2,8 +2,11 @@
 
 import pm1 from "../features/Part/assets/slider-webp/pm/pm-slide-1.webp";
 import pm2 from "../features/Part/assets/slider-webp/pm/pm-slide-2.webp";
-import pm3 from "../features/Part/assets/slider-webp/pm/pm-slide-3.webp";
 import pm4 from "../features/Part/assets/slider-webp/pm/pm-slide-4.webp";
+import pm5 from "../features/Part/assets/slider-webp/pm/pm-slide-5.webp";
+import pm6 from "../features/Part/assets/slider-webp/pm/pm-slide-6.webp";
+import pm7 from "../features/Part/assets/slider-webp/pm/pm-slide-7.webp";
+import pm8 from "../features/Part/assets/slider-webp/pm/pm-slide-8.webp";
 
 import de1 from "../features/Part/assets/slider-webp/de/de-slide-1.webp";
 import de2 from "../features/Part/assets/slider-webp/de/de-slide-2.webp";
@@ -26,12 +29,14 @@ import be2 from "../features/Part/assets/slider-webp/be/be-slide-2.webp";
 import be3 from "../features/Part/assets/slider-webp/be/be-slide-3.webp";
 import be4 from "../features/Part/assets/slider-webp/be/be-slide-4.webp";
 import be5 from "../features/Part/assets/slider-webp/be/be-slide-5.webp";
+import be6 from "../features/Part/assets/slider-webp/be/be-slide-6.webp";
+import be7 from "../features/Part/assets/slider-webp/be/be-slide-7.webp";
 
 
 
 export const sliderImages = {
-  pm: [pm1, pm2, pm3, pm4],
+  pm: [pm1, pm2, pm4, pm5, pm6, pm7, pm8],
   de: [de1, de2, de3, de4,de5,de6,de7],
   fe: [fe1,fe2,fe3,fe4,fe5,fe6,fe7],
-  be: [be1,be2,be3,be4,be5],
+  be: [be1,be2,be3,be4,be5,be6,be7],
 };

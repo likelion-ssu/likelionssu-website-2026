@@ -1,8 +1,8 @@
 import React from "react";
-import de2 from "../../assets/de/de-2.svg";
-import de3 from "../../assets/de/de-3.svg";
+import de2 from "../../assets/de/de-2.webp";
+import de3 from "../../assets/de/de-3.webp";
 import grid from "../../assets/grid-left.svg";
-import hand from "../../assets/de/hand.svg";
+import hand from "../../assets/de/hand.webp";
 
 export default function DeContent() {
   return (

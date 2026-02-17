@@ -1,6 +1,8 @@
 import React from "react";
 import { sliderImages } from "../../../data/images";
 
+const SECONDS_PER_IMAGE = 10;
+
 export default function ImageSlider({ version = "pm" }) {
   const images = sliderImages[version] || [];
   const loopImages = [
@@ -11,10 +13,14 @@ export default function ImageSlider({ version = "pm" }) {
     ...images,
     ...images,
   ];
+  const sliderDurationSec = Math.max(images.length, 1) * SECONDS_PER_IMAGE;
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="flex w-max gap-[0.16rem] sm:gap-[0.31rem] animate-slider">
+      <div
+        className="flex w-max gap-[0.16rem] sm:gap-[0.31rem] animate-slider"
+        style={{ animationDuration: `${sliderDurationSec}s` }}
+      >
         {loopImages.map((img, idx) => (
           <img
             key={`${version}-${idx}`}
