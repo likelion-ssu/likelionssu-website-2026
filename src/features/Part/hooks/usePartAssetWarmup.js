@@ -3,32 +3,40 @@ const partAssetModules = {
     eager: true,
     import: "default",
   }),
-  ...import.meta.glob("../assets/slider-webp/**/*.webp", {
+  ...import.meta.glob("../assets/**/*.webp", {
     eager: true,
     import: "default",
   }),
 };
 
-const ASSETS_BY_PART = Object.values(partAssetModules).reduce(
-  (acc, src) => {
+const ASSETS_BY_PART = Object.entries(partAssetModules).reduce(
+  (acc, [path, src]) => {
     // 슬라이더는 저용량 webp로 교체했기 때문에 기존 거대 svg는 워밍업에서 제외.
-    if (src.includes("-slide-") && src.endsWith(".svg")) {
+    if (path.includes("-slide-") && path.endsWith(".svg")) {
       return acc;
     }
 
-    if (src.includes("/pm/")) {
+    // 동일 이름의 webp가 있으면 svg 프리로드는 건너뜀(대용량 원본 다운로드 방지).
+    if (path.endsWith(".svg")) {
+      const webpPairPath = path.replace(/\.svg$/, ".webp");
+      if (partAssetModules[webpPairPath]) {
+        return acc;
+      }
+    }
+
+    if (path.includes("/pm/")) {
       acc.pm.push(src);
       return acc;
     }
-    if (src.includes("/de/")) {
+    if (path.includes("/de/")) {
       acc.de.push(src);
       return acc;
     }
-    if (src.includes("/fe/")) {
+    if (path.includes("/fe/")) {
       acc.fe.push(src);
       return acc;
     }
-    if (src.includes("/be/")) {
+    if (path.includes("/be/")) {
       acc.be.push(src);
       return acc;
     }

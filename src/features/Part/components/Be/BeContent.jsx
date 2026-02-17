@@ -1,9 +1,9 @@
 import React from "react";
-import be2 from "../../assets/be/be-2.svg";
-import be3 from "../../assets/be/be-3.svg";
-import be3m from "../../assets/be/be-3-m.svg";
+import be2 from "../../assets/be/be-2.webp";
+import be3 from "../../assets/be/be-3.webp";
+import be3m from "../../assets/be/be-3-m.webp";
 import grid from "../../assets/grid-left.svg";
-import meow from "../../assets/be/meow.svg";
+import meow from "../../assets/be/meow.webp";
 
 export default function BeContent() {
   return (

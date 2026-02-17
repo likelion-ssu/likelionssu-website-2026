@@ -1,5 +1,5 @@
 import React from "react";
-import de1 from "../../assets/de/de-1.svg";
+import de1 from "../../assets/de/de-1.webp";
 
 export default function DeIntro() {
   return (
@@ -39,6 +39,5 @@ UX/UI 디자인을 통해 완성도 높은 사용자 경험 전반을 만들어�
     </div>
   );
 }
-
 
 

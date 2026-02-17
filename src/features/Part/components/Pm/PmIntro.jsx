@@ -1,5 +1,5 @@
 import React from "react";
-import pm1 from "../../assets/pm/pm-1.svg";
+import pm1 from "../../assets/pm/pm-1.webp";
 
 export default function PmIntro() {
   return (
@@ -33,6 +33,5 @@ About the PM Part`}
     </div>
   );
 }
-
 
 
