@@ -170,9 +170,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
         <span className={isMobile ? "typo-body2" : "typo-commentk"}>
           {project.category}
         </span>
-        <p
-          className={`${isMobile ? "typo-cardtextk" : "typo-cardtextk"} text-text text-center leading-tight`}
-        >
+        <p className="typo-cardtextk text-text text-center leading-tight">
           {project.title}
         </p>
         <span
