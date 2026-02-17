@@ -72,7 +72,7 @@ export default function ProjectPage() {
               <ProjectCardDetailContent project={project} variant="mobile" />
             </div>
             <div
-              className="hidden lg:flex flex-1 items-center justify-center px-4 sm:px-6 lg:px-8 py-8 cursor-pointer"
+              className="hidden lg:fixed lg:inset-0 lg:z-[170] lg:flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 cursor-pointer bg-black/50"
               onClick={() => navigate("/project")}
               role="dialog"
               aria-modal="true"
