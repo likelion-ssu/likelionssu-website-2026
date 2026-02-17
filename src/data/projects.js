@@ -1,11 +1,9 @@
 // 11기
 import assum1 from "../features/Project/assets/11th/assum-1.webp";
-import assum2 from "../features/Project/assets/11th/assum-2.webp";
 import assum3 from "../features/Project/assets/11th/assum-3.webp";
 import assum4 from "../features/Project/assets/11th/assum-4.webp";
 import assum5 from "../features/Project/assets/11th/assum-5.webp";
 import damda1 from "../features/Project/assets/11th/damda-1.webp";
-import damda3 from "../features/Project/assets/11th/damda-3.webp";
 import damda4 from "../features/Project/assets/11th/damda-4.webp";
 import damda5 from "../features/Project/assets/11th/damda-5.webp";
 import damda6 from "../features/Project/assets/11th/damda-6.webp";
@@ -23,7 +21,6 @@ import zeromarket3 from "../features/Project/assets/11th/zeromarket-3.webp";
 import zeromarket4 from "../features/Project/assets/11th/zeromarket-4.webp";
 import zeromarket8 from "../features/Project/assets/11th/zeromarket-8.webp";
 import picpic1 from "../features/Project/assets/11th/picpic-1.webp";
-import picpic3 from "../features/Project/assets/11th/picpic-3.webp";
 import picpic16 from "../features/Project/assets/11th/picpic-16.webp";
 import picpic17 from "../features/Project/assets/11th/picpic-17.webp";
 import picpic19 from "../features/Project/assets/11th/picpic-19.webp";
@@ -124,7 +121,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "정의민 최신임 강해솔 최서현 박정우",
     coverImage: assum1,
-    images: [assum1, assum2, assum3, assum4, assum5], // 슬라이드용 이미지 URL 배열. 예: ["url1", "url2"]
+    images: [assum1, assum3, assum4, assum5], // 슬라이드용 이미지 URL 배열. 예: ["url1", "url2"]
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/CxC6qJGPeqn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -140,7 +137,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "윤주호 소희연 허동윤 유승한 조수민",
     coverImage: damda1,
-    images: [damda1, damda3, damda4, damda5, damda6],
+    images: [damda1, damda4, damda5, damda6],
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/CxAXID1PkOM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -189,7 +186,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "김지은 정의민 유해인 강해솔 한지원 김교휘 박정우",
     coverImage: picpic1,
-    images: [picpic1, picpic3, picpic16, picpic17, picpic19],
+    images: [picpic1, picpic16, picpic17, picpic19],
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/C2ezOuXPKJg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",

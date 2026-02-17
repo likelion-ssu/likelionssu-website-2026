@@ -21,8 +21,9 @@ export default function ProjectCardDetailContent({ project, variant }) {
         : rawImages.length > 0
           ? rawImages
           : [];
+  const initialTrackIndex = imageList.length > 1 ? 1 : 0;
 
-  const [trackIndex, setTrackIndex] = useState(0);
+  const [trackIndex, setTrackIndex] = useState(initialTrackIndex);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [autoSlideResetTick, setAutoSlideResetTick] = useState(0);
@@ -42,12 +43,13 @@ export default function ProjectCardDetailContent({ project, variant }) {
       : 0;
 
   useEffect(() => {
-    setTrackIndex(imageList.length > 1 ? 1 : 0);
+    setIsTransitionEnabled(false);
+    setTrackIndex(initialTrackIndex);
+    setAutoSlideResetTick((prev) => prev + 1);
     setIsPaused(false);
-    setIsTransitionEnabled(true);
     setPlaybackFeedback(null);
     setIsFeedbackVisible(false);
-  }, [project.id, imageList.length]);
+  }, [project.id, initialTrackIndex]);
 
   useEffect(() => {
     if (imageList.length <= 1 || isPaused) return;
