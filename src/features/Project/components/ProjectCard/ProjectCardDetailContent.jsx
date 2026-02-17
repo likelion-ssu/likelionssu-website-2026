@@ -10,6 +10,7 @@ const ICON_FEEDBACK_FADE_MS = 260;
 /** 프로젝트 상세 카드 본문만 (PC는 모달/모바일은 페이지로 분기). variant="mobile" 시 가로 꽉 참 */
 export default function ProjectCardDetailContent({ project, variant }) {
   const isMobile = variant === "mobile";
+  const isIdeathon = project.category === "아이디어톤";
 
   // 표지(coverImage)를 맨 앞에 두고, 나머지 images 이어붙임 (표지와 중복 시 제외)
   const rawImages = project.images ?? [];
@@ -279,22 +280,24 @@ export default function ProjectCardDetailContent({ project, variant }) {
               )}
             </div>
           )}
-          {/* PC에서만 이미지 바로 아래 표시 (간격 없음) */}
-          <div className="hidden lg:flex gap-[0.62rem] justify-start items-center pt-0">
-            {project.instagramUrl ? (
-              <a
-                href={project.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 typo-small1 text-subtext hover:text-primarybrand transition"
-                aria-label="Instagram"
-              >
+          {/* PC에서만 이미지 바로 아래 표시 (간격 없음) - 아이디어톤 제외 */}
+          {!isIdeathon && (
+            <div className="hidden lg:flex gap-[0.62rem] justify-start items-center pt-0">
+              {project.instagramUrl ? (
+                <a
+                  href={project.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 typo-small1 text-subtext hover:text-primarybrand transition"
+                  aria-label="Instagram"
+                >
+                  <img src={instagramIcon} alt="" className="w-5 h-5" />
+                </a>
+              ) : (
                 <img src={instagramIcon} alt="" className="w-5 h-5" />
-              </a>
-            ) : (
-              <img src={instagramIcon} alt="" className="w-5 h-5" />
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
 
         <section className="order-2 flex flex-col gap-6 lg:col-start-2 lg:row-start-1">
@@ -310,23 +313,25 @@ export default function ProjectCardDetailContent({ project, variant }) {
               {project.about}
             </p>
           </div>
-          <div className="flex flex-col gap-2">
-            <h2
-              className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
-            >
-              Stack
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className={`px-1.5 py-1.5 bg-accent text-text ${isMobile ? "typo-footer2ew" : "typo-tagtextew"}`}
-                >
-                  {tech}
-                </span>
-              ))}
+          {!isIdeathon && (
+            <div className="flex flex-col gap-2">
+              <h2
+                className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
+              >
+                Stack
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className={`px-1.5 py-1.5 bg-accent text-text ${isMobile ? "typo-footer2ew" : "typo-tagtextew"}`}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           <div className="flex flex-col gap-2">
             <h2
               className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
@@ -341,22 +346,24 @@ export default function ProjectCardDetailContent({ project, variant }) {
           </div>
         </section>
 
-        {/* 모바일(402px 기준): Team 아래, 소셜 가운데 정렬, 아이콘 2rem */}
-        <div className="order-3 flex gap-3 lg:hidden flex-start items-center pt-6">
-          {project.instagramUrl ? (
-            <a
-              href={project.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center typo-small1 text-subtext hover:text-primarybrand transition"
-              aria-label="Instagram"
-            >
+        {/* 모바일(402px 기준): Team 아래, 소셜 가운데 정렬, 아이콘 2rem - 아이디어톤 제외 */}
+        {!isIdeathon && (
+          <div className="order-3 flex gap-3 lg:hidden flex-start items-center pt-6">
+            {project.instagramUrl ? (
+              <a
+                href={project.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center typo-small1 text-subtext hover:text-primarybrand transition"
+                aria-label="Instagram"
+              >
+                <img src={instagramIcon} alt="" className="w-[2rem] h-[2rem]" />
+              </a>
+            ) : (
               <img src={instagramIcon} alt="" className="w-[2rem] h-[2rem]" />
-            </a>
-          ) : (
-            <img src={instagramIcon} alt="" className="w-[2rem] h-[2rem]" />
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );
