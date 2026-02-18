@@ -83,14 +83,14 @@ export default function FaqSection() {
               <img
                 src={item.image}
                 alt={item.question}
-                className="size-full object-contain lg:object-cover object-center bg-secondarybrand"
+                className="absolute inset-0 size-full object-cover object-center bg-secondarybrand"
               />
             </div>
             <div className="absolute inset-0 w-[200%] h-[200%] scale-50 origin-top-left lg:w-full lg:h-full lg:scale-100 lg:origin-center pointer-events-none lg:pointer-events-auto">
               <img
                 src={item.answerImage}
                 alt=""
-                className={`size-full object-contain lg:object-cover object-center bg-secondarybrand transition-opacity duration-300 ease-out ${
+                className={`absolute inset-0 size-full object-cover object-center bg-secondarybrand transition-opacity duration-300 ease-out ${
                   openFaqIndex === index
                     ? "opacity-100 lg:group-hover:opacity-100"
                     : "opacity-0 lg:group-hover:opacity-100"
