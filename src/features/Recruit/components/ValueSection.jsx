@@ -16,8 +16,12 @@ export default function ValueSection() {
     >
       {/* 타이틀 - 모바일 subtitlee / PC pretitle1e */}
       <h2 className="text-center text-primarybrand mb-12 lg:mb-16">
-        <span className="typo-subtitlee lg:hidden">What We Value</span>
-        <span className="hidden lg:block typo-pretitle1e">What We Value</span>
+        <span data-value-title="true" className="typo-subtitlee lg:hidden">
+          What We Value
+        </span>
+        <span data-value-title="true" className="hidden lg:block typo-pretitle1e">
+          What We Value
+        </span>
       </h2>
 
       {/* 밸류 카드 3개 - min-width로 애매한 해상도에서도 고정 */}

@@ -34,8 +34,12 @@ export default function RecruitPage() {
           <ValueSection />
           <PartSection />
           <RoadmapSection />
-          <TimelineSection />
-          <FaqSection />
+          <div className="-mt-[2rem] lg:-mt-[4.5rem]">
+            <TimelineSection />
+          </div>
+          <div className="mt-[2.25rem] lg:mt-[5rem]">
+            <FaqSection />
+          </div>
           <div className="flex flex-col">
             <ClosingSection />
             <Footer />
