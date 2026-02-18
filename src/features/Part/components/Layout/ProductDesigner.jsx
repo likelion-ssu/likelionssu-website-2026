@@ -43,7 +43,7 @@ export default function ProductDesigner() {
       <div
         ref={deContentRef}
         className="w-full sm:pt-[0rem] sm:pb-[0rem]
-        scroll-mt-[7.515rem] sm:scroll-mt-[5.56rem]"
+        scroll-mt-[5.7rem] sm:scroll-mt-[5.56rem]"
       >
         <DeContent />
       </div>
@@ -52,7 +52,7 @@ export default function ProductDesigner() {
       <div className="w-full flex justify-center">
         <div
           ref={sessionRef}
-          className="w-full sm:w-[63.4375rem] scroll-mt-[7.515rem] sm:scroll-mt-[2.74rem]"
+          className="w-full sm:w-[63.4375rem] scroll-mt-[5.7rem] sm:scroll-mt-[2.74rem]"
         >
           <SessionSection version="de" />
         </div>
