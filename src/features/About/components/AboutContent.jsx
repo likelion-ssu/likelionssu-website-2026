@@ -7,8 +7,8 @@ import {
   CORE_VALUES,
 } from "../../../data/about";
 import activityCheckIcon from "../../../assets/activity-check.svg";
-import recruitIcon from "../../../assets/recruit.svg";
 import RoadmapMobile from "./RoadmapMobile";
+import HoverBtn from "../../../components/header/HoverBtn";
 
 /**
  * 오른쪽 스크롤 텍스트 영역.
@@ -137,21 +137,12 @@ export default function AboutContent({
           </section>
 
           <section>
-            <button
-              type="button"
-              onClick={() => navigate("/team")}
-              className="typo-pretitle2e text-text inline-flex items-center gap-2 relative pt-7.5 cursor-pointer border-0 bg-transparent p-0 font-inherit"
-            >
-              <span>Management Team</span>
-              <img
-                src={recruitIcon}
-                alt=""
-                width={17}
-                height={17}
-                aria-hidden
+            <div className="pt-7.5">
+              <HoverBtn
+                type="managementteam"
+                onClick={() => navigate("/team")}
               />
-              <span className="absolute left-0 right-0 bottom-[-4px] h-[1px] bg-text"></span>
-            </button>
+            </div>
           </section>
         </div>
       </div>
