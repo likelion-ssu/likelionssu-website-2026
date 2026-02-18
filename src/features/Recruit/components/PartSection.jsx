@@ -40,10 +40,14 @@ function PartCard({
       <div className="flex items-center shrink-0 gap-[2.5rem]">
         <Link
           to={`/part?tab=${label}`}
-          className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand"
+          className="text-text hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand active:text-primarybrand"
         >
-          <span className="sm:hidden">← 파트 소개 보기</span>
-          <span className="hidden sm:inline">← 파트 소개 보러 가기</span>
+          <span className="typo-buttontextbold sm:hidden">
+            ← 파트 소개 보기
+          </span>
+          <span className="hidden sm:inline typo-cardtextk">
+            ← 파트 소개 보러 가기
+          </span>
         </Link>
         <h3
           className={`text-text typo-title1e whitespace-nowrap ${isBEBottom ? "mt-0" : ""}`}
@@ -54,9 +58,12 @@ function PartCard({
           href={PRECOURSE_URLS[label]}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand"
+          className="text-text hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand active:text-primarybrand"
         >
-          프리코스 영상 →
+          <span className="typo-buttontextbold sm:hidden">프리코스 영상 →</span>
+          <span className="hidden sm:inline typo-cardtextk">
+            프리코스 영상 →
+          </span>
         </a>
       </div>
     </div>
@@ -74,11 +81,72 @@ function PartCard({
         className={`w-[10rem] h-[10rem] sm:w-[14rem] sm:h-[14rem] object-contain ${imgClassName}`}
       />
       {textImg && (
-        <img
-          src={textImg}
-          alt=""
-          className={`absolute left-1/2 top-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain pointer-events-none transition-all duration-750 ease-in-out ${showTextOverlay ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-0 group-hover:opacity-100 group-hover:-translate-x-1/2"} ${textImgClassName}`}
-        />
+        <div
+          className={`
+      absolute left-1/2 top-1/2 -translate-y-1/2
+      w-[180%] min-w-[12rem] max-w-[15rem]
+      pointer-events-none
+      ${textImgClassName}
+    `}
+        >
+          <img
+            src={textImg}
+            alt=""
+            className={`
+        w-full h-auto object-contain
+        transition-[clip-path,opacity,transform,filter] duration-600 ease-out
+        will-change-[clip-path,transform,opacity,filter]
+      `}
+            style={{
+              // ✅ 오 -> 왼 펼침
+              // 닫힘: 오른쪽에서 전부 가림 (left가 100%)
+              // 열림: 가림 없음
+              clipPath: showTextOverlay
+                ? "inset(0% 0% 0% 0%)"
+                : "inset(0% 0% 0% 100%)",
+
+              // ✅ 촤라락 느낌: 살짝 밀려있다가 제자리 + 미세 스큐 + 블러 해제
+              transform: showTextOverlay
+                ? "translateX(-50%) skewX(0deg) translateX(0px)"
+                : "translateX(-50%) skewX(10deg) translateX(18px)",
+
+              opacity: showTextOverlay ? 1 : 0,
+              filter: showTextOverlay ? "blur(0px)" : "blur(2.5px)",
+            }}
+          />
+
+          {/* ✅ PC hover에서도 열리게: group-hover를 inline style로 못 쓰니 아래 'hover용 레이어'를 추가 */}
+          <img
+            src={textImg}
+            alt=""
+            className={`
+        absolute inset-0 w-full h-auto object-contain
+        transition-[clip-path,opacity,transform,filter] duration-600 ease-out
+        will-change-[clip-path,transform,opacity,filter]
+        opacity-0
+        group-hover:opacity-100
+      `}
+            style={{
+              // ✅ 오 -> 왼 펼침 (hover)
+              clipPath: "inset(0% 0% 0% 0%)",
+              transform: "translateX(-50%) skewX(0deg) translateX(0px)",
+              filter: "blur(0px)",
+            }}
+          />
+
+          {/* 닫힌 상태용(hover 전) 마스크를 만들기 위해, base img는 기본적으로 오->왼 닫힘 상태를 유지 */}
+          <div
+            className={`
+        absolute inset-0
+        transition-[clip-path,opacity,transform,filter] duration-600 ease-out
+        opacity-100
+        group-hover:opacity-0
+      `}
+            style={{
+              clipPath: "inset(0% 0% 0% 100%)",
+            }}
+          />
+        </div>
       )}
     </div>
   );
