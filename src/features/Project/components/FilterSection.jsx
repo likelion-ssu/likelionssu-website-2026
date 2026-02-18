@@ -11,7 +11,7 @@ export default function FilterSection({
     <div className={`relative w-full ${isSticky ? "pb-0" : ""}`}>
       {/* 모바일 */}
       <div
-        className={`sm:hidden flex w-full border border-line bg-secondarybrand ${isSticky ? "border-x-0 border-t-0" : "bg-light rounded-none"}`}
+        className={`sm:hidden flex w-full border-[0.03125rem] border-line bg-secondarybrand ${isSticky ? "border-x-0 border-t-0" : "bg-light rounded-none"}`}
       >
         {FILTER_TABS.map((tab, index) => {
           const isSelected = selectedTab === tab;
@@ -21,7 +21,7 @@ export default function FilterSection({
               onClick={() => onTabChange(tab)}
               className={`
                 flex-1 py-3 typo-buttontext transition-colors
-                ${index < FILTER_TABS.length - 1 ? "border-r border-line" : ""}
+                ${index < FILTER_TABS.length - 1 ? "border-r-[0.03125rem] border-line" : ""}
                 ${isSelected ? "bg-light text-primarybrand typo-buttontextbold" : "text-subtext"}
               `}
             >
@@ -31,21 +31,22 @@ export default function FilterSection({
         })}
       </div>
 
-      {/* PC */}
-      <div className="hidden sm:flex relative flex-wrap justify-center gap-2 sm:gap-3">
-        {FILTER_TABS.map((tab) => {
+      {/* PC - 모바일처럼 간격 없이, 보더 겹침 방지 */}
+      <div className="hidden sm:flex relative flex-wrap justify-center">
+        {FILTER_TABS.map((tab, index) => {
           const isSelected = selectedTab === tab;
           return (
             <button
               key={tab}
               onClick={() => onTabChange(tab)}
               className={`
-                min-w-[5.5rem] sm:min-w-[7rem] px-3 py-2 sm:px-5 sm:py-3 border typo-buttontext transition-colors focus:outline-none focus:ring-0 focus:border-line cursor-pointer
+                min-w-[5.5rem] sm:min-w-[7rem] px-[0.63rem] py-[0.56rem] border-[0.03125rem] border-line typo-buttontext transition-colors cursor-pointer
+                ${index > 0 ? "-ml-[0.03125rem]" : ""}
                 ${isSticky ? "border-t-0" : ""}
                 ${
                   isSelected
                     ? "bg-light text-primarybrand typo-buttontextbold"
-                    : "bg-accent text-subtext border-line hover:text-primarybrand"
+                    : "bg-secondarybrand text-subtext hover:text-primarybrand"
                 }
               `}
             >
@@ -56,7 +57,7 @@ export default function FilterSection({
 
         {!isSticky && (
           <div
-            className="absolute bottom-0 left-0 right-0 h-px bg-line"
+            className="absolute bottom-0 left-0 right-0 h-[0.03125rem] bg-line"
             aria-hidden="true"
           />
         )}

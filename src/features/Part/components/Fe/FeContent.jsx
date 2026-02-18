@@ -1,8 +1,8 @@
 import React from "react";
-import fe2 from "../../assets/fe/fe-2.svg";
-import fe3 from "../../assets/fe/fe-3.svg";
+import fe2 from "../../assets/fe/fe-2.webp";
+import fe3 from "../../assets/fe/fe-3.webp";
 import grid from "../../assets/grid-left.svg";
-import cap from "../../assets/fe/cap.svg";
+import cap from "../../assets/fe/cap.webp";
 
 export default function FeContent() {
   return (

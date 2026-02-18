@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ROADMAP_SECTIONS,
@@ -18,6 +18,9 @@ export default function AboutContent({
   onActivityClick
 }) {
   const navigate = useNavigate();
+  const activityItemRefs = useRef([]);
+  const anchorViewportTopRef = useRef(null);
+  const didInitAnchorRef = useRef(false);
 
   // 전체 활동 인덱스 계산
   const getGlobalIndex = (sectionIndex, activityIndex) => {
@@ -27,6 +30,29 @@ export default function AboutContent({
     }
     return globalIndex + activityIndex;
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined" || window.innerWidth < 640) return;
+
+    const firstItem = activityItemRefs.current[0];
+    if (!firstItem) return;
+
+    if (!didInitAnchorRef.current) {
+      anchorViewportTopRef.current = firstItem.getBoundingClientRect().top;
+      didInitAnchorRef.current = true;
+    }
+
+    const activeItem = activityItemRefs.current[activeIndex];
+    const anchorTop = anchorViewportTopRef.current;
+    if (!activeItem || anchorTop == null) return;
+
+    const activeTop = activeItem.getBoundingClientRect().top;
+    const delta = activeTop - anchorTop;
+
+    if (Math.abs(delta) > 1) {
+      window.scrollBy({ top: delta, behavior: "smooth" });
+    }
+  }, [activeIndex]);
 
   return (
     <div className="min-h-screen py-9 px-5 sm:px-12 text-color-text">
@@ -53,6 +79,9 @@ export default function AboutContent({
                     return (
                       <li
                         key={activity.id}
+                        ref={(el) => {
+                          activityItemRefs.current[globalIndex] = el;
+                        }}
                         className={`relative flex items-center justify-between w-42 pl-3.5 pr-2 py-1 cursor-pointer transition-all duration-200 ${
                           isActive
                             ? "text-primarybrand before:content-[''] before:absolute before:inset-y-0 before:right-0 before:bg-light before:-left-5 before:sm:-left-[4rem] before:z-0"

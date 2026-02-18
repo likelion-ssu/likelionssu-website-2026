@@ -1,5 +1,5 @@
 import React from "react";
-import be1 from "../../assets/be/be-1.svg";
+import be1 from "../../assets/be/be-1.webp";
 
 export default function BeIntro() {
   return (
@@ -43,6 +43,5 @@ About the BE Part`}
     </div>
   );
 }
-
 
 

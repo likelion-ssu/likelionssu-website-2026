@@ -1,11 +1,9 @@
 // 11기
 import assum1 from "../features/Project/assets/11th/assum-1.webp";
-import assum2 from "../features/Project/assets/11th/assum-2.webp";
 import assum3 from "../features/Project/assets/11th/assum-3.webp";
 import assum4 from "../features/Project/assets/11th/assum-4.webp";
 import assum5 from "../features/Project/assets/11th/assum-5.webp";
 import damda1 from "../features/Project/assets/11th/damda-1.webp";
-import damda3 from "../features/Project/assets/11th/damda-3.webp";
 import damda4 from "../features/Project/assets/11th/damda-4.webp";
 import damda5 from "../features/Project/assets/11th/damda-5.webp";
 import damda6 from "../features/Project/assets/11th/damda-6.webp";
@@ -23,7 +21,6 @@ import zeromarket3 from "../features/Project/assets/11th/zeromarket-3.webp";
 import zeromarket4 from "../features/Project/assets/11th/zeromarket-4.webp";
 import zeromarket8 from "../features/Project/assets/11th/zeromarket-8.webp";
 import picpic1 from "../features/Project/assets/11th/picpic-1.webp";
-import picpic3 from "../features/Project/assets/11th/picpic-3.webp";
 import picpic16 from "../features/Project/assets/11th/picpic-16.webp";
 import picpic17 from "../features/Project/assets/11th/picpic-17.webp";
 import picpic19 from "../features/Project/assets/11th/picpic-19.webp";
@@ -124,7 +121,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "정의민 최신임 강해솔 최서현 박정우",
     coverImage: assum1,
-    images: [assum1, assum2, assum3, assum4, assum5], // 슬라이드용 이미지 URL 배열. 예: ["url1", "url2"]
+    images: [assum1, assum3, assum4, assum5], // 슬라이드용 이미지 URL 배열. 예: ["url1", "url2"]
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/CxC6qJGPeqn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -140,7 +137,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "윤주호 소희연 허동윤 유승한 조수민",
     coverImage: damda1,
-    images: [damda1, damda3, damda4, damda5, damda6],
+    images: [damda1, damda4, damda5, damda6],
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/CxAXID1PkOM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -163,7 +160,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 4,
-    title: "zero market 제로마켓",
+    title: "제로마켓",
     number: 11,
     category: "해커톤",
     description: "우리동네 가게 재고 솔루션",
@@ -189,7 +186,7 @@ const PROJECTS_RAW = [
     stack: ["TypeScript", "React", "Spring Boot", "MySQL"],
     team: "김지은 정의민 유해인 강해솔 한지원 김교휘 박정우",
     coverImage: picpic1,
-    images: [picpic1, picpic3, picpic16, picpic17, picpic19],
+    images: [picpic1, picpic16, picpic17, picpic19],
     githubUrl: null,
     instagramUrl:
       "https://www.instagram.com/p/C2ezOuXPKJg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -268,7 +265,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 10,
-    title: "Don't 스파이크",
+    title: "돈스파이크",
     number: 12,
     category: "해커톤",
     description: "혈당 스파이크를 방지할 작은 시작",
@@ -284,7 +281,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 11,
-    title: "Wellness Coach 웰니스 코치",
+    title: "웰니스코치",
     number: 12,
     category: "해커톤",
     description: "건강하게 나이드는 당신을 위한 식단 메이트",
@@ -301,7 +298,7 @@ const PROJECTS_RAW = [
   // 12기 겨울잠
   {
     id: 12,
-    title: "Salary 샐러리",
+    title: "샐러리",
     number: 12,
     category: "겨울잠",
     description: "금융/경제 지식을 부담없이 학습 가능한 웹서비스",
@@ -317,10 +314,10 @@ const PROJECTS_RAW = [
   },
   {
     id: 13,
-    title: "Greenspark 그린스파크",
+    title: "그린스파크",
     number: 12,
     category: "겨울잠",
-    description: "전기요금 절약으로 지속가능한 도약을 만들어내는 서비스",
+    description: "전기요금 절약으로 지속가능함을 만들어내는 서비스",
     about:
       "그린스파크는 사용자가 자신의 가전제품 에너지 효율등급을 쉽게 조회하고, 전력 사용량을 분석하여 미래의 전력 소비와 전기세를 예측할 수 있도록 알고리즘을 구현하였습니다. 또한, 사용자에게 맞춤형 전력 절약 팁을 제공하고, 에너지 상식 퀴즈를 통해 지속가능성에 대한 동기부여를 강화합니다.",
     stack: [
@@ -346,7 +343,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 14,
-    title: "Dotoread 도토릿",
+    title: "도토릿",
     number: 12,
     category: "겨울잠",
     description: "언제든 맛있게 꺼내먹는 Read it Later 서비스",
@@ -378,7 +375,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 16,
-    title: "뭐하라고~?뭐하러Go!",
+    title: "뭐하러Go!",
     number: 13,
     category: "아이디어톤",
     description: "AI 활용 나만의 일정 맞춤 서비스",
@@ -545,8 +542,7 @@ const PROJECTS_RAW = [
     title: "PROMPT STUDIO",
     number: 13,
     category: "겨울잠",
-    description:
-      "좋은 프롬프트를 복사해서, 내 스타일로 바로 완성. AI 작업을 쉽고 간단하게 만들어주는 플랫폼",
+    description: "프롬프트를 AI로 쉽고 간단하게 만들어주는 플랫폼",
     about:
       "Prompt Studio는 누구나 좋은 프롬프트를 가져와 자신의 스타일에 맞게 바로 다듬고 활용할 수 있도록 만든 도구형 플랫폼입니다. 특히 인라인 피드백 서비스를 통해 수정 과정에서 즉각적인 개선 제안을 받아, 복사-수정-실행 전 과정을 하나의 흐름으로 자연스럽게 연결합니다. 이를 통해 복잡한 설정 없이도 AI 작업을 빠르고 쉽게 수행하고 결과물 완성도를 높일 수 있습니다.",
     stack: [
@@ -569,7 +565,7 @@ const PROJECTS_RAW = [
   },
   {
     id: 25,
-    title: "CLASSIVERSE",
+    title: "클래시버스",
     number: 13,
     category: "겨울잠",
     description: "등장인물과 대화하며 탐험하는 나만의 고전 유니버스",

@@ -44,7 +44,7 @@ export default function SessionSection({ version = "pm" }) {
           </p>
 
           <div className="px-0.4rem sm:px-0">
-            <div className="flex flex-col bg-white w-full h-[32rem] sm:h-[37.5rem] sm:w-[34.8125rem] px-[1rem] py-[1.1rem] sm:px-[1.78rem] sm:py-[1.31rem] rounded-[0.625rem]">
+            <div className="flex flex-col bg-white w-full h-[32rem] sm:h-[37.5rem] sm:w-[32rem] px-[1rem] py-[1.1rem] sm:px-[1.78rem] sm:py-[1.31rem] rounded-[0.625rem]">
               <h2 className="text-center">
                 <span className="block sm:hidden typo-subtitlee">
                   {sessionData.header}

@@ -15,7 +15,7 @@ export const sessionVersions = {
     sessions: [
       {
         title: "UX",
-        desc: ["페인 포인트 발굴, 유저저니 설계", "우선순위 결정, 스토리보드"],
+        desc: ["페인 포인트 발굴, 스토리보드 작성", "정보 구조 설계, 유저 플로우 작성, 프로토타이핑"],
       },
       {
         title: "TECH",
@@ -26,7 +26,7 @@ export const sessionVersions = {
       },
       {
         title: "BUSINESS",
-        desc: ["시장 분석 및 전략, 수익 모델 설계, 로드맵 수립", ""],
+        desc: ["시장 분석, GTM 전략, 수익 모델 설계", "유닛 이코노믹스, 핵심 지표 설계, 퍼널 분석"],
       },
       {
         title: "PM의 소프트 스킬",
@@ -38,7 +38,7 @@ export const sessionVersions = {
       {
         title: "공모전 승률을 끌어올리는 방법",
         desc: [
-          "개발자·디자이너와의 효과적인 소통 방법",
+          "1차 합격을 위한 승부수",
           "기획 팀장 장민영님의 특강",
         ],
       },
@@ -66,27 +66,27 @@ export const sessionVersions = {
     sessions: [
       {
         title: "UX/UI의 이해",
-        desc: ["전반적인 UI/UX 이론과 실무 용어 학습", ""],
+        desc: ["UX/UI 기본 개념과 사용자 관점 사고방식", "페르소나·유저플로우·정보구조 기반 설계 기초"],
       },
       {
         title: "Figma 툴 익히기",
-        desc: ["", ""],
+        desc: ["프레임·오토레이아웃·컴포넌트 실습 중심 학습", "협업을 고려한 구조적 화면 설계 방식"],
       },
       {
         title: "디자인 시스템",
-        desc: ["", ""],
+        desc: ["컬러·타이포·컴포넌트 규칙 정의 방법", "일관성과 확장성을 고려한 시스템 설계"],
       },
       {
         title: "완성도를 높이는 디테일",
-        desc: ["레이아웃과 그리드", "Figma Effect의 활용"],
+        desc: ["그리드·여백·정렬을 통한 시각적 안정감", "Effect 활용을 통한 밀도 있는 UI 표현"],
       },
       {
-        title: "프로토타이핑 기초-고급까지",
-        desc: ["", ""],
+        title: "인터랙션과 경험 설계",
+        desc: ["트랜지션·프로토타이핑 기반 흐름 설계", "설명 대신 경험으로 전달하는 구현 방식"],
       },
       {
-        title: "좋은 디자인을 위해 알아야 하는 것들",
-        desc: ["서비스 브랜딩의 중요성", "실무에 용이한 AI 디자인 툴"],
+        title: "프로덕트 관점과 디자인 방향성",
+        desc: ["브랜딩·비즈니스 맥락을 이해하는 시야 확장", "AI 활용과 개인 디자인 정체성 탐색"],
       },
     ],
   },
@@ -106,28 +106,28 @@ export const sessionVersions = {
 정말 큰 도움이 될 세션을 만들어나가고 싶어요.`,
     sessions: [
       {
-        title: "FE 개발의 기초",
+        title: "FE Overview",
         desc: ["프론트엔드 개발 기초 지식과 개발 환경", ""],
       },
       {
-        title: "JS 기본 문법",
-        desc: ["", ""],
+        title: "JavaScript Core",
+        desc: ["JS의 핵심 문법, DOM, Event", ""],
       },
       {
-        title: "JS 심화 문법과 React 기초 (1)",
-        desc: ["", ""],
+        title: "Modern JS와 React 기초(1)",
+        desc: ["ES6+, localStorage", "Component, Props"],
       },
       {
         title: "React 기초 (2)와 Tailwind css",
-        desc: ["", ""],
+        desc: ["State, Hooks", "Tailwind CSS 스타일링"],
       },
       {
         title: "React 심화와 API 통신",
-        desc: ["", ""],
+        desc: ["조건부 렌더링, 라우팅", "Axios, 상태 관리"],
       },
       {
         title: "FE-BE 합동 세션",
-        desc: ["", ""],
+        desc: ["API 연동 실습", ""],
       },
     ],
   },
@@ -148,27 +148,27 @@ export const sessionVersions = {
     sessions: [
       {
         title: "Web과 Spring Boot 기초",
-        desc: ["", ""],
+        desc: ["Web Application 구성 요소", "Spring Boot 프로젝트 시작"],
       },
       {
         title: "데이터베이스와 객체지향프로그래밍",
-        desc: ["", ""],
+        desc: ["관계형 데이터베이스", "스프링 컨테이너와 DI / IoC"],
       },
       {
         title: "RestAPI 설계와 JPA (1)",
-        desc: ["", ""],
+        desc: ["REST API 설계 원칙", "객체–테이블 매핑 이해"],
       },
       {
         title: "RestAPI 설계와 JPA (2)",
-        desc: ["", ""],
+        desc: ["Spring Data JPA", "CRUD API 구현"],
       },
       {
         title: "서버 구축 및 배포",
-        desc: ["", ""],
+        desc: ["AWS EC2 기반 배포", "합동 세션 소개"],
       },
       {
         title: "FE-BE 합동 세션",
-        desc: ["", ""],
+        desc: ["API 연동 실습", ""],
       },
     ],
   },

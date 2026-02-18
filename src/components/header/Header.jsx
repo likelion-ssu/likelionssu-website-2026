@@ -17,6 +17,7 @@ export default function Header({
   transitionMode = false,
 }) {
   const navigate = useNavigate();
+
   return (
     <div
       className={`fixed top-0 left-0 w-full ${
@@ -25,7 +26,7 @@ export default function Header({
           : "z-30 bg-secondarybrand border-b-[0.7px] border-line"
       }
                   flex flex-col items-center 
-                  h-[5.9375rem] sm:h-[3.5625rem] sm:pt-[0.625rem] sm:pb-[0.0625rem] gap-[0.5565rem]
+                  h-[3.875rem] sm:h-[3.5625rem] sm:pt-[0.625rem] sm:pb-[0.0625rem] gap-[0.5565rem]
                   ${noneSidebar && !transitionMode ? "sm:border-b-0" : ""}`}
     >
       <div
@@ -33,14 +34,13 @@ export default function Header({
                    sm:w-[83.40625rem] sm:justify-between sm:items-center sm:h-[3.5625rem]
                    ${transitionMode ? "z-[150]" : ""}`}
       >
-        {/* 헤더 가운데 세로선 (웹에서 noneSidebar일 때) */}
-        {/* Recruit 페이지에서는 세로선 숨김 */}
-        {noneSidebar && !hideCenterLine && (
+        {/* 헤더 가운데 세로선 */}
+        {noneSidebar && !hideCenterLine && !transitionMode && (
           <div className="hidden sm:block absolute left-1/2 sm:top-[-0.625rem] -translate-x-1/2 w-[0.0625rem] sm:h-[3.5625rem] bg-line" />
         )}
 
         {/* Logo */}
-        <div className="absolute z-[160] top-[3.56rem] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:top-0 sm:left-0">
+        <div className="absolute z-[160] top-[2.1rem] left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 sm:top-0 sm:left-0">
           <Logo onClick={() => navigate("/")} />
         </div>
 
@@ -61,7 +61,7 @@ export default function Header({
           {/* Menu 아이콘 */}
           {!hideMobileMenu && (
             <div
-              className="absolute top-[3.63rem] right-[1.22rem] sm:static sm:top-0 sm:right-0 flex items-center justify-center cursor-pointer"
+              className="absolute top-[2.4em] right-[1.22rem] sm:static sm:top-0 sm:right-0 flex items-center justify-center cursor-pointer"
               onClick={onMenuClick}
             >
               <img src={menu} className="w-[1.2375rem] h-[0.9375rem]" />

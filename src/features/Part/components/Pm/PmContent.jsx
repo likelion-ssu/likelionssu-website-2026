@@ -1,6 +1,6 @@
 import React from "react";
-import pm2 from "../../assets/pm/pm-2.svg";
-import pm3 from "../../assets/pm/pm-3.svg";
+import pm2 from "../../assets/pm/pm-2.webp";
+import pm3 from "../../assets/pm/pm-3.webp";
 import grid from "../../assets/grid-left.svg";
 import camera from "../../assets/pm/camera.svg";
 
@@ -137,4 +137,3 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
     </div>
   );
 }
-

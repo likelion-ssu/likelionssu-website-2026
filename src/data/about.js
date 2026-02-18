@@ -128,7 +128,7 @@ export const ROADMAP_SECTIONS = [
     activities: [
       {
         id: 8,
-        label: "개총/기획 경진 대회",
+        label: "기획 경진 대회",
         images: ACTIVITY_IMAGES[8],
         imageCaptions: [
           "저희 개강했어요",

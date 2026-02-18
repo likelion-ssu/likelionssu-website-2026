@@ -3,11 +3,11 @@ import linePc from "../assets/TimelineSection_line_pc.svg";
 import lineMo from "../assets/TimelineSection_line_mo.svg";
 
 const TIMELINE_ITEMS = [
-  { title: "지원서 제출", date: "2.24(월) - 3.7(금)" },
-  { title: "프리코스 시청", date: "2.24(월) - 3.10(월)" },
-  { title: "서류 결과", date: "3.9(일)" },
-  { title: "면접 평가", date: "3.12(수) - 3.14(금)" },
-  { title: "최종 결과 발표", date: "3.16(일)" },
+  { title: "지원서 제출", date: "2.23(월) - 3.6(금)" },
+  { title: "프리코스 시청", date: "2.23(월) - 3.8(일)" },
+  { title: "서류 결과", date: "3.8(일)" },
+  { title: "면접 평가", date: "3.11(수) - 3.13(금)" },
+  { title: "최종 결과 발표", date: "3.15(일)" },
 ];
 
 // 모바일 SVG 기준 마커 y 위치
@@ -21,7 +21,7 @@ export default function TimelineSection() {
       className="scroll-mt-[5.9375rem] lg:scroll-mt-[3.5625rem] bg-secondarybrand w-full px-4 lg:px-[3.75rem]"
     >
       {/* 타이틀 - 모바일 subtitlee / PC pretitle1e */}
-      <h2 className="text-center text-primarybrand mb-12 lg:mb-16">
+      <h2 className="text-center text-primarybrand mb-12 lg:mb-[6.25rem]">
         <span className="typo-subtitlee lg:hidden">Application Timeline</span>
         <span className="hidden lg:block typo-pretitle1e">
           Application Timeline
@@ -34,10 +34,10 @@ export default function TimelineSection() {
           {/* 텍스트 라인 */}
           <div className="px-1 py-1">
             <div className="flex justify-between text-center">
-              {TIMELINE_ITEMS.map((item) => (
+              {TIMELINE_ITEMS.map((item, index) => (
                 <div
                   key={item.title}
-                  className="flex flex-col items-center gap-0.5"
+                  className={`flex flex-col items-center gap-0.5 ${index === TIMELINE_ITEMS.length - 1 ? "translate-x-2" : ""}`}
                 >
                   <span className="typo-subtitlek text-text font-medium">
                     {item.title}

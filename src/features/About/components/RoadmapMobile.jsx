@@ -14,7 +14,7 @@ const IMG_SIZE_2_CLASS = "w-[102px] h-[76px]";
  * 원본 비율과 관계없이 지정 크기로 잘라서 표시(object-fit: cover).
  */
 export default function RoadmapMobile() {
-  const [expandedId, setExpandedId] = useState(null);
+  const [expandedId, setExpandedId] = useState(0);
   /** 클릭된 이미지: { activityId, imageIndex } | null → 해당 이미지 위에 오버레이+캡션 표시 */
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -82,46 +82,57 @@ export default function RoadmapMobile() {
                           )}
                         </button>
                       </div>
-                      {isExpanded && activity.images?.length > 0 && (
+                      {activity.images?.length > 0 && (
                         <div
-                          id={`roadmap-images-${activity.id}`}
-                          role="region"
-                          aria-labelledby={`roadmap-trigger-${activity.id}`}
-                          className="flex justify-between items-center py-4 w-full"
+                          className={`w-full overflow-hidden transition-all duration-300 ease-out ${
+                            isExpanded
+                              ? "max-h-[200px] opacity-100 translate-y-0"
+                              : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+                          }`}
                         >
-                          {activity.images.slice(0, 3).map((src, i) => {
-                            const isSelected =
-                              selectedImage?.activityId === activity.id &&
-                              selectedImage?.imageIndex === i;
-                            const caption =
-                              activity.imageCaptions?.[i] ?? "";
-                            return (
-                              <button
-                                key={i}
-                                type="button"
-                                onClick={() =>
-                                  toggleImageSelection(activity.id, i)
-                                }
-                                className={`relative overflow-hidden bg-emptyimg shrink-0 ${sizeClasses[i]}`}
-                              >
-                                <img
-                                  src={src}
-                                  alt=""
-                                  className="w-full h-full object-cover"
-                                  loading="lazy"
-                                  decoding="async"
-                                  fetchPriority="low"
-                                />
-                                {isSelected && (
-                                  <span className="absolute inset-0 flex items-center justify-center p-2 bg-hoverimg">
-                                    <span className="typo-small2 text-light text-center break-keep whitespace-pre-line">
-                                      {caption}
+                          <div
+                            id={`roadmap-images-${activity.id}`}
+                            role="region"
+                            aria-labelledby={`roadmap-trigger-${activity.id}`}
+                            aria-hidden={!isExpanded}
+                            className={`w-full flex justify-between items-center transition-[padding] duration-300 ease-out ${
+                              isExpanded ? "py-4" : "py-0"
+                            }`}
+                          >
+                            {activity.images.slice(0, 3).map((src, i) => {
+                              const isSelected =
+                                selectedImage?.activityId === activity.id &&
+                                selectedImage?.imageIndex === i;
+                              const caption =
+                                activity.imageCaptions?.[i] ?? "";
+                              return (
+                                <button
+                                  key={i}
+                                  type="button"
+                                  onClick={() =>
+                                    toggleImageSelection(activity.id, i)
+                                  }
+                                  className={`relative overflow-hidden bg-emptyimg shrink-0 ${sizeClasses[i]}`}
+                                >
+                                  <img
+                                    src={src}
+                                    alt=""
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                    fetchPriority="low"
+                                  />
+                                  {isSelected && (
+                                    <span className="absolute inset-0 flex items-center justify-center p-2 bg-hoverimg">
+                                      <span className="typo-small2 text-light text-center break-keep whitespace-pre-line">
+                                        {caption}
+                                      </span>
                                     </span>
-                                  </span>
-                                )}
-                              </button>
-                            );
-                          })}
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
                         </div>
                       )}
                     </li>

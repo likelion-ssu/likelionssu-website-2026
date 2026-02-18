@@ -1,5 +1,5 @@
 import React from "react";
-import fe1 from "../../assets/fe/fe-1.svg";
+import fe1 from "../../assets/fe/fe-1.webp";
 
 export default function FeIntro() {
   return (
@@ -38,6 +38,5 @@ PM, DE, BE  모든 파트와의 심도 깊은 소통을 통해
     </div>
   );
 }
-
 
 

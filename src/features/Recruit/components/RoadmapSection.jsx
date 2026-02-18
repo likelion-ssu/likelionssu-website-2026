@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ROADMAP_ITEMS } from "../../../data/roadmap";
 import loadingcircle from "../assets/RoadmapSection_circle.svg";
 import circleSelected from "../assets/RoadmapSection_circle_selected.svg";
 
 export default function RoadmapSection() {
-  const [selectedNode, setSelectedNode] = useState("교육세션");
+  const [selectedNode, setSelectedNode] = useState("회원선발");
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" && window.innerWidth < 1024,
   );
-  const selectedContent = ROADMAP_ITEMS.find(
-    (i) => i.id === selectedNode,
-  )?.content;
+
+  const selectedContent = ROADMAP_ITEMS.find((i) => i.id === selectedNode)?.content;
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -193,27 +192,18 @@ export default function RoadmapSection() {
             </div>
             {selectedContent?.images && (
               <div className="flex gap-[0.38rem]">
-                <div className="flex-1 min-w-0 aspect-[116/68] overflow-hidden">
-                  <img
-                    src={selectedContent.images[0]}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 min-w-0 aspect-[116/68] overflow-hidden">
-                  <img
-                    src={selectedContent.images[1]}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 min-w-0 aspect-[116/68] overflow-hidden">
-                  <img
-                    src={selectedContent.images[2]}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                {selectedContent.images.map((src, index) => (
+                  <div
+                    key={`mo-img-${index}`}
+                    className="flex-1 min-w-0 aspect-[116/68] overflow-hidden"
+                  >
+                    <img
+                      src={src}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             )}
           </div>

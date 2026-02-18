@@ -5,13 +5,16 @@ export default function PartMenu({
   webText = "Product Designer",
   isActive = false,
   onClick,
+  mobileRightBorder = false,
 }) {
   return (
     <div
       onClick={onClick}
       className={`
-        border border-line flex justify-center items-center
-        py-2.5 px-1 gap-[0.5625rem] w-full
+        border border-[0.7px] border-line border-t-0 flex justify-center items-center
+        py-2.5 px-1 gap-[0.5625rem] w-full  h-[2.125rem]
+        
+        ${mobileRightBorder ? "border-r border-line" : "border-r-0"}
         
         sm:w-[14rem] sm:h-[2rem] sm:px-[3.0625rem] sm:py-0 sm:gap-[0.625rem]
         sm:rounded-tr-[0.0625rem] sm:rounded-br-[0.0625rem]
@@ -21,7 +24,6 @@ export default function PartMenu({
         ${isActive ? "bg-white" : "bg-secondarybrand"}
       `}
     >
-    
       <p
         className={`
           typo-buttontext text-center
@@ -36,7 +38,11 @@ export default function PartMenu({
         className={`
           hidden sm:block text-center whitespace-nowrap
           typo-bodye1 tracking-wide
-          ${isActive ? "text-primarybrand typo-bolde" : "text-text hover:text-primarybrand"}
+          ${
+            isActive
+              ? "text-primarybrand typo-bolde"
+              : "text-text hover:text-primarybrand"
+          }
         `}
       >
         {webText}
