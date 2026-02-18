@@ -66,9 +66,9 @@ export const ROADMAP_ITEMS = [
     },
   },
   {
-    id: "여름방학스터디",
-    label: "어름방학 스터디",
-    labelLines: ["여름방학", "스터디"],
+    id: "하계스터디",
+    label: "하계 스터디",
+    labelLines: ["하계", "스터디"],
     hasAsterisk: false,
     content: {
       title: "6월",
