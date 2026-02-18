@@ -49,7 +49,7 @@ export default function PartPage() {
     <div className="bg-secondarybrand min-h-screen relative">
       <Header onMenuClick={toggleSidebar} />
 
-      <div className="pt-[7.8775rem] sm:pt-[7.3125rem]">
+      <div className="pt-[6.3rem] sm:pt-[7.3125rem]">
         <PartMenuTab activePart={activePart} setActivePart={handlePartChange} />
 
         {/* 레이아웃 들어올 자리 */}
