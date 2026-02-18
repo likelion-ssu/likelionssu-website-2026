@@ -160,7 +160,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
   return (
     <article
       className={`w-full flex flex-col overflow-hidden bg-light
-        ${isMobile ? "min-h-0 rounded-none shadow-none py-0" : "max-w-[51.6875rem] p-[0.63rem] pb-[5rem] rounded-[0.625rem] shadow-md cursor-default"}
+        ${isMobile ? "min-h-0 rounded-none shadow-none py-0" : "max-w-[51.6875rem] pb-[5rem] rounded-[0.625rem] shadow-md cursor-default"}
       `}
       onClick={(e) => e.stopPropagation()}
     >
@@ -181,7 +181,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
       </header>
 
       <div
-        className={`flex-1 grid grid-cols-1 lg:grid-cols-[65%_35%] lg:grid-rows-1 lg:gap-x-[1rem] lg:items-start ${isMobile ? "pt-0 px-[1.8rem] pb-[3.5rem] gap-[0.6rem]" : "p-[0.88rem] gap-2 pt-0 pb-8"}`}
+        className={`flex-1 grid grid-cols-1 lg:grid-cols-[minmax(0,65%)_minmax(0,35%)] lg:grid-rows-1 lg:gap-x-[1rem] lg:items-start ${isMobile ? "pt-0 px-[1.8rem] pb-[3.5rem] gap-[0.6rem]" : "px-6 gap-2 pt-0 pb-8"}`}
       >
         {/* PC: 이미지 + GIT/인스타를 하나로 묶음 / 모바일: 이미지만 */}
         <div className="order-1 flex flex-col gap-[0.62rem] lg:col-start-1 lg:row-start-1 min-h-0">
@@ -302,7 +302,7 @@ export default function ProjectCardDetailContent({ project, variant }) {
           )}
         </div>
 
-        <section className="order-2 flex flex-col gap-6 lg:col-start-2 lg:row-start-1">
+        <section className="order-2 flex flex-col gap-6 lg:col-start-2 lg:row-start-1 min-w-0">
           <div className="flex flex-col gap-2">
             <h2
               className={`${isMobile ? "typo-bolde" : "typo-commente"} text-text`}
