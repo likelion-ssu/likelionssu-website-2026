@@ -19,6 +19,8 @@ export default function IntroSection() {
   const startScrollRef = useRef(null);
   const frameRef = useRef(0);
   const scrollRafRef = useRef(0);
+  const autoScrollTriggeredRef = useRef(false);
+  const scrollToValueRef = useRef(null);
 
   const [motion, setMotion] = useState({
     scrollProgress: 0,
@@ -131,6 +133,15 @@ export default function IntroSection() {
     };
 
     const handleScroll = () => {
+      const metrics = metricsRef.current;
+      if (metrics && scrollRafRef.current === 0) {
+        if (window.scrollY <= metrics.startScrollY + 1) {
+          autoScrollTriggeredRef.current = false;
+        } else if (!autoScrollTriggeredRef.current && scrollToValueRef.current) {
+          autoScrollTriggeredRef.current = true;
+          scrollToValueRef.current();
+        }
+      }
       scheduleMotionUpdate();
     };
 
@@ -178,6 +189,7 @@ export default function IntroSection() {
   const fallingLineOpacity = isStarMoving ? lineFadeIn * lineFadeOut : 0;
 
   const handleScrollToValue = useCallback(() => {
+    autoScrollTriggeredRef.current = true;
     recalcMetrics();
 
     let targetY = metricsRef.current ? Math.max(0, metricsRef.current.endScrollY) : 0;
@@ -229,6 +241,10 @@ export default function IntroSection() {
 
     scrollRafRef.current = window.requestAnimationFrame(step);
   }, [recalcMetrics]);
+
+  useEffect(() => {
+    scrollToValueRef.current = handleScrollToValue;
+  }, [handleScrollToValue]);
 
   return (
     <div className="relative w-full min-h-screen bg-secondarybrand flex justify-center items-center px-4 lg:px-[3.75rem] pb-0 pt-0 lg:pt-[3.5625rem]">
