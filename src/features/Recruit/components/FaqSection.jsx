@@ -103,6 +103,7 @@ export default function FaqSection() {
         {/* 7번째: 직접 질문하러 가기 - 이미지만 / 추후 오픈채팅 링크 삽입 */}
         <a
           href="https://www.instagram.com/likelion_ssu/"
+          target="_blank"
           className={`group relative aspect-square w-full overflow-hidden rounded-lg block ${openFaqIndex !== null ? "z-[11]" : ""}`}
         >
           <div className="absolute inset-0 w-[200%] h-[200%] scale-50 origin-top-left lg:w-full lg:h-full lg:scale-100 lg:origin-center">
