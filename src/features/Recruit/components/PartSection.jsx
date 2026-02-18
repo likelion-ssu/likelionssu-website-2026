@@ -90,7 +90,7 @@ function PartCard({
               key={`${label}-${index}`}
               style={{
                 left: `${(line.x / textLines.baseSize.width) * 100}%`,
-                top: `calc(${(line.y / textLines.baseSize.height) * 100}% - (${index} * var(--part-mobile-gap-adjust)))`,
+                top: `calc(${index} * (var(--part-line-box-height) + var(--part-line-gap)))`,
               }}
               className="absolute"
             >
@@ -156,8 +156,6 @@ export default function PartSection() {
             label="PM"
             img={pmImg}
             textLines={RECRUIT_PART_TEXTS.PM}
-            textLinesClassName="!min-w-[18rem] !max-w-[22rem]"
-            imgClassName="!w-[11rem] !h-[11rem] sm:!w-[11rem] sm:!h-[11rem]"
             showTextOverlay={pressedMobilePart === "PM"}
             onImagePress={() => handleMobileImagePress("PM")}
           />
@@ -180,7 +178,6 @@ export default function PartSection() {
             label="BE"
             img={beImg}
             textLines={RECRUIT_PART_TEXTS.BE}
-            textLinesClassName="sm:!min-w-[16rem] sm:!max-w-[22rem]"
             headerPos="top"
             showTextOverlay={pressedMobilePart === "BE"}
             onImagePress={() => handleMobileImagePress("BE")}
@@ -235,7 +232,7 @@ export default function PartSection() {
             label="BE"
             img={beImg}
             textLines={RECRUIT_PART_TEXTS.BE}
-            textLinesClassName="!min-w-[16rem] !max-w-[22rem]"
+            textLinesClassName="!min-w-[14.5rem] !max-w-[19.5rem]"
             headerPos="bottom"
             className="absolute right-[20%] bottom-[5%] w-[30%]"
           />
