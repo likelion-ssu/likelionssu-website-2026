@@ -151,15 +151,15 @@ export const sessionVersions = {
         desc: ["Web Application 구성 요소", "Spring Boot 프로젝트 시작"],
       },
       {
-        title: "데이터베이스와 객체지향프로그래밍",
+        title: "데이터베이스와 객체 지향 설계",
         desc: ["관계형 데이터베이스", "스프링 컨테이너와 DI / IoC"],
       },
       {
-        title: "RestAPI 설계와 JPA (1)",
+        title: "RestAPI와 JPA (1)",
         desc: ["REST API 설계 원칙", "객체–테이블 매핑 이해"],
       },
       {
-        title: "RestAPI 설계와 JPA (2)",
+        title: "RestAPI와 JPA (2)",
         desc: ["Spring Data JPA", "CRUD API 구현"],
       },
       {
