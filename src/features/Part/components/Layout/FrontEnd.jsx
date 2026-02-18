@@ -41,11 +41,12 @@ export default function FrontEnd() {
 
       <div
         ref={feContentRef}
-        className="w-full sm:w-[90rem] sm:pt-[0rem]  sm:pb-[0rem]
+        className="sm:w-screen sm:pt-[0rem] sm:pb-[0rem]
         scroll-mt-[5.7rem] sm:scroll-mt-[3.96rem]"
       >
         <FeContent />
       </div>
+
 
 
       <div

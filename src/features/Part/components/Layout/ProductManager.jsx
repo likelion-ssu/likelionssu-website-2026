@@ -40,7 +40,7 @@ export default function ProductManager() {
 
       <div
         ref={pmContentRef}
-        className="w-full sm:w-[90rem] sm:pt-[0rem]  sm:pb-[0rem]
+        className="w-full sm:w-screen sm:pt-[0rem]  sm:pb-[0rem]
         scroll-mt-[5.7rem] sm:scroll-mt-[5.56rem]"
       >
         <PmContent />

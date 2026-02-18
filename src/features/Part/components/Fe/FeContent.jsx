@@ -8,33 +8,49 @@ export default function FeContent() {
   return (
     <div className="relative w-full overflow-x-hidden flex flex-col justify-end items-start gap-[2.75rem] min-h-[53.1875rem] pb-[2.68rem]">
 
+      {/* =======================
+          GRID (viewport 기준 고정)
+      ======================= */}
       <div
-        className="absolute bottom-0 left-0 w-[14.15625rem] h-[14.28125rem]
-                   sm:w-[28.3125rem] sm:h-[28.5625rem]
-                   z-0 pointer-events-none"
+        className="
+          absolute bottom-0 left-1/2 -translate-x-1/2
+          w-screen flex justify-start pointer-events-none z-0
+        "
         style={{
           background:
             "linear-gradient(225deg, #F9F8F5 29.01%, rgba(249, 248, 245, 0.00) 100%)",
         }}
       >
-        <img src={grid} alt="grid" className="w-full h-full object-cover" />
+        <img
+          src={grid}
+          alt="grid"
+          className="
+            w-[14.15625rem] h-[14.28125rem] object-cover
+            sm:w-[28.3125rem] sm:h-[28.5625rem]
+          "
+        />
       </div>
 
+      {/* =======================
+          HR
+      ======================= */}
       <hr className="w-full border-t-[0.7px] border-line sm:hidden relative z-10" />
 
-      <hr className="hidden sm:block absolute top-[1.6rem] right-0 w-[44.5rem] border-t-[0.7px] border-line z-10" />
+      <div className="hidden sm:flex absolute top-[1.6rem] left-1/2 -translate-x-1/2 w-screen justify-end pointer-events-none z-10">
+        <hr className="w-[44.5rem] border-t-[0.7px] border-line" />
+      </div>
 
       <div className="relative w-full px-[1.19rem] sm:px-0 z-10">
 
-        {/* 웹 */}
+        {/* =======================
+            웹 레이아웃
+        ======================= */}
         <div className="hidden sm:flex w-full justify-center">
           <div className="w-[72.3125rem] mt-[3.19rem] flex flex-col items-start gap-[2.25rem]">
 
             <div className="flex flex-row justify-start items-center gap-[4.38rem]">
 
-             
               <div className="relative flex flex-col items-start gap-[1.25rem]">
-
                 <img
                   src={cap}
                   alt="cap"
@@ -45,7 +61,6 @@ export default function FeContent() {
                 <p className="typo-small1">최다예 하유경 이정안 서해승</p>
               </div>
 
-              
               <div className="flex flex-col gap-[1.25rem]">
                 <div className="typo-pretitle1k">파트장 한마디</div>
                 <p className="typo-body2 whitespace-pre-line">
@@ -63,7 +78,6 @@ export default function FeContent() {
 
             <div className="flex flex-row justify-start items-center gap-[4.38rem]">
 
-              
               <div className="flex flex-col items-start gap-[1.25rem]">
                 <img src={fe3} alt="fe3" className="h-[20.6875rem]" />
                 <p className="typo-small1">최다예 하유경 이정안 서해승</p>
@@ -95,7 +109,6 @@ FE 개발을 배우고 싶은 열정은 가득하지만, 어디서부터 시작�
         ======================= */}
         <div className="sm:hidden flex flex-col gap-[2.75rem] w-full">
 
-          
           <div className="flex flex-col gap-[1.19rem]">
             <div className="typo-pretitle1k">파트장 한마디</div>
 
@@ -113,10 +126,8 @@ FE 개발을 배우고 싶은 열정은 가득하지만, 어디서부터 시작�
             </p>
           </div>
 
-         
           <div className="relative flex flex-col items-end gap-[0.81rem]">
 
-      
             <img
               src={cap}
               alt="cap"
@@ -127,7 +138,6 @@ FE 개발을 배우고 싶은 열정은 가득하지만, 어디서부터 시작�
             <p className="typo-small1">최다예 하유경 이정안 서해승</p>
           </div>
 
-    
           <div>
             <div className="typo-subtitlek text-text/30">FE가 고민된다면?</div>
             <div className="typo-pretitle1k pt-[0.88rem]">
@@ -147,7 +157,6 @@ FE 개발을 배우고 싶은 열정은 가득하지만,
 치열하게 고민하고 성장하고 싶으신 분`}
             </p>
           </div>
-
 
           <div className="flex flex-col items-end gap-[0.81rem]">
             <img src={fe3} alt="fe3" className="w-full" />
