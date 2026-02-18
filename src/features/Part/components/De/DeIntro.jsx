@@ -20,16 +20,16 @@ About the DE Part`}
           </span>
         </div>
 
-        <div className="sm:w-[35.4rem] typo-small2 text-text">
+        <div className="sm:w-[36rem] typo-small2 text-text">
             <span className="whitespace-pre-line sm:hidden block">
             {`DE(Product-Designer)는 사용자가 서비스를 어떻게 인식하고 경험하는 전 과정을 설계하며, UX/UI 디자인을 통해 완성도 높은 사용자 경험 전반을 만들어갑니다. 단순한 시각적 미학을 넘어 ‘사용자 중심의 문제 해결’을 목표로, Figma를 활용해 기획 의도와 사용성을 균형 있게 담은 인터페이스를 구현합니다.
 디자인의 논리와 구조를 탐구하고, 다양한 파트와 협업하며 프로덕트 중심의 디자인 역량과 커뮤니케이션 감각을 함께 성장시켜 나갑니다.`}
           </span>
-          <span className="sm:whitespace-pre-line hidden sm:block">
+          <span className="sm:whitespace-pre-line hidden typo-body2 sm:block">
             {`DE(Product-Designer)는 사용자가 서비스를 어떻게 인식하고 경험하는 전 과정을 설계하며, 
-UX/UI 디자인을 통해 완성도 높은 사용자 경험 전반을 만들어갑니다. 단순한 시각적 미학을 넘어 ‘사용자 중심의 문
-제 해결’을 목표로, Figma를 활용해 기획 의도와 사용성을 균형 있게 담은 인터페이스를 구현합니다.
-디자인의 논리와 구조를 탐구하고, 다양한 파트와 협업하며 
+UX/UI 디자인을 통해 완성도 높은 사용자 경험 전반을 만들어갑니다. 단순한 시각적 미학을 넘어 ‘사
+용자 중심의 문제 해결’을 목표로, Figma를 활용해 기획 의도와 사용성을 균형 있게 담은 인터페이
+스를 구현합니다. 디자인의 논리와 구조를 탐구하고, 다양한 파트와 협업하며 
 프로덕트 중심의 디자인 역량과 커뮤니케이션 감각을 함께 성장시켜 나갑니다.`}
           </span>
           </div>
