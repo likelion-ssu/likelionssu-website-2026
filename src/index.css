@@ -436,6 +436,35 @@ html {
   letter-spacing: 4%;
 }
 
+/* Recruit Part overlay text - mobile Small 1 / desktop Sub Title K */
+.typo-recruit-parttext {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+}
+@media (min-width: 640px) {
+  .typo-recruit-parttext {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
+
+/* Recruit Part overlay positioning tweak:
+   mobile only -> slight right shift + tighter vertical gaps */
+.recruit-part-text-overlay {
+  --part-mobile-x-shift: 20px;
+  --part-mobile-gap-adjust: 6px;
+}
+@media (min-width: 640px) {
+  .recruit-part-text-overlay {
+    --part-mobile-x-shift: 0px;
+    --part-mobile-gap-adjust: 0px;
+  }
+}
+
 
 
 /* ===========================

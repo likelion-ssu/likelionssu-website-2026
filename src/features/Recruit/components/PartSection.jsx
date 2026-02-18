@@ -4,11 +4,8 @@ import pmImg from "../assets/PartSection_pm_img.svg";
 import deImg from "../assets/PartSection_de_img.svg";
 import feImg from "../assets/PartSection_fe_img.svg";
 import beImg from "../assets/PartSection_be_img.svg";
-import pmText from "../assets/PartSection_pm_text.svg";
-import deText from "../assets/PartSection_de_text.svg";
-import feText from "../assets/PartSection_fe_text.svg";
-import beText from "../assets/PartSection_be_text.svg";
 import circle from "../assets/RoadmapSection_circle.svg";
+import { RECRUIT_PART_TEXTS } from "../../../data/recruitPartText";
 
 // 파트별 프리코스 영상 URL
 const PRECOURSE_URLS = {
@@ -21,8 +18,8 @@ const PRECOURSE_URLS = {
 function PartCard({
   label,
   img,
-  textImg,
-  textImgClassName = "",
+  textLines,
+  textLinesClassName = "",
   headerPos = "top", // "top" | "bottom"
   className = "",
   headerClassName = "",
@@ -73,12 +70,34 @@ function PartCard({
         alt={label}
         className={`w-[10rem] h-[10rem] sm:w-[14rem] sm:h-[14rem] object-contain ${imgClassName}`}
       />
-      {textImg && (
-        <img
-          src={textImg}
-          alt=""
-          className={`absolute left-1/2 top-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto object-contain pointer-events-none transition-all duration-750 ease-in-out ${showTextOverlay ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-0 group-hover:opacity-100 group-hover:-translate-x-1/2"} ${textImgClassName}`}
-        />
+      {textLines?.lines?.length > 0 && (
+        <div
+          style={{
+            aspectRatio: `${textLines.baseSize.width} / ${textLines.baseSize.height}`,
+            left: "calc(50% + var(--part-mobile-x-shift))",
+          }}
+          className={`recruit-part-text-overlay absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] min-w-[12rem] max-w-[15rem] h-auto pointer-events-none ${textLinesClassName}`}
+        >
+          {textLines.lines.map((line, index) => (
+            <div
+              key={`${label}-${index}`}
+              style={{
+                left: `${(line.x / textLines.baseSize.width) * 100}%`,
+                top: `calc(${(line.y / textLines.baseSize.height) * 100}% - (${index} * var(--part-mobile-gap-adjust)))`,
+              }}
+              className="absolute"
+            >
+              <p
+                style={{
+                transitionDelay: `${index * 120}ms`,
+                }}
+                className={`bg-[rgba(255,255,255,0.95)] px-[0.625rem] py-[0.5rem] whitespace-nowrap typo-recruit-parttext text-[rgba(0,0,0,0.7)] transition-all duration-700 ease-out ${showTextOverlay ? "opacity-100 translate-x-0" : "opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0"}`}
+              >
+                {line.text}
+              </p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
@@ -129,8 +148,8 @@ export default function PartSection() {
           <PartCard
             label="PM"
             img={pmImg}
-            textImg={pmText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+            textLines={RECRUIT_PART_TEXTS.PM}
+            textLinesClassName="!min-w-[18rem] !max-w-[22rem]"
             imgClassName="!w-[11rem] !h-[11rem] sm:!w-[11rem] sm:!h-[11rem]"
             showTextOverlay={pressedMobilePart === "PM"}
             onImagePress={() => handleMobileImagePress("PM")}
@@ -138,7 +157,7 @@ export default function PartSection() {
           <PartCard
             label="DE"
             img={deImg}
-            textImg={deText}
+            textLines={RECRUIT_PART_TEXTS.DE}
             showTextOverlay={pressedMobilePart === "DE"}
             onImagePress={() => handleMobileImagePress("DE")}
           />
@@ -146,15 +165,15 @@ export default function PartSection() {
           <PartCard
             label="FE"
             img={feImg}
-            textImg={feText}
+            textLines={RECRUIT_PART_TEXTS.FE}
             showTextOverlay={pressedMobilePart === "FE"}
             onImagePress={() => handleMobileImagePress("FE")}
           />
           <PartCard
             label="BE"
             img={beImg}
-            textImg={beText}
-            textImgClassName="!min-w-[22rem]"
+            textLines={RECRUIT_PART_TEXTS.BE}
+            textLinesClassName="sm:!min-w-[16rem] sm:!max-w-[22rem]"
             headerPos="top"
             showTextOverlay={pressedMobilePart === "BE"}
             onImagePress={() => handleMobileImagePress("BE")}
@@ -179,8 +198,8 @@ export default function PartSection() {
           <PartCard
             label="PM"
             img={pmImg}
-            textImg={pmText}
-            textImgClassName="!min-w-[14.5rem] !max-w-[19.5rem]"
+            textLines={RECRUIT_PART_TEXTS.PM}
+            textLinesClassName="!min-w-[14.5rem] !max-w-[19.5rem]"
             imgClassName="!w-[7.5rem] !h-[7.5rem] sm:!w-[11rem] sm:!h-[11rem]"
             headerPos="top"
             className="absolute left-[10%] top-[0%] w-[30%]"
@@ -190,7 +209,7 @@ export default function PartSection() {
           <PartCard
             label="DE"
             img={deImg}
-            textImg={deText}
+            textLines={RECRUIT_PART_TEXTS.DE}
             headerPos="top"
             className="absolute right-[3%] top-[6%] w-[30%]"
           />
@@ -199,7 +218,7 @@ export default function PartSection() {
           <PartCard
             label="FE"
             img={feImg}
-            textImg={feText}
+            textLines={RECRUIT_PART_TEXTS.FE}
             headerPos="top"
             className="absolute left-[0%] bottom-[8%] w-[30%]"
           />
@@ -208,8 +227,8 @@ export default function PartSection() {
           <PartCard
             label="BE"
             img={beImg}
-            textImg={beText}
-            textImgClassName="!min-w-[16rem] !max-w-[22rem]"
+            textLines={RECRUIT_PART_TEXTS.BE}
+            textLinesClassName="!min-w-[16rem] !max-w-[22rem]"
             headerPos="bottom"
             className="absolute right-[20%] bottom-[5%] w-[30%]"
           />
