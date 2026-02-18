@@ -9,7 +9,9 @@ export default function RoadmapSection() {
     typeof window !== "undefined" && window.innerWidth < 1024,
   );
 
-  const selectedContent = ROADMAP_ITEMS.find((i) => i.id === selectedNode)?.content;
+  const selectedContent = ROADMAP_ITEMS.find(
+    (i) => i.id === selectedNode,
+  )?.content;
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -18,20 +20,15 @@ export default function RoadmapSection() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // SVG viewBox 크기
-  const SVG_WIDTH = 900;
-  const SVG_HEIGHT = 600;
+  // 모바일/PC별 뷰박스 크기 분리
+  const SVG_WIDTH = isMobile ? 400 : 900;
+  const SVG_HEIGHT = isMobile ? 380 : 600; // 500 → 380
 
-  // 모바일: viewBox 축소 → 전체 확대(zoom in) 효과
-  const viewBox = isMobile
-    ? "170 90 560 420"
-    : `0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`;
-
-  // 타원 파라미터 - 모바일: 약간 확대 / PC: 기존 유지
   const CENTER_X = SVG_WIDTH / 2;
   const CENTER_Y = SVG_HEIGHT / 2;
-  const RADIUS_X = isMobile ? 280 : 340;
-  const RADIUS_Y = isMobile ? 170 : 220;
+  const RADIUS_X = isMobile ? 165 : 340;
+  const RADIUS_Y = isMobile ? 130 : 220;
+  const viewBox = `0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`;
   const START_ANGLE = -Math.PI / 2; // 12시 방향부터 시작
 
   // 노드 위치 계산
@@ -90,21 +87,29 @@ export default function RoadmapSection() {
 
       {/* 하단: 로드맵 + 콘텐츠 (PC: 가로 / 모바일: 세로) */}
       <div className="flex flex-1 flex-col lg:flex-row">
-        {/* 좌측: 로드맵 (노드 + 연결선) - 모바일에서 더 꽉 차게 */}
-        <div className="relative flex-1 min-h-[17rem] lg:min-h-[32rem] flex items-center justify-center px-2 lg:px-5 py-4 lg:py-3">
-          <div className="relative w-full max-w-[50rem] aspect-[9/6] mx-auto">
+        {/* 좌측: 로드맵 (노드 + 연결선) -*/}
+        <div className="relative flex-1 min-h-[24rem] lg:min-h-[32rem] flex items-center justify-center px-0 lg:px-5 py-0 lg:py-3">
+          <div
+            className={`relative w-full mx-auto ${
+              isMobile
+                ? "aspect-[4/3.8]" // ← 모바일 높이 키워줌
+                : "max-w-[52rem] aspect-[9/6]"
+            }`}
+          >
             {/* SVG 컨테이너 */}
             <svg
               viewBox={viewBox}
               className="absolute inset-0 w-full h-full"
               preserveAspectRatio="xMidYMid meet"
             >
-              {/* 적당히 둥근 곡선 경로 */}
+              {/* 곡선 경로 */}
               <path
                 d={generateSmoothPath()}
                 fill="none"
                 stroke="#000000"
-                strokeWidth="0.5"
+                strokeWidth={isMobile ? "0.4" : "0.5"}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
 
               {/* 노드들 */}
@@ -116,7 +121,6 @@ export default function RoadmapSection() {
                 const fh = isMobile ? 80 : 55;
                 return (
                   <g key={item.id}>
-                    {/* 노드 배경 */}
                     <foreignObject
                       x={x - fw / 2}
                       y={y - fh / 2}
@@ -128,19 +132,27 @@ export default function RoadmapSection() {
                           type="button"
                           onClick={() => setSelectedNode(item.id)}
                           className={`
-                          ${isMobile ? "w-[6rem] h-[4rem] p-2.5 gap-1" : "w-[5.9375rem] min-w-[5.9375rem] max-w-[5.9375rem] h-[3.4375rem] min-h-[3.4375rem] max-h-[3.4375rem] p-[0.625rem] gap-[0.3rem]"}
+                          ${isMobile ? "w-[4.375rem] h-[3.125rem] p-[0.4rem] gap-[0rem]" : "w-[5.9375rem] min-w-[5.9375rem] max-w-[5.9375rem] h-[3.4375rem] min-h-[3.4375rem] max-h-[3.4375rem] p-[0.625rem] gap-[0.3rem]"}
                           flex justify-center items-center box-border
                           rounded-[1.25rem] lg:rounded-[1.875rem]
-                          border border-text lg:border-[0.0313rem]
+                          border-[0.0313rem] border-text lg:border-[0.0313rem]
                           text-center overflow-hidden
-                          ${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"} text-text cursor-pointer
+                          ${isMobile ? "typo-small1" : "typo-recruit-roadmap"} text-text cursor-pointer
                           transition-colors
                           ${isSelected ? "bg-primarybrand text-white font-bold border-none" : "bg-light hover:bg-[#FFFFFF] hover:border-primarybrand hover:text-primarybrand"}
                         `}
                         >
                           {item.labelLines ? (
                             <span
-                              className={`flex flex-col justify-center leading-tight line-clamp-2 ${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"}`}
+                              className={`flex flex-col justify-center leading-tight ${
+                                isSelected
+                                  ? isMobile
+                                    ? "typo-small1-medium"
+                                    : "typo-recruit-roadmap-medium"
+                                  : isMobile
+                                    ? "typo-small1"
+                                    : "typo-recruit-roadmap"
+                              }`}
                             >
                               {item.labelLines.map((line, i) => (
                                 <span key={i}>{line}</span>
@@ -148,16 +160,25 @@ export default function RoadmapSection() {
                             </span>
                           ) : (
                             <span
-                              className={`${isMobile ? "typo-bodyk1" : "typo-recruit-roadmap"} whitespace-nowrap`}
+                              className={`${
+                                isSelected
+                                  ? isMobile
+                                    ? "typo-small1-medium"
+                                    : "typo-recruit-roadmap-medium"
+                                  : isMobile
+                                    ? "typo-small1"
+                                    : "typo-recruit-roadmap"
+                              } whitespace-nowrap`}
                             >
                               {item.label}
                             </span>
                           )}
+
                           {item.hasAsterisk && (
                             <img
                               src={isSelected ? circleSelected : loadingcircle}
                               alt=""
-                              className="w-[0.6639rem] h-[0.6639rem] ml-0.5 shrink-0"
+                              className="w-[0.6639rem] h-[0.6639rem] ml-1 shrink-0"
                             />
                           )}
                         </button>
@@ -168,8 +189,8 @@ export default function RoadmapSection() {
               })}
             </svg>
 
-            {/* 중앙 로딩 서클 - 회전 애니메이션 */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 pointer-events-none">
+            {/* 중앙 로딩 서클 - 회전 애니메이션 (모바일 1.2071rem / PC 2rem) */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.2071rem] h-[1.2071rem] lg:w-8 lg:h-8 pointer-events-none">
               <img
                 src={loadingcircle}
                 alt=""
@@ -178,9 +199,10 @@ export default function RoadmapSection() {
             </div>
           </div>
         </div>
-        {/* 우측/아래: 콘텐츠 패널 - 모바일: 타이틀+설명 아래 이미지 3개 가로 / PC: 기존 그리드 유지 */}
+
+        {/* 우측/아래: 콘텐츠 패널 */}
         <div className="w-full lg:w-[35rem] shrink-0 px-4 pt-0 pb-3 lg:px-0 lg:pr-8 lg:py-8 bg-secondarybrand flex flex-col justify-center">
-          {/* 모바일: 타이틀+설명 아래 이미지 3개 가로 */}
+          {/* 모바일 */}
           <div className="space-y-4 lg:hidden">
             <div className="space-y-2">
               <h2 className="typo-cardtextk text-text font-bold">
@@ -208,7 +230,7 @@ export default function RoadmapSection() {
             )}
           </div>
 
-          {/* PC: 기존 레이아웃 그대로 */}
+          {/* PC */}
           <div className="hidden lg:block space-y-4">
             <h2 className="typo-cardtextk text-text">
               {selectedContent?.title ?? "로드맵"}
