@@ -199,6 +199,14 @@ html {
     letter-spacing: 0.04em;
   }
 
+  .typo-small1-medium {
+    font-family: "Interop", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+  }
+
   /* (Small 2) Interop Light 12 25 4% */
   .typo-small2 {
     font-family: "Interop", sans-serif;
@@ -465,7 +473,13 @@ html {
   }
 }
 
-
+.typo-recruit-roadmap-medium {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 4%;
+}
 
 /* ===========================
     COLOR
@@ -568,16 +582,25 @@ html {
   }
 }
 
-
 /* ===========================
     왼쪽 아래로 까딱 
 =========================== */
 @keyframes swing-diagonal {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(-5deg); }
-  50%  { transform: rotate(-5deg); }
-  75%  { transform: rotate(0deg); }  
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .swing-diagonal {
@@ -589,11 +612,21 @@ html {
    왼쪽 아래로 까딱 (오른쪽 밑 고정)
 =========================== */
 @keyframes swing-diagonale {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(-3deg); } /* 왼쪽 아래로 기울임 */
-  50%  { transform: rotate(0deg); }
-  75%  { transform: rotate(0deg); }  
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  } /* 왼쪽 아래로 기울임 */
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .swing-diagonale {
@@ -601,19 +634,28 @@ html {
   animation: swing-diagonale 2.5s infinite;
 }
 
-
 /* ===========================
    오른쪽 아래로 까딱
 =========================== */
 @keyframes swing-diagonal-right {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(5deg); }  
-  50%  { transform: rotate(5deg); }
-  75%  { transform: rotate(0deg); } 
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .swing-diagonal-right {
-  transform-origin: 0% 100%; 
+  transform-origin: 0% 100%;
   animation: swing-diagonal-right 2.5s infinite;
 }

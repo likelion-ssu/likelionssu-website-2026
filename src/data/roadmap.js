@@ -125,7 +125,7 @@ export const ROADMAP_ITEMS = [
   {
     id: "대학연합해커톤",
     label: "대학 연합 해커톤",
-    labelLines: ["대학", "연합 해커톤"],
+    labelLines: ["대학 연합", "해커톤"],
     hasAsterisk: false,
     content: {
       title: "12월",

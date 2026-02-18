@@ -37,10 +37,14 @@ function PartCard({
       <div className="flex items-center shrink-0 gap-[2.5rem]">
         <Link
           to={`/part?tab=${label}`}
-          className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand"
+          className="text-text hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand active:text-primarybrand"
         >
-          <span className="sm:hidden">← 파트 소개 보기</span>
-          <span className="hidden sm:inline">← 파트 소개 보러 가기</span>
+          <span className="typo-buttontextbold sm:hidden">
+            ← 파트 소개 보기
+          </span>
+          <span className="hidden sm:inline typo-cardtextk">
+            ← 파트 소개 보러 가기
+          </span>
         </Link>
         <h3
           className={`text-text typo-title1e whitespace-nowrap ${isBEBottom ? "mt-0" : ""}`}
@@ -51,9 +55,12 @@ function PartCard({
           href={PRECOURSE_URLS[label]}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-text typo-cardtextk hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand"
+          className="text-text hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand active:text-primarybrand"
         >
-          프리코스 영상 →
+          <span className="typo-buttontextbold sm:hidden">프리코스 영상 →</span>
+          <span className="hidden sm:inline typo-cardtextk">
+            프리코스 영상 →
+          </span>
         </a>
       </div>
     </div>
