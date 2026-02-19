@@ -32,7 +32,7 @@ export const sessionVersions = {
         title: "PM의 소프트 스킬",
         desc: [
           "개발자·디자이너와의 효과적인 소통 방법",
-          "부대표 김민서님의 특강",
+          "부대표 김이나님의 특강",
         ],
       },
       {

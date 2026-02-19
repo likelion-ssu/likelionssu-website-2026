@@ -412,7 +412,7 @@ const PROJECTS_RAW = [
     about:
       "\"나와 딱 맞는 룸메이트, 어디서 구할 수 있을까?\" 높아지는 월세 가격, 늘어나는 2030 1인가구 비율과 물가상승률. 이로 인해 공동주거에 대한 관심은 나날이 높아지고 있습니다. Gooroom은 '룸메이트를 구하는 순간'에 집중하였습니다. 룸메이트를 찾는 번거로움을 덜어주고, AI 기반 생활패턴 분석과 매칭률 계산을 통해 나와 잘 맞는 사용자를 찾을 수 있는 룸메이트 탐색 서비스입니다.",
     stack: [],
-    team: "김민서 이현채 하유경 문근 이성윤",
+    team: "김이나 이현채 하유경 문근 이성윤",
     coverImage: gooroom1,
     images: [gooroom1, gooroom2, gooroom3, gooroom4],
     githubUrl: null,
@@ -504,7 +504,7 @@ const PROJECTS_RAW = [
     about:
       "고립은둔청년 전국 54만명, 서울특별시 13만명. 사회적 관계가 부족하거나, 대부분의 시간을 집에서 보내는 고립은둔청년은 심각한 사회문제로 대두되고 있습니다. IDDA는 집 밖으로 나가고 싶어하지만, 무기력함으로 인해 어려움을 겪는 고립은둔청년의 pain point를 해결하기 위해, 사용자의 고립 단계에 맞는 난이도의 미션을 제공하여 점진적으로 외출을 유도하는 서비스입니다.",
     stack: ["JavaScript", "React", "Spring Boot", "MySQL", "ChatGPT"],
-    team: "김민서 김연희 최다예 황선우 조수한",
+    team: "김이나 김연희 최다예 황선우 조수한",
     coverImage: idda1,
     images: [idda1, idda2, idda3, idda4],
     githubUrl: null,
@@ -530,7 +530,7 @@ const PROJECTS_RAW = [
       "Gemini",
       "ChatGPT",
     ],
-    team: "김민서 박현지 이예림 이현채 최다예 황선우 오영록 조해원",
+    team: "김이나 박현지 이예림 이현채 최다예 황선우 오영록 조해원",
     coverImage: dasoni1,
     images: [dasoni1, dasoni2, dasoni3, dasoni4],
     githubUrl: null,

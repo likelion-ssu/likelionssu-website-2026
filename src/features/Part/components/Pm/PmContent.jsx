@@ -47,7 +47,7 @@ export default function PmContent() {
 
             <div className="absolute top-0 left-[7.25rem] flex flex-col items-start gap-[1.25rem]">
               <img src={pm2} alt="pm2" className="w-[25.5625rem]" />
-              <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+              <p className="typo-small1">유승빈 김이나 장민영 박현지</p>
             </div>
 
             <div className="absolute top-[4.94rem] left-[calc(7.25rem+25.5625rem+4.69rem)] flex flex-col gap-[1.25rem]">
@@ -80,7 +80,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             {/* PM3 이미지 */}
             <div className="z-1 absolute top-[23.62rem] right-[6.69rem] flex flex-col items-end gap-[1.25rem]">
               <img src={pm3} alt="pm3" className="h-[25.5625rem]" />
-              <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+              <p className="typo-small1">유승빈 김이나 장민영 박현지</p>
             </div>
 
             {/* 웹 Camera */}
@@ -122,7 +122,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
                 />
               </div>
 
-              <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+              <p className="typo-small1">유승빈 김이나 장민영 박현지</p>
             </div>
 
             <div>
@@ -143,7 +143,7 @@ AI를 자주 써보며 ‘이걸 어떻게 하면
             {/* pm3 */}
             <div className="flex flex-col items-end gap-[0.81rem]">
               <img src={pm3} alt="pm3" className="w-full" />
-              <p className="typo-small1">유승빈 김민서 장민영 박현지</p>
+              <p className="typo-small1">유승빈 김이나 장민영 박현지</p>
             </div>
 
           </div>
