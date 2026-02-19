@@ -98,7 +98,7 @@ export const TEAM_MEMBERS = [
     name: "이정안",
     part: "총무",
     image: team9,
-    quotes: ["어때요 웹사이트 디자인 개쩔죠? 제가 했어요~"],
+    quotes: ["어때요 웹사이트 디자인 개쩔죠? 제가 개발했어요~"],
     position: { top: "36.04%", left: "66.9%" },
     rotation: 3.73,
     zIndex: 9,

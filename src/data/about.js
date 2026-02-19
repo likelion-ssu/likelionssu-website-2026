@@ -225,4 +225,4 @@ export const YEONHHEOK_ITEMS = [
 ];
 
 /** Core Values */
-export const CORE_VALUES = ["열정", "책임", "협업"];
+export const CORE_VALUES = ["열정", "책임", "능동"];

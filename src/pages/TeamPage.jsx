@@ -108,6 +108,7 @@ export default function TeamPage() {
   const mobilePhotoGridScale = isTablet
     ? TABLET_PHOTO_GRID_SCALE
     : MOBILE_PHOTO_GRID_SCALE;
+  const mobileOverlayTextScale = 1 / mobilePhotoGridScale;
   const mobilePhotoGridWidthRem = isTablet
     ? TABLET_PHOTO_GRID_WIDTH_REM
     : MOBILE_PHOTO_GRID_WIDTH_REM;
@@ -213,6 +214,8 @@ export default function TeamPage() {
                       members={TEAM_MEMBERS}
                       selectedId={selectedId}
                       onSelect={selectMember}
+                      overlayTextScale={1}
+                      overlayTextClassName="typo-body2"
                     />
                   </div>
                   <div
@@ -270,6 +273,8 @@ export default function TeamPage() {
                       members={TEAM_MEMBERS}
                       selectedId={selectedId}
                       onSelect={selectMember}
+                      overlayTextScale={mobileOverlayTextScale}
+                      overlayTextClassName="typo-commentk"
                     />
                   </div>
                 </div>
