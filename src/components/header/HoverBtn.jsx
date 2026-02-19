@@ -11,8 +11,10 @@ export default function HoverBtn({ type = "default", onClick }) {
 
   return (
     <div
-      className={`relative flex items-center cursor-pointer ${
-        isManagementTeam ? "flex-row-reverse justify-between" : ""
+      className={`relative cursor-pointer ${
+        isManagementTeam
+          ? "inline-flex items-center flex-row-reverse"
+          : "flex items-center"
       }`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}

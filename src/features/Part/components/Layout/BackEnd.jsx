@@ -41,7 +41,7 @@ export default function BackEnd() {
       {/* Content 영역 (viewport 기준 absolute 요소 살리기 위해 center 강제 X) */}
       <div
         ref={beContentRef}
-        className="w-full scroll-mt-[7.515rem] sm:scroll-mt-[5.56rem]"
+        className="w-full scroll-mt-[5.7rem] sm:scroll-mt-[5.56rem]"
       >
         <BeContent />
       </div>
@@ -50,7 +50,7 @@ export default function BackEnd() {
       <div className="w-full flex justify-center">
         <div
           ref={sessionRef}
-          className="w-full sm:w-[63.4375rem] scroll-mt-[7.515rem] sm:scroll-mt-[2.74rem]"
+          className="w-full sm:w-[63.4375rem] scroll-mt-[5.7rem] sm:scroll-mt-[2.74rem]"
         >
           <SessionSection version="be" />
         </div>

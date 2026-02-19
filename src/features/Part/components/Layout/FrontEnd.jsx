@@ -41,16 +41,17 @@ export default function FrontEnd() {
 
       <div
         ref={feContentRef}
-        className="w-full sm:w-[90rem] sm:pt-[0rem]  sm:pb-[0rem]
-        scroll-mt-[7.515rem] sm:scroll-mt-[3.96rem]"
+        className="sm:w-screen sm:pt-[0rem] sm:pb-[0rem]
+        scroll-mt-[5.7rem] sm:scroll-mt-[3.96rem]"
       >
         <FeContent />
       </div>
 
 
+
       <div
         ref={sessionRef}
-        className="w-full sm:w-[63.4375rem] scroll-mt-[7.515rem] sm:scroll-mt-[2.74rem]"
+        className="w-full sm:w-[63.4375rem] scroll-mt-[5.7rem] sm:scroll-mt-[2.74rem]"
       >
         <SessionSection version="fe"/>
       </div>

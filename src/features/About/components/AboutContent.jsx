@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+﻿import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ROADMAP_SECTIONS,
@@ -7,8 +7,8 @@ import {
   CORE_VALUES,
 } from "../../../data/about";
 import activityCheckIcon from "../../../assets/activity-check.svg";
-import recruitIcon from "../../../assets/recruit.svg";
 import RoadmapMobile from "./RoadmapMobile";
+import HoverBtn from "../../../components/header/HoverBtn";
 
 /**
  * 오른쪽 스크롤 텍스트 영역.
@@ -19,8 +19,6 @@ export default function AboutContent({
 }) {
   const navigate = useNavigate();
   const activityItemRefs = useRef([]);
-  const anchorViewportTopRef = useRef(null);
-  const didInitAnchorRef = useRef(false);
 
   // 전체 활동 인덱스 계산
   const getGlobalIndex = (sectionIndex, activityIndex) => {
@@ -34,22 +32,26 @@ export default function AboutContent({
   useEffect(() => {
     if (typeof window === "undefined" || window.innerWidth < 640) return;
 
-    const firstItem = activityItemRefs.current[0];
-    if (!firstItem) return;
+    const activeItem = activityItemRefs.current[activeIndex];
+    if (!activeItem) return;
 
-    if (!didInitAnchorRef.current) {
-      anchorViewportTopRef.current = firstItem.getBoundingClientRect().top;
-      didInitAnchorRef.current = true;
+    const SAFE_MARGIN = 8;
+    const headerElement = document.querySelector('[data-app-header="true"]');
+    const headerBottom = headerElement
+      ? headerElement.getBoundingClientRect().bottom
+      : 0;
+    const rect = activeItem.getBoundingClientRect();
+    const viewportTop = Math.max(SAFE_MARGIN, headerBottom + SAFE_MARGIN);
+    const viewportBottom = window.innerHeight - SAFE_MARGIN;
+    let delta = 0;
+
+    if (rect.top < viewportTop) {
+      delta = rect.top - viewportTop;
+    } else if (rect.bottom > viewportBottom) {
+      delta = rect.bottom - viewportBottom;
     }
 
-    const activeItem = activityItemRefs.current[activeIndex];
-    const anchorTop = anchorViewportTopRef.current;
-    if (!activeItem || anchorTop == null) return;
-
-    const activeTop = activeItem.getBoundingClientRect().top;
-    const delta = activeTop - anchorTop;
-
-    if (Math.abs(delta) > 1) {
+    if (delta !== 0) {
       window.scrollBy({ top: delta, behavior: "smooth" });
     }
   }, [activeIndex]);
@@ -135,21 +137,12 @@ export default function AboutContent({
           </section>
 
           <section>
-            <button
-              type="button"
-              onClick={() => navigate("/team")}
-              className="typo-pretitle2e text-text inline-flex items-center gap-2 relative pt-7.5 cursor-pointer border-0 bg-transparent p-0 font-inherit"
-            >
-              <span>Management Team</span>
-              <img
-                src={recruitIcon}
-                alt=""
-                width={17}
-                height={17}
-                aria-hidden
+            <div className="pt-7.5">
+              <HoverBtn
+                type="managementteam"
+                onClick={() => navigate("/team")}
               />
-              <span className="absolute left-0 right-0 bottom-[-4px] h-[1px] bg-text"></span>
-            </button>
+            </div>
           </section>
         </div>
       </div>

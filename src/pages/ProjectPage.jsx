@@ -34,7 +34,7 @@ export default function ProjectPage() {
 
     const makeObserver = () => {
       const isMobile = window.innerWidth < 640;
-      const headerHeight = isMobile ? 95 : 57;
+      const headerHeight = isMobile ? 62 : 57;
       const topOffset = headerHeight + 1;
 
       // sentinel이 헤더 아래로 들어가면=안 보이면 붙었다고 판단하게
@@ -65,7 +65,7 @@ export default function ProjectPage() {
     <div className="bg-secondarybrand min-h-screen relative flex flex-col">
       <Header onMenuClick={toggleSidebar} />
 
-      <div className="flex-1 flex flex-col pt-[5.9375rem] sm:pt-[3.5625rem] min-h-0">
+      <div className="flex-1 flex flex-col pt-[3.875rem] sm:pt-[3.5625rem] min-h-0">
         {project ? (
           <main className="flex-1 flex flex-col lg:flex-row min-h-0 bg-secondarybrand">
             <div className="flex-1 overflow-auto lg:hidden flex flex-col w-full min-h-0">
@@ -99,7 +99,7 @@ export default function ProjectPage() {
               className={`
                 sticky z-40
                 top-[3.875rem] sm:top-[3.5625rem]
-                bg-transparent
+                bg-secondarybrand
               `}
             >
               <FilterSection

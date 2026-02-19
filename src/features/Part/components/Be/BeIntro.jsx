@@ -20,21 +20,16 @@ About the BE Part`}
           </span>
         </div>
 
-        <div className="sm:w-[35.4rem] typo-small2 text-text">
+        <div className="sm:w-[35.4rem] typo-small2  text-text">
             <span className="whitespace-pre-line sm:hidden block">
             {`BE(Back-End)는 API·서버·데이터베이스 설계 및 관리를 담당하며,
 안정적인 서비스 운영을 위한 기술적 기반을 마련합니다.
 서비스가 해결해야 할 문제를 기술적으로 정의하고, 비즈니스 로직과
 데이터 구조를 설계하여 서비스의 핵심 기능을 책임집니다.
-또한, 지속적인 기능 개선과 유지보수를 통해 안정성과 확장성을 확보하여
-변화하는 비즈니스 환경에 유연하게 대응합니다.`}
+또한, 지속적인 기능 개선과 유지보수를 통해 안정성과 확장성을 확보하여 변화하는 비즈니스 환경에 유연하게 대응합니다.`}
           </span>
-          <span className="sm:whitespace-pre-line hidden sm:block">
-            {`BE(Back-End)는 API·서버·데이터베이스 설계 및 관리를 담당하며,
-안정적인 서비스 운영을 위한 기술적 기반을 마련합니다. 서비스가 해결해야 할 문제를 기술적으로 정의하고,
-비즈니스 로직과 데이터 구조를 설계하여 서비스의 핵심 기능을 책임집니다.
-또한, 지속적인 기능 개선과 유지보수를 통해 안정성과 확장성을 확보하여
-변화하는 비즈니스 환경에 유연하게 대응합니다.`}
+          <span className="sm:whitespace-pre-line hidden  typo-body2  sm:block">
+            {`BE(Back-End)는 API·서버·데이터베이스 설계 및 관리를 담당하며, 안정적인 서비스 운영을 위한 기술적 기반을 마련합니다.  서비스가 해결해야 할 문제를 기술적으로 정의하고, 비즈니스 로직과 데이터 구조를 설계하여 서비스의 핵심 기능을 책임집니다. 또한,지속적인 기능 개선과 유지보수를 통해 안정성과 확장성을 확보하여 변화하는 비즈니스 환경에 유연하게 대응합니다.`}
           </span>
           </div>
       </div>

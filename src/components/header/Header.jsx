@@ -20,10 +20,11 @@ export default function Header({
 
   return (
     <div
+      data-app-header="true"
       className={`fixed top-0 left-0 w-full ${
         transitionMode
-          ? "z-[140] bg-transparent border-transparent"
-          : "z-30 bg-secondarybrand border-b-[0.7px] border-line"
+          ? "z-[150] bg-transparent border-transparent"
+          : "z-[150] bg-secondarybrand border-b-[0.7px] border-line"
       }
                   flex flex-col items-center 
                   h-[3.875rem] sm:h-[3.5625rem] sm:pt-[0.625rem] sm:pb-[0.0625rem] gap-[0.5565rem]
@@ -45,7 +46,9 @@ export default function Header({
         </div>
 
         {/* 웹에서 noneSidebar일 때 MenuTab */}
-        <div className="hidden sm:flex z-[160]">{noneSidebar && <MenuTab />}</div>
+        <div className="hidden sm:flex z-[160]">
+          {noneSidebar && <MenuTab />}
+        </div>
 
         {/* 오른쪽 컨텐츠 */}
         <div
