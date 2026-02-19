@@ -1,6 +1,6 @@
 export const lineupVersions = {
   pm: {
-    role: "기획 파트장",
+    role: "PM 파트장",
     name: "유승빈",
     recruitLabel: "아기사자",
     recruitStatus: "모집 중",
