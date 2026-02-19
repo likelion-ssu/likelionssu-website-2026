@@ -119,7 +119,7 @@ export default function AboutContent({
         {/* 오른쪽: 연혁, Core Values, Management Team - 모바일에서 먼저 표시 */}
         <div className="flex-1 min-w-0 flex flex-col gap-10 order-1 sm:order-none">
           <section>
-            <h2 className="typo-pretitle2e mb-6">YeonHheok</h2>
+            <h2 className="typo-pretitle2e mb-6">History</h2>
             <ul className="typo-bodyk1 space-y-1">
               {YEONHHEOK_ITEMS.map((item, i) => (
                 <li key={i}>{item}</li>
