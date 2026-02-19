@@ -16,7 +16,7 @@ import team14 from "../features/Team/assets/14.webp";
 export const TEAM_MEMBERS = [
   {
     id: 1,
-    name: "김민서",
+    name: "김이나",
     part: "부대표",
     image: team1,
     quotes: [

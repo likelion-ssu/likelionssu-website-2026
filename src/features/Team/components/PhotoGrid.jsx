@@ -100,7 +100,7 @@ export default function PhotoGrid({ members, selectedId, onSelect }) {
 //   },
 //   {
 //     id: 3,
-//     name: "김민서",
+//     name: "김이나",
 //     part: "부대표",
 //     image: team14,
 //     quotes: [
