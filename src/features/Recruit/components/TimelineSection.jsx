@@ -4,8 +4,8 @@ import lineMo from "../assets/TimelineSection_line_mo.svg";
 
 const TIMELINE_ITEMS = [
   { title: "지원서 제출", date: "2.23(월) - 3.6(금)" },
-  { title: "프리코스 시청", date: "2.23(월) - 3.8(일)" },
   { title: "서류 결과", date: "3.8(일)" },
+  { title: "프리코스 시청", date: "3.8(일) - 3.13(금)" },
   { title: "면접 평가", date: "3.11(수) - 3.13(금)" },
   { title: "최종 결과 발표", date: "3.15(일)" },
 ];
@@ -37,7 +37,12 @@ export default function TimelineSection() {
               {TIMELINE_ITEMS.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`flex flex-col items-center gap-0.5 ${index === TIMELINE_ITEMS.length - 1 ? "translate-x-2" : ""}`}
+                  className={`
+                  flex flex-col items-center gap-0.5
+      ${index === TIMELINE_ITEMS.length - 1 ? "translate-x-2" : ""}
+      ${index === 2 ? "translate-x-4" : ""}
+        ${index === 1 ? "translate-x-3" : ""}
+    `}
                 >
                   <span className="typo-subtitlek text-text font-medium">
                     {item.title}
