@@ -5,6 +5,10 @@ import zeromarket1Thumb from "../features/Project/assets/thumbnails/11th/zeromar
 import picpic1Thumb from "../features/Project/assets/thumbnails/11th/picpic-1-thumb.webp";
 import remini1Thumb from "../features/Project/assets/thumbnails/11th/remini-1-thumb.webp";
 import flexrate1Thumb from "../features/Project/assets/thumbnails/11th/flexrate-1-thumb.webp";
+import enterq1 from "../features/Project/assets/thumbnails/11th/ENTER_Q-1.webp";
+import homeane2 from "../features/Project/assets/thumbnails/11th/HOMEANE-2.webp";
+import alcohol1 from "../features/Project/assets/thumbnails/11th/alcohol-1.webp";
+import peonanhang1 from "../features/Project/assets/thumbnails/11th/peonanhang-1.webp";
 
 import stew1Thumb from "../features/Project/assets/thumbnails/12th/stew-1-thumb.webp";
 import yessir1Thumb from "../features/Project/assets/thumbnails/12th/yessir-1-thumb.webp";
@@ -13,6 +17,10 @@ import wellnesscoach1Thumb from "../features/Project/assets/thumbnails/12th/well
 import salary1Thumb from "../features/Project/assets/thumbnails/12th/salary-1-thumb.webp";
 import greenspark1Thumb from "../features/Project/assets/thumbnails/12th/greenspark-1-thumb.webp";
 import dotoread1Thumb from "../features/Project/assets/thumbnails/12th/dotoread-1-thumb.webp";
+import ptd1 from "../features/Project/assets/thumbnails/12th/PTD-1.webp";
+import dream1 from "../features/Project/assets/thumbnails/12th/dream-1.webp";
+import tobe1 from "../features/Project/assets/thumbnails/12th/TOBE-1.webp";
+import crushyourstress1 from "../features/Project/assets/thumbnails/12th/crushyourstress-1.webp";
 
 import yeah1Thumb from "../features/Project/assets/thumbnails/13th/yeah-1-thumb.webp";
 import go1Thumb from "../features/Project/assets/thumbnails/13th/go-1-thumb.webp";
@@ -26,6 +34,7 @@ import dasoni1Thumb from "../features/Project/assets/thumbnails/13th/dasoni-1-th
 import promptstudio1Thumb from "../features/Project/assets/thumbnails/13th/promptstudio-1-thumb.webp";
 import classiverse1Thumb from "../features/Project/assets/thumbnails/13th/classiverse-1-thumb.webp";
 
+// id는 배열 순서대로 1~33 (11기→12기→13기, 해커톤→아이디어톤→겨울잠)
 export const PROJECT_THUMBNAILS_BY_ID = {
   1: assum1Thumb,
   2: damda1Thumb,
@@ -34,23 +43,30 @@ export const PROJECT_THUMBNAILS_BY_ID = {
   5: picpic1Thumb,
   6: remini1Thumb,
   7: flexrate1Thumb,
-  8: stew1Thumb,
-  9: yessir1Thumb,
-  10: dontspike1Thumb,
-  11: wellnesscoach1Thumb,
-  12: salary1Thumb,
-  13: greenspark1Thumb,
-  14: dotoread1Thumb,
-  15: yeah1Thumb,
-  16: go1Thumb,
-  17: jibbangso1Thumb,
-  18: gooroom1Thumb,
-  19: sumshiu1Thumb,
-  20: pin4u1Thumb,
-  21: shijang1Thumb,
-  22: idda1Thumb,
-  23: dasoni1Thumb,
-  24: promptstudio1Thumb,
-  25: classiverse1Thumb,
+  8: enterq1,
+  9: homeane2,
+  10: alcohol1,
+  11: peonanhang1,
+  12: stew1Thumb,
+  13: yessir1Thumb,
+  14: dontspike1Thumb,
+  15: wellnesscoach1Thumb,
+  16: salary1Thumb,
+  17: greenspark1Thumb,
+  18: dotoread1Thumb,
+  19: ptd1,
+  20: dream1,
+  21: tobe1,
+  22: crushyourstress1,
+  23: yeah1Thumb,
+  24: go1Thumb,
+  25: jibbangso1Thumb,
+  26: gooroom1Thumb,
+  27: sumshiu1Thumb,
+  28: pin4u1Thumb,
+  29: shijang1Thumb,
+  30: idda1Thumb,
+  31: dasoni1Thumb,
+  32: promptstudio1Thumb,
+  33: classiverse1Thumb,
 };
-
