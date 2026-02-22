@@ -38,7 +38,7 @@ export default function DeContent() {
         <img
           src={hand}
           alt="hand"
-          className="swing-diagonal-right absolute left-0 top-[7.19rem] h-[9.1875rem]"
+          className="swing-diagonal-right absolute left-[-0.5rem] top-[7.19rem] h-[9.1875rem]"
         />
       </div>
 
