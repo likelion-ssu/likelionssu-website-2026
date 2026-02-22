@@ -4,7 +4,7 @@ import lineMo from "../assets/TimelineSection_line_mo.svg";
 
 const TIMELINE_ITEMS = [
   { title: "지원서 제출", date: "2.23(월) - 3.6(금)" },
-  { title: "서류 결과", date: "3.8(일)" },
+  { title: "서류 결과 발표", date: "3.8(일)" },
   { title: "프리코스 시청", date: "3.8(일) - 3.13(금)" },
   { title: "면접 평가", date: "3.11(수) - 3.13(금)" },
   { title: "최종 결과 발표", date: "3.15(일)" },
