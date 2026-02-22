@@ -10,8 +10,8 @@ const aboutAssetModules = import.meta.glob(
   { eager: true, import: "default" },
 );
 
-/** 활동 id(0~14)별 이미지 3장 [url, url, url] */
-const ACTIVITY_IMAGES = Array.from({ length: 15 }, (_, id) => {
+/** 활동 id(0~15)별 이미지 3장 [url, url, url] */
+const ACTIVITY_IMAGES = Array.from({ length: 16 }, (_, id) => {
   const n = id + 1;
   return [
     aboutAssetModules[`../features/About/assets/thumbnails/${n}-1.webp`],
@@ -120,17 +120,6 @@ export const ROADMAP_SECTIONS = [
           "소중한 기억으로\n방학을 마무리해요",
         ],
       },
-      {
-        id: 8,
-        label: "어흥콘",
-        isKeyEvent: true,
-        images: ACTIVITY_IMAGES[8],
-        imageCaptions: [
-          "각 대학에서\n프로젝트를 출품해요",
-          "시연과 공유를 통해\n아이디어를 나누는\n행사예요",
-          "각 학교 학생들과\n자유롭게 교류해봐요",
-        ],
-      },
     ],
   },
   {
@@ -149,9 +138,20 @@ export const ROADMAP_SECTIONS = [
       },
       {
         id: 10,
-        label: "겨울잠",
+        label: "어흥콘",
         isKeyEvent: true,
         images: ACTIVITY_IMAGES[10],
+        imageCaptions: [
+          "각 대학에서\n프로젝트를 출품해요",
+          "시연과 공유를 통해\n아이디어를 나누는\n행사예요",
+          "각 학교 학생들과\n자유롭게 교류해봐요",
+        ],
+      },
+      {
+        id: 11,
+        label: "겨울잠",
+        isKeyEvent: true,
+        images: ACTIVITY_IMAGES[11],
         imageCaptions: [
           "겨울잠은 3개월 동안\n진행되는 멋사의\n장기 프로젝트예요",
           "의견을 나누며\n완성도를 높이기!",
@@ -159,9 +159,9 @@ export const ROADMAP_SECTIONS = [
         ],
       },
       {
-        id: 11,
+        id: 12,
         label: "홈커밍데이",
-        images: ACTIVITY_IMAGES[11],
+        images: ACTIVITY_IMAGES[12],
         imageCaptions: [
           "선배 사자들과\n함께하는 시간",
           "강연도 듣고,\n의견도 나눌 수 있는\n유익한 시간이에요",
@@ -169,10 +169,10 @@ export const ROADMAP_SECTIONS = [
         ],
       },
       {
-        id: 12,
+        id: 13,
         label: "대학 연합 해커톤",
         isKeyEvent: true,
-        images: ACTIVITY_IMAGES[12],
+        images: ACTIVITY_IMAGES[13],
         imageCaptions: [
           "올해는 권역별\n연합 해커톤이\n진행될 예정이에요",
           "여러 대학들과\n함께하는 대회!",
@@ -180,9 +180,9 @@ export const ROADMAP_SECTIONS = [
         ],
       },
       {
-        id: 13,
+        id: 14,
         label: "14기 수료식",
-        images: ACTIVITY_IMAGES[13],
+        images: ACTIVITY_IMAGES[14],
         imageCaptions: [
           "겨울잠 최종 발표와\n함께 수료식을\n진행해요",
           "멋사는 1년을\n그 무엇보다\n알차게 만들어줘요",
@@ -190,9 +190,9 @@ export const ROADMAP_SECTIONS = [
         ],
       },
       {
-        id: 14,
+        id: 15,
         label: "우수 활동자 기업 탐방",
-        images: ACTIVITY_IMAGES[14],
+        images: ACTIVITY_IMAGES[15],
         imageCaptions: [
           "우수 활동자는\n미국 실리콘밸리에 가요",
           "현지 스타트업 방문과\n해외 대학 교류 대회로\n넓은 시야를 갖춰요",
