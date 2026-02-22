@@ -29,6 +29,25 @@ import remini16 from "../features/Project/assets/11th/remini-16.webp";
 import remini17 from "../features/Project/assets/11th/remini-17.webp";
 import remini18 from "../features/Project/assets/11th/remini-18.webp";
 import remini19 from "../features/Project/assets/11th/remini-19.webp";
+import alcohol1 from "../features/Project/assets/11th/alcohol-1.webp";
+import alchohol25 from "../features/Project/assets/11th/alcohol-25.webp";
+import alchohol26 from "../features/Project/assets/11th/alcohol-26.webp";
+import alchohol27 from "../features/Project/assets/11th/alcohol-27.webp";
+import enterq1 from "../features/Project/assets/11th/ENTER_Q-1.webp";
+import enterq22 from "../features/Project/assets/11th/ENTER_Q-22.webp";
+import enterq23 from "../features/Project/assets/11th/ENTER_Q-23.webp";
+import enterq24 from "../features/Project/assets/11th/ENTER_Q-24.webp";
+import enterq25 from "../features/Project/assets/11th/ENTER_Q-25.webp";
+import homeane2 from "../features/Project/assets/11th/HOMEANE-2.webp";
+import homeane18 from "../features/Project/assets/11th/HOMEANE-18.webp";
+import homeane22 from "../features/Project/assets/11th/HOMEANE-22.webp";
+import homeane25 from "../features/Project/assets/11th/HOMEANE-25.webp";
+import homeane29 from "../features/Project/assets/11th/HOMEANE-29.webp";
+import homeane30 from "../features/Project/assets/11th/HOMEANE-30.webp";
+import peonanhang1 from "../features/Project/assets/11th/peonanhang-1.webp";
+import peonanhang4 from "../features/Project/assets/11th/peonanhang-4.webp";
+import peonanhang8 from "../features/Project/assets/11th/peonanhang-8.webp";
+import peonanhang14 from "../features/Project/assets/11th/peonanhang-14.webp";
 
 // 12기
 import dontspike1 from "../features/Project/assets/12th/dontspike-1.webp";
@@ -62,6 +81,27 @@ import yessir1 from "../features/Project/assets/12th/yessir-1.webp";
 import yessir2 from "../features/Project/assets/12th/yessir-2.webp";
 import yessir4 from "../features/Project/assets/12th/yessir-4.webp";
 import yessir5 from "../features/Project/assets/12th/yessir-5.webp";
+import ptd1 from "../features/Project/assets/12th/PTD-1.webp";
+import ptd11 from "../features/Project/assets/12th/PTD-11.webp";
+import ptd12 from "../features/Project/assets/12th/PTD-12.webp";
+import ptd17 from "../features/Project/assets/12th/PTD-17.webp";
+import ptd18 from "../features/Project/assets/12th/PTD-18.webp";
+import tobe1 from "../features/Project/assets/12th/TOBE-1.webp";
+import tobe12 from "../features/Project/assets/12th/TOBE-12.webp";
+import tobe14 from "../features/Project/assets/12th/TOBE-14.webp";
+import tobe15 from "../features/Project/assets/12th/TOBE-15.webp";
+import tobe16 from "../features/Project/assets/12th/TOBE-16.webp";
+import dream1 from "../features/Project/assets/12th/dream-1.webp";
+import dream5 from "../features/Project/assets/12th/dream-5.webp";
+import dream6 from "../features/Project/assets/12th/dream-6.webp";
+import dream7 from "../features/Project/assets/12th/dream-7.webp";
+import dream8 from "../features/Project/assets/12th/dream-8.webp";
+import crushyourstress1 from "../features/Project/assets/12th/crushyourstress-1.webp";
+import crushyourstress2 from "../features/Project/assets/12th/crushyourstress-2.webp";
+import crushyourstress3 from "../features/Project/assets/12th/crushyourstress-3.webp";
+import crushyourstress4 from "../features/Project/assets/12th/crushyourstress-4.webp";
+import crushyourstress5 from "../features/Project/assets/12th/crushyourstress-5.webp";
+import crushyourstress6 from "../features/Project/assets/12th/crushyourstress-6.webp";
 
 //13기
 import classiverse1 from "../features/Project/assets/13th/classiverse-1.webp";
@@ -230,9 +270,70 @@ const PROJECTS_RAW = [
     instagramUrl:
       "https://www.instagram.com/p/C2McUY7PhAJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
-  // 12기 해커톤
+  // 11기 아이디어톤
   {
     id: 8,
+    title: "ENTER-Q",
+    number: 11,
+    category: "아이디어톤",
+    description: "학생을 위한 AI 자기주도 학습 플랫폼",
+    about:
+      "ENTER-Q는 학생을 위한 AI 자기주도 학습 플랫폼입니다. GPT AI를 활용해 문제를 생성하고, 이를 PDF로 변환할 수 있는 기능을 제공합니다. 사용자는 직접 문제를 제작하고 풀이를 작성해 공유할 수 있으며, 커뮤니티 기능을 통해 학습 자료를 교류할 수 있습니다. C2C 문제 거래 수수료, B2C 문제 판매, 인앱 광고를 기반으로 운영되는 학습 플랫폼입니다.",
+    stack: [],
+    team: "강해솔 유승한 윤주호 이진형 조수민 최신임",
+    coverImage: enterq1,
+    images: [enterq1, enterq22, enterq23, enterq24, enterq25],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 9,
+    title: "HOMEANE",
+    number: 11,
+    category: "아이디어톤",
+    description: "부동산 계약/사기 해결 가이드 제공 서비스",
+    about:
+      "HOMEANE은 부동산 계약 가이드와 부동산 사기 해결 가이드를 제공하는 서비스입니다. 부동산 계약에 미숙한 2030 세대를 주요 대상으로 하며, 계약 과정에서 필요한 체크리스트를 확인할 수 있도록 구성되어 있습니다. 사기 상황 발생 시 대응 가이드를 제공하고, 전문가 연결 기능을 포함해 전세 사기 예방과 대처를 지원합니다.",
+    stack: [],
+    team: "이혜민 유해인 오유은 최서현 유예지",
+    coverImage: homeane2,
+    images: [homeane2, homeane18, homeane22, homeane25, homeane29, homeane30],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 10,
+    title: "알비서",
+    number: 11,
+    category: "아이디어톤",
+    description: "음주 습관 기록 애플리케이션",
+    about:
+      "알비서는 사용자의 음주 습관을 기록하고 관리하는 애플리케이션입니다. 절주와 금주를 위한 기록 기능과 캘린더 연동 기능을 제공하며, PUSH 알림과 캐릭터 시스템을 통해 관리 기능을 강화했습니다. 사용자는 자신의 음주를 기록하고 공유할 수 있으며, 전문적인 진료 및 병원 서비스 제공을 목표로 하는 음주 관리 서비스입니다.",
+    stack: [],
+    team: "김지은 박재영 박수영 박정우 한지원 유나경",
+    coverImage: alcohol1,
+    images: [alcohol1, alchohol25, alchohol26, alchohol27],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 11,
+    title: "편안행",
+    number: 11,
+    category: "아이디어톤",
+    description: "교통 약자를 위한 통합 교통 애플리케이션",
+    about:
+      "편안행은 교통 약자를 위한 통합 교통 애플리케이션입니다. 최단 경로 추천과 장애인 콜택시 호출 기능을 포함하며, 저상버스 및 엘리베이터 위치 정보 등 공공데이터를 활용해 경로 정보를 제공합니다. 장애인 등 교통 약자를 주요 대상으로 하여 이동 편의를 지원하는 서비스입니다.",
+    stack: [],
+    team: "김교휘 소희연 신수연 정의민 허동윤",
+    coverImage: peonanhang1,
+    images: [peonanhang1, peonanhang4, peonanhang8, peonanhang14],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  // 12기 해커톤
+  {
+    id: 12,
     title: "스튜",
     number: 12,
     category: "해커톤",
@@ -248,7 +349,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/C-xpuBMSCoD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 9,
+    id: 13,
     title: "Yes, sir 예썰",
     number: 12,
     category: "해커톤",
@@ -264,7 +365,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/C-xrRBFyN31/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 10,
+    id: 14,
     title: "돈스파이크",
     number: 12,
     category: "해커톤",
@@ -280,7 +381,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/C-xrnwOSEXg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 11,
+    id: 15,
     title: "웰니스코치",
     number: 12,
     category: "해커톤",
@@ -297,7 +398,7 @@ const PROJECTS_RAW = [
   },
   // 12기 겨울잠
   {
-    id: 12,
+    id: 16,
     title: "샐러리",
     number: 12,
     category: "겨울잠",
@@ -313,7 +414,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DE8zUOmyWxI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 13,
+    id: 17,
     title: "그린스파크",
     number: 12,
     category: "겨울잠",
@@ -342,7 +443,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DE_YaR0SMMK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 14,
+    id: 18,
     title: "도토릿",
     number: 12,
     category: "겨울잠",
@@ -357,9 +458,77 @@ const PROJECTS_RAW = [
     instagramUrl:
       "https://www.instagram.com/p/DE6nss4ymbM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
+  // 12기 아이디어톤
+  {
+    id: 19,
+    title: "PTD",
+    number: 12,
+    category: "아이디어톤",
+    description: "함께 달리고, 함께 성장하는 러닝 서비스",
+    about:
+      "규칙적으로 걷기를 실천하는 사람은 4명 중 1명으로, 많은 현대인이 운동 부족 상태에 놓여 있습니다. 운동의 필요성은 느끼지만, 혼자서는 오래 지속하기 어렵습니다. 함께 달리고, 함께 성장하는 러닝 서비스 'PTD'를 소개합니다. PTD는 그룹 러닝을 통해 꾸준하게 달리고, 그림을 그리며 달리는 색다른 재미를 제공합니다. 또한 아바타 성장 시스템, 코스 제작·공유·리뷰 기능과 커뮤니티 기능을 통해 기존 러닝 서비스와는 차별화된 경험을 선사합니다. PTD와 함께 달리는 즐거움을 느껴보세요!",
+    stack: [],
+    team: "김상우 김하연 신유정 공윤호 이상은 정연재",
+    coverImage: ptd1,
+    images: [ptd1, ptd11, ptd12, ptd17, ptd18],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 20,
+    title: "꿈꾸자",
+    number: 12,
+    category: "아이디어톤",
+    description: "교대 근무자를 위한 수면 관리 서비스",
+    about:
+      "임상 간호사 부족과 잦은 교대근무. 수면 부족과 불규칙한 식사로 인한 탈임상 간호사 증가는 환자를 돌보는 간호사를 환자로 만들고 있습니다. 교대 근무자를 위한 수면 관리 스케줄러 서비스 '꿈꾸자'는 사용자의 근무 일정에 맞춘 적절 수면 시간 제공과 수면 트래킹을 통해 수면에 대한 압박감을 해소하고, 적절한 식사 시간 추천과 식단 현황 관리를 통해 수면을 돕습니다.",
+    stack: [],
+    team: "유승빈 류다인 백승현 신민경 유민주 정서윤",
+    coverImage: dream1,
+    images: [dream1, dream5, dream6, dream7, dream8],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 21,
+    title: "TOBE",
+    number: 12,
+    category: "아이디어톤",
+    description: "함께 성장하는 나만의 반려식물",
+    about:
+      "남녀노소를 불문한 현대인의 우울감, 어떻게 해결할 수 있을까요? 같은 시간, 함께 성장하는 나만의 반려식물 'TOBE'를 소개합니다. TOBE는 AI 모델을 활용해 사용자가 작성한 일기를 기반으로 텍스트 마이닝과 감성 분석을 진행합니다. 분석 데이터를 바탕으로 사용자의 감정을 이해하고, 위로와 공감의 메시지를 전합니다. 사용자는 단순히 식물을 '키우는 것'을 넘어, 자신의 감정을 알아주고 함께 성장하는 반려식물로부터 따뜻한 위로를 받는 새로운 경험을 할 수 있습니다. TOBE와 함께, 오늘의 마음을 돌보는 시간을 시작해보세요.",
+    stack: [],
+    team: "고영명 박하은 신지환 김건휘 이시온 지하윤",
+    coverImage: tobe1,
+    images: [tobe1, tobe12, tobe14, tobe15, tobe16],
+    githubUrl: null,
+    instagramUrl: null,
+  },
+  {
+    id: 22,
+    title: "부셔부셔",
+    number: 12,
+    category: "아이디어톤",
+    description: "스트레스 해소 서비스",
+    about:
+      "국내 직장인 1,000명을 대상으로 한 조사에서 49%가 우울 상태, 55%가 번아웃을 경험한 것으로 나타났습니다. 우리는 지금 스트레스가 일상이 된 사회에 살고 있습니다. 스트레스를 받을 때마다 기록하고, 나만의 맞춤 해소 방법으로 스스로 스트레스를 부숴버릴 수 있는 서비스, '부셔부셔'를 소개합니다. '부셔부셔'는 스트레스 해소 방법을 제공하는 데일리 처방전, 2주에 한 번씩 쌓인 스트레스를 해소하기 위해 일종의 일탈을 할 수 있는 부셔데이와 스트레스 관리 리포트를 통해 사용자가 자신의 스트레스를 관리하고 해소할 수 있도록 돕습니다.",
+    stack: [],
+    team: "최지예 유태연 박지효 박채연 김선정 전형준",
+    coverImage: crushyourstress1,
+    images: [
+      crushyourstress1,
+      crushyourstress2,
+      crushyourstress3,
+      crushyourstress4,
+      crushyourstress5,
+      crushyourstress6,
+    ],
+    githubUrl: null,
+    instagramUrl: null,
+  },
   // 13기 아이디어톤
   {
-    id: 15,
+    id: 23,
     title: "예아",
     number: 13,
     category: "아이디어톤",
@@ -374,7 +543,7 @@ const PROJECTS_RAW = [
     instagramUrl: null,
   },
   {
-    id: 16,
+    id: 24,
     title: "뭐하러Go!",
     number: 13,
     category: "아이디어톤",
@@ -389,7 +558,7 @@ const PROJECTS_RAW = [
     instagramUrl: null,
   },
   {
-    id: 17,
+    id: 25,
     title: "지빵소",
     number: 13,
     category: "아이디어톤",
@@ -404,7 +573,7 @@ const PROJECTS_RAW = [
     instagramUrl: null,
   },
   {
-    id: 18,
+    id: 26,
     title: "Gooroom",
     number: 13,
     category: "아이디어톤",
@@ -420,7 +589,7 @@ const PROJECTS_RAW = [
   },
   // 13기 해커톤
   {
-    id: 19,
+    id: 27,
     title: "숨쉬어",
     number: 13,
     category: "해커톤",
@@ -446,7 +615,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DO5uHgjkvIA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 20,
+    id: 28,
     title: "Pin4U",
     number: 13,
     category: "해커톤",
@@ -473,7 +642,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DO53rT4ksKe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 21,
+    id: 29,
     title: "시장에가면",
     number: 13,
     category: "해커톤",
@@ -496,7 +665,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DO5344DEs8K/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 22,
+    id: 30,
     title: "이불 밖은 따뜻해",
     number: 13,
     category: "해커톤",
@@ -513,7 +682,7 @@ const PROJECTS_RAW = [
   },
   // 13기 겨울잠
   {
-    id: 23,
+    id: 31,
     title: "다소니",
     number: 13,
     category: "겨울잠",
@@ -538,7 +707,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DUAHjjAEsi8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 24,
+    id: 32,
     title: "PROMPT STUDIO",
     number: 13,
     category: "겨울잠",
@@ -564,7 +733,7 @@ const PROJECTS_RAW = [
       "https://www.instagram.com/p/DUAHbvLEsWp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    id: 25,
+    id: 33,
     title: "클래시버스",
     number: 13,
     category: "겨울잠",
