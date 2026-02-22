@@ -12,7 +12,7 @@ import { saveRecruitPartScroll } from "../recruitScrollRestore";
 const PRECOURSE_URLS = {
   PM: "https://youtube.com/playlist?list=PL0_ZM90TPnbYPazLWsikA0WsChrZLzAIL&si=ZIJax7muWJ8vUehk",
   DE: "https://youtube.com/playlist?list=PLGh_uyBM2dBLUh9HftRzkpCFV57dpLpJR&si=rwxZXz_JHJKJYYti",
-  FE: "https://youtube.com/playlist?list=PLomA8CWFV7xygG3Nt0jQQnT6KXQ0bjV77&si=PV0ESnFxvAMvMoPt",
+  FE: "https://youtube.com/playlist?list=PL_hpGp4t-L-PRUrXi59eveIq5JovBiO3t&si=3WygK1nDvRdudOwQ",
   BE: "https://www.youtube.com/playlist?list=PLm25o_YohhFvXRGOXe_9qWx60UGwxgfLu",
 };
 
