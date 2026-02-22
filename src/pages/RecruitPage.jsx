@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
+import { useNavigationType } from "react-router-dom";
 import Header from "../components/header/Header";
 import SideBar from "../components/sidebar/SideBar";
 import Footer from "../components/footer/Footer";
@@ -10,12 +11,67 @@ import RoadmapSection from "../features/Recruit/components/RoadmapSection";
 import TimelineSection from "../features/Recruit/components/TimelineSection";
 import FaqSection from "../features/Recruit/components/FaqSection";
 import ClosingSection from "../features/Recruit/components/ClosingSection";
+import {
+  clearRecruitPartScroll,
+  getRecruitPartScroll,
+  setRecruitScrollRestoreLock,
+} from "../features/Recruit/recruitScrollRestore";
 
 export default function RecruitPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigationType = useNavigationType();
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const closeSidebar = () => setIsSidebarOpen(false);
+
+  useLayoutEffect(() => {
+    if (navigationType !== "POP") {
+      setRecruitScrollRestoreLock(false);
+      clearRecruitPartScroll();
+      return undefined;
+    }
+
+    const savedScroll = getRecruitPartScroll();
+    if (savedScroll === null || savedScroll <= 0) {
+      setRecruitScrollRestoreLock(false);
+      if (savedScroll !== null) clearRecruitPartScroll();
+      return undefined;
+    }
+
+    setRecruitScrollRestoreLock(true);
+
+    let attempt = 0;
+    const maxAttempts = 12;
+    let frameId = null;
+
+    const restoreScroll = () => {
+      const maxScroll = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight,
+      );
+      const targetScroll = Math.min(savedScroll, maxScroll);
+
+      window.scrollTo({ top: targetScroll, left: 0, behavior: "auto" });
+
+      attempt += 1;
+      const reachedTarget = Math.abs(window.scrollY - targetScroll) <= 2;
+
+      if (!reachedTarget && attempt < maxAttempts) {
+        frameId = window.requestAnimationFrame(restoreScroll);
+        return;
+      }
+
+      setRecruitScrollRestoreLock(false);
+      clearRecruitPartScroll();
+    };
+
+    frameId = window.requestAnimationFrame(restoreScroll);
+
+    return () => {
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      setRecruitScrollRestoreLock(false);
+    };
+  }, [navigationType]);
 
   return (
     <div className="bg-secondarybrand min-h-screen relative">

@@ -6,6 +6,7 @@ import feImg from "../assets/PartSection_fe_img.svg";
 import beImg from "../assets/PartSection_be_img.svg";
 import circle from "../assets/RoadmapSection_circle.svg";
 import { RECRUIT_PART_TEXTS } from "../../../data/recruitPartText";
+import { saveRecruitPartScroll } from "../recruitScrollRestore";
 
 // 파트별 프리코스 영상 URL
 const PRECOURSE_URLS = {
@@ -29,6 +30,9 @@ function PartCard({
 }) {
   // 가로 한 줄: [링크 | 타이틀 | 링크]. BE(아래 헤더)일 때만 버튼 위 / BE 아래
   const isBEBottom = label === "BE" && headerPos === "bottom";
+  const handlePartIntroClick = () => {
+    saveRecruitPartScroll(window.scrollY);
+  };
 
   const TitleAndButtons = (
     <div
@@ -37,6 +41,7 @@ function PartCard({
       <div className="flex items-center shrink-0 gap-[2.5rem]">
         <Link
           to={`/part?tab=${label}`}
+          onClick={handlePartIntroClick}
           className="text-text hover:opacity-80 whitespace-nowrap underline hover:text-primarybrand active:text-primarybrand"
         >
           <span className="typo-buttontextbold sm:hidden">

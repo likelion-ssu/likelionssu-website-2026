@@ -4,6 +4,7 @@ import introStar from "../assets/IntroSection_button_star.svg";
 import introHoverStar from "../assets/IntroSection_hoverButton_star.svg";
 import introArrow from "../assets/IntroSection_button_arrow.svg";
 import introHoverArrow from "../assets/IntroSection_hoverButton_arrow.svg";
+import { isRecruitScrollRestoreLocked } from "../recruitScrollRestore";
 
 const STAR_SIZE_REM = 3.25843;
 const EPSILON = 0.0005;
@@ -17,6 +18,7 @@ export default function IntroSection() {
   const buttonRef = useRef(null);
   const metricsRef = useRef(null);
   const startScrollRef = useRef(null);
+  const lastScrollYRef = useRef(0);
   const frameRef = useRef(0);
   const scrollRafRef = useRef(0);
   const autoScrollTriggeredRef = useRef(false);
@@ -134,10 +136,29 @@ export default function IntroSection() {
 
     const handleScroll = () => {
       const metrics = metricsRef.current;
+      const previousScrollY = lastScrollYRef.current;
+      const currentScrollY = window.scrollY;
+      lastScrollYRef.current = currentScrollY;
+
       if (metrics && scrollRafRef.current === 0) {
-        if (window.scrollY <= metrics.startScrollY + 1) {
+        const restoreLocked = isRecruitScrollRestoreLocked();
+        const hasPassedTarget = currentScrollY >= metrics.endScrollY - 1;
+        const isScrollingDown = currentScrollY > previousScrollY + 0.5;
+        const crossedStartFromTop =
+          previousScrollY <= metrics.startScrollY + 1 &&
+          currentScrollY > metrics.startScrollY + 1;
+
+        if (restoreLocked) {
+          // Skip auto-trigger while Recruit scroll restore is applying.
+        } else if (currentScrollY <= metrics.startScrollY + 1) {
           autoScrollTriggeredRef.current = false;
-        } else if (!autoScrollTriggeredRef.current && scrollToValueRef.current) {
+        } else if (
+          !autoScrollTriggeredRef.current &&
+          scrollToValueRef.current &&
+          !hasPassedTarget &&
+          isScrollingDown &&
+          crossedStartFromTop
+        ) {
           autoScrollTriggeredRef.current = true;
           scrollToValueRef.current();
         }
@@ -151,6 +172,7 @@ export default function IntroSection() {
     };
 
     recalcMetrics();
+    lastScrollYRef.current = window.scrollY;
     scheduleMotionUpdate();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
